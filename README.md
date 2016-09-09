@@ -26,7 +26,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
 eissec - 
   |-- src - 
       | - csolve - Interface code to connect to constraint solver for EISSEC
-      | - symhelper - Support code used by EISSEC while executing transformed 
+      | - symhelper - Support code used by EISSEC while executing transformed
                         code generator
       | - transformer - OCaml code to transform code generator source code
                         for symbolic execution
@@ -62,6 +62,7 @@ README file is. $ is a command prompt.
 
 ### Quick test (Building from source)
  `$ source env_setup.sh`
+
  `$ make`
   (make should succeed and produce `test/x86/fullmodel` and `test/x86/testmodel`)
 
@@ -73,16 +74,26 @@ README file is. $ is a command prompt.
   One of the dumped rules can look like:
   
 	```
-   _G2101 in 21..28, 
+   _G2101 in 21..28,
+
    _G653 in 36..138, _G653 #>= _G588, _G184 #>= _G653, 
+
    _G462 in -1..32, _G462 + 10 #= _G494, 
+
    _G494 in 9..42, _G494 + _G543 #= _G588, _G462 + 10 #= _G494, _G494 * 3 #= _G543, 
+
    _G543 in 27..126, _G494 + _G543 #= _G588, _G494 * 3 #= _G543, 
+
    _G588 in 36..137, _G653 #>= _G588, _G588 #=< _G184 + -1, _G494 + _G543 #= _G588, 
+
    _G184 in 37..138, _G184 #>= _G653, _G588 #=< _G184 + -1, 
+
     map: 	cmpb	%_G2101 ->
+
     insn(_G9,rtl(15,_G27,union_u([rtl(_G184,_G191,_G198,_G205),rtl(_G462,_G469,_G470,_G471),rtl(_G653,_G660,_G667,_G668)|_G393],_G39,_G46,_G53,_G54),_G73))
+
     Q_425 	_G2101 in 21..28,
+
    ```
 
     Here `_G` are Prolog variables. As can be seen, above rule is for `cmpb x86`
