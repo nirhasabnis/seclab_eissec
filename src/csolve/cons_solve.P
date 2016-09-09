@@ -1,0 +1,632 @@
+/* 
+  EISSEC (Extracting Instruction Semantics via Symbolic Execution of Code
+  Generators) is a symbolic execution based system for automatically extracting
+  assembly to IR translators from code generators of modern compilers.
+  
+  Copyright (C) 2012 - 2016 by Niranjan Hasabnis and R.Sekar in Secure Systems
+  Lab, Stony Brook University, Stony Brook, NY 11794.
+ 
+  This program is free software; you can redistribute it and/or modify 
+  it under the terms of the GNU General Public License as published by 
+  the Free Software Foundation; either version 2 of the License, or 
+  (at your option) any later version. 
+ 
+  This program is distributed in the hope that it will be useful, 
+  but WITHOUT ANY WARRANTY; without even the implied warranty of 
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
+  GNU General Public License for more details. 
+ 
+  You should have received a copy of the GNU General Public License 
+  along with this program; if not, write to the Free Software 
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
+ */
+
+:- [library(clpfd)].
+
+mystart :-
+   empty_assoc(Vl), setup_rules_file(FD, IMAPFD), procloop(Vl, _, FD, IMAPFD).
+mystart :- procresloop.
+
+procloop(Vl, Vln, FD, IMAPFD) :-
+   read(T), 
+   /*print(T), print(' '), assoc_to_list(Vl, TT), print(user_error, TT),*/
+   nonvar(T), T =.. [H|Tl],
+   proc(H, Tl, Vl, Vl1, FD, IMAPFD),
+   procloop(Vl1, Vln, FD, IMAPFD).
+
+proc(begin, [], Vl, Vln, _FD, _IMAPFD) :- 
+   put_assoc(0, Vl, _IV, Vl1),
+   put_assoc(1, Vl1, _OV, Vl2),
+   put_assoc(2, Vl2, [], Vln).  % 2 is used to represent a list of output 
+                                % varibles for which we want to generate
+                                % constraints.
+
+proc(storeres, [N], Vl, Vl, FD, IMAPFD) :-
+   get_assoc(0, Vl, IV),
+   get_assoc(1, Vl, OV),
+   get_assoc(2, Vl, CV),
+   stores(Vl, IV, OV, CV, FD, IMAPFD, N).
+
+proc(markconsvar, [v(N)], Vl, Vln, _FD, _IMAPFD) :-
+   get_assoc(2, Vl, CV),
+   append(CV, [N], CVn), /* Append new variable to a list */     
+   put_assoc(2, Vl, CVn, Vln).
+
+proc(failres, [], Vl, Vl, FD, IMAPFD) :-
+   get_assoc(0, Vl, IV),
+   get_assoc(2, Vl, CV),
+   stores(Vl, IV, ['Inv'|_], CV, FD, IMAPFD).
+   /* stores(IV, ['Inv'|_]). */
+
+proc(addo, [T], Vl, Vln, _FD, _IMAPFD) :- 
+   get_assoc(1, Vl, OV),
+   txVar(T, Vl, Tn1, Vln),
+   addout(Tn1, OV).
+
+proc(getnext, [v(N)], Vl, Vl, _FD, _IMAPFD) :-
+   get_assoc(N, Vl, V),
+   trylabel(V).
+
+proc(add, [C], Vl, Vln, _FD, _IMAPFD) :- addCons(C, Vl, Vln).
+
+proc(tryboth, [C], Vl, Vln, _FD, _IMAPFD) :-
+   (addCons(C, Vl, Vln) ->
+       print_and_sync('1\n');
+     (print_and_sync('f\n'), fail)); Vl=Vln.
+
+proc(tryone, [C], Vl, Vln, _FD, _IMAPFD) :-
+   (addCons(C, Vl, Vln) -> 
+       print_and_sync('1\n');
+     (print_and_sync('f\n'), fail)).
+
+stores(Vl, IV, OV, CV, FD, IMAPFD, N) :-
+   terminate_var_tail(OV),
+   /*assert(tx(IV, OV)),*/ /* Commented for memory usage */
+   errdump(Vl, (IV, OV), FD, IMAPFD, N, CV), 
+   print_conditions(Vl, CV, FD),
+   fail.
+
+/*
+stores(IV, OV) :-
+   terminate_var_tail(OV),
+   /*assert(tx(IV, OV)),*/ /* Commented for memory usage */
+   errdump((IV, OV)), 
+   fail. 
+*/
+
+addout(Tn1, OV) :-
+   (atom(Tn1) -> string_to_atom(Tn, Tn1); Tn = Tn1),  
+   append_var_tail(OV, Tn).
+
+addCons(C, Vl, Vln) :-
+   txVar(C, Vl, Cn, Vln), 
+   procCons(Cn).
+
+txVar(T, Vl, Tn, Vln) :-
+   (nonvar(T) ->
+       T =.. [H|Tl],
+       (H=v, Tl=[N], integer(N) ->
+          (get_assoc(N, Vl, NV) -> Tn = NV, Vl = Vln;
+           put_assoc(N, Vl, NV, Vln), Tn = NV);
+        txVarList(Tl, Vl, Tln, Vln), Tn =.. [H|Tln]
+       );
+    print('Invalid input: no variables permitted\n'), fail
+   ).
+
+txVarList([], Vl, [], Vl).
+txVarList([H|T], Vl, [Hn|Tn], Vln) :- 
+   txVar(H, Vl, Hn, Vl1), txVarList(T, Vl1, Tn, Vln).
+
+append_var_tail(X, T) :-
+   (var(X) -> X=[T|_]; 
+    X = [_H|Tl], append_var_tail(Tl, T)).
+
+terminate_var_tail(X) :-
+   (var(X) -> X=[]; 
+    X = [_H|Tl], terminate_var_tail(Tl)).
+
+trylabel(V) :-
+  mylabel([V]), print(V), print_and_sync('\n').
+trylabel(_V) :- print_and_sync('f\n'), fail.
+
+/*mylabel(X) :- label(X).*/
+mylabel(X) :- labeling([ffc, bisect], X).
+/* Instead of label, try using labeling([ffc, bisect], [V]) */
+
+/* Other useful predicates:
+   fd_size(X, Size)
+   fd_inf(X, min)
+   fd_sup(X, max)
+*/
+
+/*
+procCons(um(X,Y)) :- X #= -Y.
+procCons(abs(X,Y)) :- X #= abs(Y).
+
+procCons(mod(X,Y,Z)) :- X #= Y mod Z.
+procCons(rem(X,Y,Z)) :- X #= Y rem Z.
+procCons(min(X,Y,Z)) :- X #= min(Y, Z).
+procCons(max(X,Y,Z)) :- X #= max(Y, Z).
+
+procCons(eqvilt(U,X, Y)) :- U #<==> X #< Y.
+procCons(eqvile(U,X, Y)) :- U #<==> X #=< Y.
+procCons(eqvigt(U,X, Y)) :- U #<==> X #> Y.
+procCons(eqvige(U,X, Y)) :- U #<==> X #>= Y.
+procCons(eqvieq(U,X, Y)) :- U #<==> X #= Y.
+procCons(eqvine(U,X, Y)) :- U #<==> X #\= Y.
+procCons( eqveq(U,X, Y)) :- U #<==> X = Y.
+*/
+
+procCons(add(X,Y,Z)) :- X #= Y+Z.
+procCons(sub(X,Y,Z)) :- X #= Y-Z.
+procCons(mult(X,Y,Z)) :- X #= Y*Z.
+procCons(mul(X,Y,Z)) :- X #= Y*Z.
+procCons(div(X,Y,Z)) :- X #= Y/Z.
+
+procCons(ilt(X, Y)) :- X #< Y.
+procCons(ile(X, Y)) :- X #=< Y.
+procCons(igt(X, Y)) :- X #> Y.
+procCons(ige(X, Y)) :- X #>= Y.
+procCons(ieq(X, Y)) :- X = Y.
+/* %%% procCons(ieq(X, Y)) :- X #= Y.*/
+
+procCons(ine(X, Y)) :- X #\= Y.
+procCons(tne(X, Y)) :- X \== Y.
+procCons(eq(X, Y)) :- X = Y.
+procCons(eq_range(X, L, H)) :- X in L..H.
+procCons(eq_set2(X, E1, E2)) :- X in E1\/E2.
+procCons(eq_set3(X, E1, E2, E3)) :- X in E1\/E2\/E3.
+procCons(eq_set4(X, E1, E2, E3, E4)) :- X in E1\/E2\/E3\/E4.
+procCons(eq_set5(X, E1, E2, E3, E4, E5)) :- X in E1\/E2\/E3\/E4\/E5.
+procCons(eq_set6(X, E1, E2, E3, E4, E5, E6)) :- X in E1\/E2\/E3\/E4\/E5\/E6.
+procCons(eq_set7(X, E1, E2, E3, E4, E5, E6, E7)) :- X in E1\/E2\/E3\/E4\/E5\/E6\/E7.
+procCons(eq_set8(X, E1, E2, E3, E4, E5, E6, E7, E8)) :- 
+	X in E1\/E2\/E3\/E4\/E5\/E6\/E7\/E8.
+procCons(eq_set9(X, E1, E2, E3, E4, E5, E6, E7, E8, E9)) :- 
+	X in E1\/E2\/E3\/E4\/E5\/E6\/E7\/E8\/E9.
+procCons(eq_set10(X, E1, E2, E3, E4, E5, E6, E7, E8, E9,E10)) :- 
+	X in E1\/E2\/E3\/E4\/E5\/E6\/E7\/E8\/E9\/E10.
+procCons(eq_set11(X, E1, E2, E3, E4, E5, E6, E7, E8, E9,E10,E11)) :- 
+	X in E1\/E2\/E3\/E4\/E5\/E6\/E7\/E8\/E9\/E10\/E11.
+procCons(eq_set12(X,E1,E2,E3,E4,E5,E6,E7,E8,E9,E10,E11,E12)) :- 
+	X in E1\/E2\/E3\/E4\/E5\/E6\/E7\/E8\/E9\/E10\/E11\/E12.
+procCons(eq_set13(X,E1,E2,E3,E4,E5,E6,E7,E8,E9,E10,E11,E12,E13)) :- 
+	X in E1\/E2\/E3\/E4\/E5\/E6\/E7\/E8\/E9\/E10\/E11\/E12\/E13.
+procCons(eq_set14(X,E1,E2,E3,E4,E5,E6,E7,E8,E9,E10,E11,E12,E13,E14)) :- 
+	X in E1\/E2\/E3\/E4\/E5\/E6\/E7\/E8\/E9\/E10\/E11\/E12\/E13\/E14.
+procCons(eq_set16(X,E1,E2,E3,E4,E5,E6,E7,E8,E9,E10,E11,E12,E13,E14,E15,E16)) :- 
+	X in E1\/E2\/E3\/E4\/E5\/E6\/E7\/E8\/E9\/E10\/E11\/E12\/E13\/E14\/E15\/E16.
+
+procCons(csor(C1,C2)) :- 
+  procCons(C1);
+  procCons(C2).
+
+procCons(csand(C1,C2)) :- 
+  procCons(C1),
+  procCons(C2).
+    
+/* Misleading predicate below. Looping is never used, plus
+   the predicate works only if it reads the string
+   "dumpall" from input. If you actually use the loop, then
+   you need to send dumpall once per loop, plus it serves no
+   purpose since the output will be the same. 
+*/
+procresloop :- 
+   read(T), procres(T), procresloop.
+
+procres(dumpall) :-
+   print('Dumping mapping\n'),
+   findall((I,O1), dump(I,O1), TxTab), print_nicely(TxTab).
+
+print_and_sync(X) :-
+   print(X), read(_Z).
+
+print_nicely(L) :- 
+   sort(L, Ln), elim_dupl(Ln, Lnn), print_map(Lnn).
+
+/* Elimination does not work right. We need to check for
+   subsumption: if lhs1 subsumes lhs2 but rhs1 is a subsequence of rhs2? */
+
+elim_dupl([], []).
+elim_dupl([R1], [R1]).
+elim_dupl([(I1,O1), (I2,O2)|L], L1) :-
+   (I1 == I2, subseq(O1, O2) 
+       -> L1 = Ln;
+    L1 = [(I1,O1)|Ln]),
+   elim_dupl([(I2,O2)|L], Ln).
+
+subseq(X, Y) :- 
+   string_to_list(X, Xn), string_to_list(Y, Yn), subsequence(Xn,Yn).
+
+subsequence([X|Xs], [Y|Ys]) :-
+   (X == Y -> subsequence(Xs, Ys);
+     subsequence([X|Xs], Ys)).
+subsequence([], _Ys).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Printing related stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+print_map([]).
+print_map([(I,O)|T]) :- 
+   print(I), print(' -> '), print(O), print('\n'), print_map(T).
+
+dump(I, O) :- 
+    tx(I, O1), domVars((I,O1)), sflatten(O1, O).
+
+print_list_(_FD, [], _SEP).
+print_list_(FD, [H|T], SEP) :- 
+  print(FD, H), length(T, N),
+  (N #> 0 -> print(FD, SEP); print(FD, '')),
+  print_list_(FD, T, SEP).
+
+print_list(FD, LP, L, SEP, RP, EMPTY_BRC) :- 
+  length(L, N),
+  (N #> 0 -> print(FD, LP), print_list_(FD, L, SEP), print(FD, RP);
+    (EMPTY_BRC -> print(FD, LP), print(FD, RP); print(FD, ''))).
+
+get_props(X, Ps) :- 
+  (attvar(X) ->
+    (get_attr(X, clpfd, clpfd_attr(_,_,_,_,fd_props(Gs,Bs,Os))) ->
+        append(Gs, Bs, Ps0),
+        append(Ps0, Os, Ps);
+        Ps=[]
+    );
+    Ps=[]
+  ).
+
+get_prop_vars(pgeq(A,B), Vs, Vsn) :- 
+  append([A], Vs, Vs1), append([B], Vs1, Vsn).
+get_prop_vars(pplus(X,Y,Z), Vs, Vsn)  :- 
+  %(var(X) -> append([X], Vs, Vs1);  append([], Vs, Vs1)),
+  %(var(Y) -> append([Y], Vs1, Vs2); append([], Vs1, Vs2)),
+  %(var(Z) -> append([Z], Vs2, Vsn);  append([], Vs2, Vsn)).
+  append([X], Vs, Vs1), append([Y], Vs1, Vs2), append([Z], Vs2, Vsn).
+get_prop_vars(pneq(A,B), Vs, Vsn) :- 
+  append([A], Vs, Vs1), append([B], Vs1, Vsn).
+get_prop_vars(ptimes(X,Y,Z), Vs, Vsn) :- 
+  append([X], Vs, Vs1), append([Y], Vs1, Vs2), append([Z], Vs2, Vsn).
+get_prop_vars(absdiff_neq(X,Y,_C), Vs, Vsn)  :-
+  append([X], Vs, Vs1), append([Y], Vs1, Vsn).
+get_prop_vars(absdiff_geq(X,Y,_C), Vs, Vsn)  :- 
+  append([X], Vs, Vs1), append([Y], Vs1, Vsn).
+get_prop_vars(x_neq_y_plus_z(X,Y,Z), Vs, Vsn) :-
+  append([X], Vs, Vs1), append([Y], Vs1, Vs2), append([Z], Vs2, Vsn).
+get_prop_vars(x_leq_y_plus_c(X,Y,_C), Vs, Vsn) :-
+  %(var(X) -> append([X], Vs, Vs1);  append([], Vs, Vs1)),
+  %(var(Y) -> append([Y], Vs1, Vsn); append([], Vs1, Vsn)).
+  append([X], Vs, Vs1), append([Y], Vs1, Vsn).
+get_prop_vars(pdiv(X,Y,Z), Vs, Vsn) :- 
+  append([X], Vs, Vs1), append([Y], Vs1, Vs2), append([Z], Vs2, Vsn).
+get_prop_vars(pexp(X,Y,Z), Vs, Vsn) :-
+  append([X], Vs, Vs1), append([Y], Vs1, Vs2), append([Z], Vs2, Vsn).
+get_prop_vars(pabs(X,Y), Vs, Vsn) :-
+  append([X], Vs, Vs1), append([Y], Vs1, Vsn).
+get_prop_vars(pmod(X,Y,Z), Vs, Vsn) :-
+  append([X], Vs, Vs1), append([Y], Vs1, Vs2), append([Z], Vs2, Vsn).
+get_prop_vars(prem(X,Y,Z), Vs, Vsn) :-
+  append([X], Vs, Vs1), append([Y], Vs1, Vs2), append([Z], Vs2, Vsn).
+get_prop_vars(pmax(X,Y,Z), Vs, Vsn) :-
+  append([X], Vs, Vs1), append([Y], Vs1, Vs2), append([Z], Vs2, Vsn).
+get_prop_vars(pmin(X,Y,Z), Vs, Vsn) :-
+  append([X], Vs, Vs1), append([Y], Vs1, Vs2), append([Z], Vs2, Vsn).
+%get_prop_vars(_, Vs, Vs). %Vsn = Vs.
+
+get_proplist_vars([], Vs, Vsn) :- Vsn = Vs.
+get_proplist_vars([(propagator(P,_))|T], Vs, Vsn) :- 
+  get_prop_vars(P, Vs, Vs1), get_proplist_vars(T, Vs1, Vsn).  
+
+print_prop(FD, pgeq(A,B)) :- 
+  print(FD, A), print(FD, ' #>= '), print(FD, B).
+
+print_prop(FD, pplus(X,Y,Z))  :- 
+   print(FD, X), print(FD, ' + '), 
+   print(FD, Y), print(FD, ' #= '), print(FD, Z).
+
+print_prop(FD, pneq(A,B)) :- 
+   print(FD, A), print(FD, ' #\\= '), print(FD, B).
+
+print_prop(FD, ptimes(X,Y,Z)) :- 
+   print(FD, X), print(FD, ' * '), 
+   print(FD, Y), print(FD, ' #= '), print(FD, Z).
+
+print_prop(FD, absdiff_neq(X,Y,C))  :-
+   print(FD, 'abs('), print(FD, X), print(FD, ', '), 
+   print(FD, Y), print(FD, ') #\\= '), print(FD, C).
+  
+print_prop(FD, absdiff_geq(X,Y,C))  :- 
+   print(FD, 'abs('), print(FD, X), print(FD, ', '), 
+   print(FD, Y), print(FD, ') #>= '), print(FD, C).
+  
+print_prop(FD, x_neq_y_plus_z(X,Y,Z)) :-
+   print(FD, X), print(FD, ' #\\= '), 
+   print(FD, Y), print(FD, ' + '), print(FD, Z).
+  
+print_prop(FD, x_leq_y_plus_c(X,Y,C)) :-
+   print(FD, X), print(FD, ' #=< '), 
+   print(FD, Y), print(FD, ' + '), print(FD, C).
+
+print_prop(FD, pdiv(X,Y,Z)) :- 
+   print(FD, X), print(FD, ' / '), 
+   print(FD, Y), print(FD, ' #= '), print(FD, Z).
+  
+print_prop(FD, pexp(X,Y,Z)) :-
+   print(FD, X), print(FD, ' ^ '), 
+   print(FD, Y), print(FD, ' #= '), print(FD, Z).
+  
+print_prop(FD, pabs(X,Y)) :-
+   print(FD, Y), print(FD, ' #= abs('), print(FD, X), print(FD, ')').
+  
+print_prop(FD, pmod(X,M,K)) :-
+  print(FD, X), print(FD, ' mod '), 
+  print(FD, M), print(FD, ' #= '), print(FD, K).
+
+print_prop(FD, prem(X,Y,Z)) :-
+  print(FD, X), print(FD, ' rem '), 
+  print(FD, Y), print(FD, ' #= '), print(FD, Z).
+  
+print_prop(FD, pmax(X,Y,Z)) :-
+  print(FD, Z), print(FD, ' #= max('), 
+  print(FD, X), print(FD, ', '), print(FD, Y), print(FD, ')'). 
+
+print_prop(FD, pmin(X,Y,Z)) :-
+  print(FD, Z), print(FD, ' #= min('), 
+  print(FD, X), print(FD, ', '), print(FD, Y), print(FD, ')').  
+
+print_proplist(_FD, [], _SEP, _INDENT).
+print_proplist(FD, [(propagator(P,_))|T], SEP, INDENT) :-
+  print(FD, INDENT), print_prop(FD, P), 
+  print(FD, SEP), print_proplist(FD, T, SEP, INDENT).  
+
+print_domain_and_cons(FD, V, SEP, INDENT) :-
+(var(V) ->
+  %fd_size(V, S),
+  %(integer(S) ->
+      print(FD, INDENT), 
+      print(FD, V), print(FD, ' in '), fd_dom(V, D), print(FD, D), 
+      print(FD, SEP),
+      %clpfd:attribute_goals(V, G, _Gs), print(FD, G),
+      get_props(V, Ps), print_proplist(FD, Ps, SEP, ''), 
+      print(FD, '\n');
+  %    print(FD, '')
+  %);  
+  print(FD, '')
+).
+
+print_domain_and_cons_list(_FD, [], _SEP, _INDENT).
+print_domain_and_cons_list(FD, [V|T], SEP, INDENT) :- 
+  print_domain_and_cons(FD, V, SEP, INDENT), 
+  print_domain_and_cons_list(FD, T, SEP, INDENT).
+
+% Collect all variables whose domain we want to print_mylist
+% We use DFS over a set of variables starting from the variables
+% which appear in O->I rule. All variables which appear in the
+% constraint of these variables are then added.
+myis_member(V, [Y|T]) :- V == Y; myis_member(V, T).
+
+addConsVars([], L, Ln) :- Ln = L.
+addConsVars([V|Vs], L, Ln) :-
+  (myis_member(V, L) ->       
+      addConsVars(Vs, L, Ln);
+      collConsVars_(V, L, Ln1),
+      addConsVars(Vs, Ln1, Ln)
+  ).
+
+collConsVars_(V, L, Ln) :-
+(var(V), not(myis_member(V, L)) ->
+  fd_size(V, S),
+  (integer(S) ->
+      get_props(V, Ps), 
+      get_proplist_vars(Ps, [], Vs),
+      append([V], L, Ln1),      
+      addConsVars(Vs, Ln1, Ln);
+      Ln = L
+  );  
+  Ln = L
+).
+
+collConsVars(X, L, Ln) :-
+    (var(X) ->
+          collConsVars_(X, L, Ln),
+          print(user_error, '');
+    X =.. [_H|T], collConsVarsList(T, L, Ln)).
+    
+collConsVarsList([], L, Ln) :- Ln = L.
+
+collConsVarsList([H|T], L, Ln) :- 
+  collConsVars(H, L, Ln1), collConsVarsList(T, Ln1, Ln).
+
+%% domVars(Vl, X) :-
+%%     (var(X) ->
+%%           print_domain_nicely(X),
+%%           print(user_error, '');
+%%     X =.. [_H|T], domVarsList(Vl, T)).
+
+%% domVarsList(_Vl, []).
+%% domVarsList(Vl, [H|T]) :- domVars(Vl, H), domVarsList(Vl, T).
+
+flatten([T1,T2|Ts], L) :-
+  ((string(T1), string(T2)) -> 
+      string_concat(T1, T2, T), flatten([T|Ts], L);
+  flatten([T2|Ts], L1), L = [T1|L1]).
+flatten([T], [T]).
+flatten([], []).
+
+% This is hack. Annoyingly, swipl does not have a way to print variable 
+% into a string. So we have to print it to a file and read it back.
+myvar_to_string(V, S) :-
+  open('/tmp/tmp.08657', write, TMPFD, [create([default])]),
+  print(TMPFD, V), close(TMPFD),
+  open('/tmp/tmp.08657', read, TMPFD1, [create([default])]),
+  read_line_to_codes(TMPFD1, C), swritef(S, "%s", [C]),
+  close(TMPFD1).
+
+sflatten(L, S) :- sflatten(L, '', S).
+
+sflatten([], S, S).
+sflatten([H|T], S1, S) :- 
+  (var(H) -> myvar_to_string(H, Hs), string_concat(S1, Hs, S2);
+                string_concat(S1, H, S2)), 
+  sflatten(T, S2, S).
+
+get_op_consvars_from_ids(_Vl, [], OCV, OCVn) :- OCVn = OCV.
+get_op_consvars_from_ids(Vl, [H|T], OCV, OCVn) :-
+  get_assoc(H, Vl, V), append([V], OCV, OCV1),
+  get_op_consvars_from_ids(Vl, T, OCV1, OCVn).
+
+errdump(Vl, Y, FD, IMAPFD, N, OCI) :-  
+  print(user_error, '\n'),
+  /* assert(errtx(Y)), errtx(X), retract(errtx(Y)), we dont want to rename vars */
+  % domVars(Vl, Y), 
+  Y = (A, B), sflatten(B, Bn), 
+  collConsVars(Y, [], ICV), % input constraint vars
+  get_op_consvars_from_ids(Vl, OCI, [], OCV),
+  print_domain_and_cons_list(user_error, ICV, ', ', ''),
+  print(user_error, ' map: '), print(user_error, Bn), 
+  print(user_error, ' -> '), print(user_error, A),
+  print(user_error, '\n'),
+  print_rule(FD, IMAPFD, N, ICV, OCV, Bn, A).
+
+print_conditions(_, [], _FD) :- print(user_error, '\n').
+
+print_conditions(Vl, [H|T], FD) :- 
+  get_assoc(H, Vl, V),
+  print(user_error, ' Q_'), print(user_error, H), print(user_error, ' '),
+  print_domain_and_cons_list(user_error, [V], ', ', '\t'),  
+  print_conditions(Vl, T, FD).
+
+printstats :- 
+  garbage_collect,
+  garbage_collect_atoms,
+  trim_stacks,
+  %garbage_collect_heap,
+  %statistics(memory, MM), 
+  %print(user_error, 'Memory: '), print(user_error, MM), 
+  %print(user_error, '\n'),
+  %statistics(garbage_collection, GC),
+  %print(user_error, 'GC: '), print(user_error, GC), 
+  %print(user_error, '\n'),
+  %statistics(heapused, HU),
+  %print(user_error, 'Heap Used: '), print(user_error, HU), 
+  %print(user_error, '\n'),
+  %statistics(heap_gc, HG),
+  %print(user_error, 'Heap GC: '), print(user_error, HG), 
+  %print(user_error, '\n').
+  statistics(garbage_collection, GC),
+  print(user_error, 'GC: '), print(user_error, GC), 
+  print(user_error, '\n'),
+  statistics(atom_garbage_collection, AGC),
+  print(user_error, 'AGC: '), print(user_error, AGC), 
+  print(user_error, '\n'),
+  statistics(atoms, A),
+  print(user_error, 'A:'), print(user_error, A),
+  print(user_error, '\n').
+	 	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Code to print mapping rule as a prolog goal
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+setup_rules_file(FD, IMAPFD) :- 
+  open('/tmp/rules.pl', write, FD, [create([default])]),
+  open('/tmp/rules.imap', write, IMAPFD, [create([default])]),
+  print(FD, ':- [library(clpfd)]. \n:- style_check(-singleton). \n\n').
+
+close_rules_file(FD, IMAPFD) :- close(FD), close(IMAPFD).
+
+print_list_special_(_FD, [], _SEP).
+print_list_special_(FD, [H|T], SEP) :- 
+  print(FD, 'new Var(0, "'), print(FD, H), print(FD, '")'), length(T, N),
+  (N #> 0 -> print(FD, SEP); print(FD, '')),
+  print_list_special_(FD, T, SEP).
+
+print_list_special(FD, LP, L, SEP, RP, EMPTY_BRC) :- 
+  length(L, N),
+  (N #> 0 -> print(FD, LP), print_list_special_(FD, L, SEP), print(FD, RP);
+    (EMPTY_BRC -> print(FD, LP), print(FD, RP); print(FD, ''))).
+
+%% list_to_string_([], S, Sn) :- Sn = S.
+%% list_to_string_([H|T], S, Sn) :- 
+%%   (string(H) ->
+%%       (length(H, L), L #> 0 -> 
+%%          atom_string(H, A), string_concat(A, S, S1),
+%%          list_to_string_(T, S1, Sn);
+%%          list_to_string_(T, S, Sn)
+%%       );
+%%       atom_string(H, A), string_concat(A, S, S1),
+%%       list_to_string_(T, S1, Sn)).        
+
+%% list_to_string(L, S) :- list_to_string_(L, '', S).
+
+filter_empty_atoms_([], L, Ln) :- Ln = L.
+filter_empty_atoms_([H|T], L, Ln) :- 
+  (atom(H) -> 
+    (atom_length(H, N), N #> 0 ->
+      append(L, [H], L1), filter_empty_atoms_(T, L1, Ln);
+      filter_empty_atoms_(T, L, Ln)
+    );
+    print(', H: '), print(H),
+    append(L, [H], L1), filter_empty_atoms_(T, L1, Ln)).
+
+filter_empty_atoms(L, Ln) :- filter_empty_atoms_(L, [], Ln). 
+
+% Compact spaces from S and return Sn.
+% '  push    %eax' -> 'push %eax'   
+compact_spaces(S, Sn) :-
+  atomic_list_concat(L, '\t', S),
+  filter_empty_atoms(L, L1),
+  atomic_list_concat(L1, ' ', S1), %output to S1
+  atomic_list_concat(L2, ' ', S1), %parse S1 to L2
+  filter_empty_atoms(L2, L3),
+  atomic_list_concat(L3, ' ', Sn). %we do tokenization multiple times
+                                   %because we there is no function to
+                                   %tokenize on tabs and spaces at same time.
+
+% Mnemonic is the first element of the list after splitting
+% assembly insn on spaces.
+get_mnemonic(S, M) :- atomic_list_concat([M|_T], ' ', S).
+
+get_perlregex(S, R) :- 
+  atomic_list_concat(STOK, ' ', S),
+  atomic_list_concat(STOK, '[ \\t]*', R).
+
+% This is used to generate a program which will match output
+% expressions directly and will check constraints while
+% matching. The format here is strictly used by the table 
+% generator program. So dont change it.
+print_rule_debug_info(FD, N, ICV, OCV, O, I) :-   
+  %% print(FD, '%O: '), print(FD, O), print(FD, '\n'),
+  %% print(FD, '%I: '), print(FD, I), print(FD, '\n'),
+  %% print(FD, '%OCV: '), print_list(FD, '', OCV, ',', '', false), print(FD, '\n'),
+  %% print(FD, '%ICV: '), print_list(FD, '', ICV, ',', '', false), print(FD, '\n'),
+  %% print(FD, '%rule'), print(FD, N), print(FD, '\n'). 
+  compact_spaces(O, O1), get_mnemonic(O1, MN),
+  length(ICV, ICVL), length(OCV, OCVL),
+  print(FD, '%gAsm_Hash_["'), print(FD, MN), print(FD, '"].push_back(new Rule("'),
+  get_perlregex(O1, O1R),
+  print(FD, O1R),  %print(FD, ' '),
+  %print(FD, O1R),
+  print(FD, '", "'), print(FD, I), print(FD, '", '),
+  (OCVL #= 0 -> print(FD, '{}, ');
+    print_list_special(FD, '{', OCV, ', ', '}, ', false)),
+  (ICVL #= 0 -> print(FD, '{}, ');
+    print_list_special(FD, '{', ICV, ', ', '},  ', false)),
+  print(FD, '"rule'), print(FD, N), print(FD, '")); \n').
+
+print_rule(FD, IMAPFD, N, ICV, OCV, O, I) :-
+  % Fiter out dumping of mapping for NULL
+  P='<NULL>', string_to_list(O, OL), string_to_list(P, PL),
+  (OL \= PL ->
+    print(IMAPFD, O), print(IMAPFD, ';\n'), print(IMAPFD, I), print(IMAPFD, '\n'),
+    print_rule_debug_info(FD, N, ICV, OCV, O, I),
+    print(FD, 'rule'), print(FD, N), 
+    append(OCV, ICV, CV),
+    length(ICV, ICVL),
+    print_list(FD, '(', CV, ',', ')', false), print(FD, ' :- \n'),
+    print_domain_and_cons_list(FD, CV, ', ', '\t'),
+    (ICVL #> 0 -> print(FD, '\tlabeling([], '), 
+      print_list(FD, '[',  ICV, ',', '])', false), 
+      %we want to label input vars only
+      print(FD, ', \n'); print(FD, '')),  
+    print(FD, '\ttrue.\n\n');
+    print(FD, '')).
+  

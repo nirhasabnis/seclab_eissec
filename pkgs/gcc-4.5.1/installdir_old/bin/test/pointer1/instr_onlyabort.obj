@@ -1,0 +1,89 @@
+080483e4 <main>:
+ 80483e4:	55                   	push   %ebp
+ 80483e5:	89 e5                	mov    %esp,%ebp
+ 80483e7:	83 e4 f0             	and    $0xfffffff0,%esp
+ 80483ea:	53                   	push   %ebx
+ 80483eb:	83 ec 3c             	sub    $0x3c,%esp
+ 80483ee:	83 7d 08 05          	cmpl   $0x5,0x8(%ebp)
+ 80483f2:	74 05                	je     80483f9 <main+0x15>
+ 80483f4:	e9 e8 00 00 00       	jmp    80484e1 <main+0xfd>
+ 80483f9:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 80483fc:	83 c0 04             	add    $0x4,%eax
+ 80483ff:	89 c2                	mov    %eax,%edx
+ 8048401:	85 d2                	test   %edx,%edx
+ 8048403:	75 05                	jne    804840a <main+0x26>
+ 8048405:	e8 d6 fe ff ff       	call   80482e0 <abort@plt>
+ 804840a:	8b 00                	mov    (%eax),%eax
+ 804840c:	89 04 24             	mov    %eax,(%esp)
+ 804840f:	e8 0c ff ff ff       	call   8048320 <atoi@plt>
+ 8048414:	89 44 24 2c          	mov    %eax,0x2c(%esp)
+ 8048418:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 804841b:	83 c0 08             	add    $0x8,%eax
+ 804841e:	89 c2                	mov    %eax,%edx
+ 8048420:	85 d2                	test   %edx,%edx
+ 8048422:	75 05                	jne    8048429 <main+0x45>
+ 8048424:	e8 b7 fe ff ff       	call   80482e0 <abort@plt>
+ 8048429:	8b 00                	mov    (%eax),%eax
+ 804842b:	89 04 24             	mov    %eax,(%esp)
+ 804842e:	e8 ed fe ff ff       	call   8048320 <atoi@plt>
+ 8048433:	89 44 24 28          	mov    %eax,0x28(%esp)
+ 8048437:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 804843a:	83 c0 0c             	add    $0xc,%eax
+ 804843d:	89 c2                	mov    %eax,%edx
+ 804843f:	85 d2                	test   %edx,%edx
+ 8048441:	75 05                	jne    8048448 <main+0x64>
+ 8048443:	e8 98 fe ff ff       	call   80482e0 <abort@plt>
+ 8048448:	8b 00                	mov    (%eax),%eax
+ 804844a:	89 04 24             	mov    %eax,(%esp)
+ 804844d:	e8 ce fe ff ff       	call   8048320 <atoi@plt>
+ 8048452:	89 44 24 24          	mov    %eax,0x24(%esp)
+ 8048456:	8b 45 0c             	mov    0xc(%ebp),%eax
+ 8048459:	83 c0 10             	add    $0x10,%eax
+ 804845c:	89 c2                	mov    %eax,%edx
+ 804845e:	85 d2                	test   %edx,%edx
+ 8048460:	75 05                	jne    8048467 <main+0x83>
+ 8048462:	e8 79 fe ff ff       	call   80482e0 <abort@plt>
+ 8048467:	8b 00                	mov    (%eax),%eax
+ 8048469:	89 04 24             	mov    %eax,(%esp)
+ 804846c:	e8 af fe ff ff       	call   8048320 <atoi@plt>
+ 8048471:	89 44 24 20          	mov    %eax,0x20(%esp)
+ 8048475:	8b 44 24 2c          	mov    0x2c(%esp),%eax
+ 8048479:	89 c2                	mov    %eax,%edx
+ 804847b:	0f af 54 24 28       	imul   0x28(%esp),%edx
+ 8048480:	8b 44 24 24          	mov    0x24(%esp),%eax
+ 8048484:	0f af 44 24 20       	imul   0x20(%esp),%eax
+ 8048489:	8b 4c 24 2c          	mov    0x2c(%esp),%ecx
+ 804848d:	8b 5c 24 20          	mov    0x20(%esp),%ebx
+ 8048491:	8d 0c 0b             	lea    (%ebx,%ecx,1),%ecx
+ 8048494:	01 c8                	add    %ecx,%eax
+ 8048496:	0f af 44 24 28       	imul   0x28(%esp),%eax
+ 804849b:	0f af c2             	imul   %edx,%eax
+ 804849e:	89 44 24 18          	mov    %eax,0x18(%esp)
+ 80484a2:	8d 44 24 18          	lea    0x18(%esp),%eax
+ 80484a6:	89 44 24 1c          	mov    %eax,0x1c(%esp)
+ 80484aa:	8b 44 24 1c          	mov    0x1c(%esp),%eax
+ 80484ae:	89 c2                	mov    %eax,%edx
+ 80484b0:	85 d2                	test   %edx,%edx
+ 80484b2:	75 05                	jne    80484b9 <main+0xd5>
+ 80484b4:	e8 27 fe ff ff       	call   80482e0 <abort@plt>
+ 80484b9:	8b 10                	mov    (%eax),%edx
+ 80484bb:	b8 b0 85 04 08       	mov    $0x80485b0,%eax
+ 80484c0:	89 54 24 0c          	mov    %edx,0xc(%esp)
+ 80484c4:	8b 54 24 1c          	mov    0x1c(%esp),%edx
+ 80484c8:	89 54 24 08          	mov    %edx,0x8(%esp)
+ 80484cc:	8d 54 24 18          	lea    0x18(%esp),%edx
+ 80484d0:	89 54 24 04          	mov    %edx,0x4(%esp)
+ 80484d4:	89 04 24             	mov    %eax,(%esp)
+ 80484d7:	e8 34 fe ff ff       	call   8048310 <printf@plt>
+ 80484dc:	b8 00 00 00 00       	mov    $0x0,%eax
+ 80484e1:	83 c4 3c             	add    $0x3c,%esp
+ 80484e4:	5b                   	pop    %ebx
+ 80484e5:	89 ec                	mov    %ebp,%esp
+ 80484e7:	5d                   	pop    %ebp
+ 80484e8:	c3                   	ret    
+ 80484e9:	90                   	nop
+ 80484ea:	90                   	nop
+ 80484eb:	90                   	nop
+ 80484ec:	90                   	nop
+ 80484ed:	90                   	nop
+ 80484ee:	90                   	nop

@@ -1,0 +1,868 @@
+BD_Shape.lo: BD_Shape.cc ../ppl-config.h /usr/include/stdint.h \
+  /usr/include/features.h /usr/include/sys/cdefs.h \
+  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+  /usr/include/gnu/stubs-32.h /usr/include/bits/wchar.h \
+  /usr/include/inttypes.h BD_Shape.defs.hh BD_Shape.types.hh \
+  globals.defs.hh globals.types.hh /usr/include/c++/4.3/cstddef \
+  /usr/include/c++/4.3/i486-linux-gnu/bits/c++config.h \
+  /usr/include/c++/4.3/i486-linux-gnu/bits/os_defines.h \
+  /usr/include/c++/4.3/i486-linux-gnu/bits/cpu_defines.h \
+  /usr/lib/gcc/i486-linux-gnu/4.3.3/include/stddef.h C_Integer.hh \
+  meta_programming.hh /usr/include/gmpxx.h /usr/include/c++/4.3/iosfwd \
+  /usr/include/c++/4.3/bits/stringfwd.h \
+  /usr/include/c++/4.3/bits/postypes.h /usr/include/c++/4.3/cwchar \
+  /usr/include/wchar.h /usr/include/stdio.h \
+  /usr/lib/gcc/i486-linux-gnu/4.3.3/include/stdarg.h \
+  /usr/include/xlocale.h /usr/include/bits/wchar2.h \
+  /usr/include/c++/4.3/cstring /usr/include/string.h \
+  /usr/include/bits/string3.h /usr/include/c++/4.3/string \
+  /usr/include/c++/4.3/bits/char_traits.h \
+  /usr/include/c++/4.3/bits/stl_algobase.h \
+  /usr/include/c++/4.3/bits/functexcept.h \
+  /usr/include/c++/4.3/exception_defines.h \
+  /usr/include/c++/4.3/bits/cpp_type_traits.h \
+  /usr/include/c++/4.3/ext/type_traits.h \
+  /usr/include/c++/4.3/ext/numeric_traits.h \
+  /usr/include/c++/4.3/bits/stl_pair.h \
+  /usr/include/c++/4.3/bits/stl_move.h \
+  /usr/include/c++/4.3/bits/concept_check.h \
+  /usr/include/c++/4.3/bits/stl_iterator_base_types.h \
+  /usr/include/c++/4.3/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/4.3/bits/stl_iterator.h \
+  /usr/include/c++/4.3/debug/debug.h /usr/include/c++/4.3/cstdio \
+  /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+  /usr/include/libio.h /usr/include/_G_config.h \
+  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+  /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
+  /usr/include/c++/4.3/bits/allocator.h \
+  /usr/include/c++/4.3/i486-linux-gnu/bits/c++allocator.h \
+  /usr/include/c++/4.3/ext/new_allocator.h /usr/include/c++/4.3/new \
+  /usr/include/c++/4.3/exception /usr/include/c++/4.3/bits/localefwd.h \
+  /usr/include/c++/4.3/i486-linux-gnu/bits/c++locale.h \
+  /usr/include/c++/4.3/clocale /usr/include/locale.h \
+  /usr/include/bits/locale.h /usr/include/c++/4.3/cctype \
+  /usr/include/ctype.h /usr/include/endian.h /usr/include/bits/endian.h \
+  /usr/include/bits/byteswap.h /usr/include/c++/4.3/bits/ostream_insert.h \
+  /usr/include/c++/4.3/cxxabi-forced.h \
+  /usr/include/c++/4.3/bits/stl_function.h \
+  /usr/include/c++/4.3/backward/binders.h \
+  /usr/include/c++/4.3/bits/basic_string.h \
+  /usr/include/c++/4.3/ext/atomicity.h \
+  /usr/include/c++/4.3/i486-linux-gnu/bits/gthr.h \
+  /usr/include/c++/4.3/i486-linux-gnu/bits/gthr-default.h \
+  /usr/include/pthread.h /usr/include/sched.h /usr/include/time.h \
+  /usr/include/bits/sched.h /usr/include/bits/time.h \
+  /usr/include/signal.h /usr/include/bits/sigset.h \
+  /usr/include/bits/pthreadtypes.h /usr/include/bits/setjmp.h \
+  /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+  /usr/include/bits/environments.h /usr/include/bits/confname.h \
+  /usr/include/getopt.h /usr/include/bits/unistd.h \
+  /usr/include/c++/4.3/i486-linux-gnu/bits/atomic_word.h \
+  /usr/include/c++/4.3/bits/basic_string.tcc \
+  /usr/include/c++/4.3/stdexcept /usr/include/c++/4.3/cfloat \
+  /usr/lib/gcc/i486-linux-gnu/4.3.3/include/float.h \
+  /usr/local/include/gmp.h /usr/include/c++/4.3/climits \
+  /usr/lib/gcc/i486-linux-gnu/4.3.3/include-fixed/limits.h \
+  /usr/lib/gcc/i486-linux-gnu/4.3.3/include-fixed/syslimits.h \
+  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+  Slow_Copy.hh Temp.defs.hh Temp.inlines.hh Temp.templates.hh \
+  globals.inlines.hh /usr/include/c++/4.3/limits \
+  /usr/include/c++/4.3/cassert /usr/include/assert.h Constraint.types.hh \
+  Generator.types.hh Congruence.types.hh Linear_Expression.types.hh \
+  Constraint_System.types.hh Generator_System.types.hh \
+  Congruence_System.types.hh Poly_Con_Relation.types.hh \
+  Poly_Gen_Relation.types.hh Polyhedron.types.hh Box.types.hh \
+  Grid.types.hh Octagonal_Shape.types.hh Variable.defs.hh \
+  Variable.types.hh Init.types.hh /usr/include/c++/4.3/set \
+  /usr/include/c++/4.3/bits/stl_tree.h \
+  /usr/include/c++/4.3/bits/stl_set.h \
+  /usr/include/c++/4.3/bits/stl_multiset.h Variable.inlines.hh \
+  Variables_Set.types.hh DB_Matrix.defs.hh DB_Matrix.types.hh \
+  DB_Row.defs.hh DB_Row.types.hh Ptr_Iterator.defs.hh \
+  Ptr_Iterator.types.hh /usr/include/c++/4.3/iterator \
+  /usr/include/c++/4.3/ostream /usr/include/c++/4.3/ios \
+  /usr/include/c++/4.3/bits/ios_base.h \
+  /usr/include/c++/4.3/bits/locale_classes.h \
+  /usr/include/c++/4.3/bits/locale_classes.tcc \
+  /usr/include/c++/4.3/streambuf /usr/include/c++/4.3/bits/streambuf.tcc \
+  /usr/include/c++/4.3/bits/basic_ios.h \
+  /usr/include/c++/4.3/bits/locale_facets.h /usr/include/c++/4.3/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/c++/4.3/i486-linux-gnu/bits/ctype_base.h \
+  /usr/include/c++/4.3/bits/streambuf_iterator.h \
+  /usr/include/c++/4.3/i486-linux-gnu/bits/ctype_inline.h \
+  /usr/include/c++/4.3/bits/locale_facets.tcc \
+  /usr/include/c++/4.3/bits/basic_ios.tcc \
+  /usr/include/c++/4.3/bits/ostream.tcc /usr/include/c++/4.3/istream \
+  /usr/include/c++/4.3/bits/istream.tcc \
+  /usr/include/c++/4.3/bits/stream_iterator.h Ptr_Iterator.inlines.hh \
+  /usr/include/c++/4.3/algorithm /usr/include/c++/4.3/bits/stl_algo.h \
+  /usr/include/c++/4.3/cstdlib /usr/include/stdlib.h \
+  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+  /usr/include/sys/types.h /usr/include/sys/select.h \
+  /usr/include/bits/select.h /usr/include/sys/sysmacros.h \
+  /usr/include/alloca.h /usr/include/bits/stdlib.h \
+  /usr/include/c++/4.3/bits/algorithmfwd.h \
+  /usr/include/c++/4.3/bits/stl_heap.h \
+  /usr/include/c++/4.3/bits/stl_tempbuf.h \
+  /usr/include/c++/4.3/bits/stl_construct.h \
+  /usr/include/c++/4.3/bits/stl_uninitialized.h \
+  /usr/include/c++/4.3/vector /usr/include/c++/4.3/bits/stl_vector.h \
+  /usr/include/c++/4.3/bits/stl_bvector.h \
+  /usr/include/c++/4.3/bits/vector.tcc DB_Row.inlines.hh \
+  /usr/include/c++/4.3/iostream checked.defs.hh mp_std_bits.defs.hh \
+  mp_std_bits.inlines.hh Rounding_Dir.defs.hh Result.defs.hh \
+  Result.inlines.hh fpu.defs.hh fpu.types.hh fpu-ia32.inlines.hh \
+  compiler.hh /usr/include/c++/4.3/csetjmp /usr/include/setjmp.h \
+  /usr/include/c++/4.3/csignal /usr/include/bits/signum.h \
+  /usr/include/bits/siginfo.h /usr/include/bits/sigaction.h \
+  /usr/include/bits/sigcontext.h /usr/include/bits/sigstack.h \
+  /usr/include/sys/ucontext.h /usr/include/bits/sigthread.h \
+  Rounding_Dir.inlines.hh Numeric_Format.defs.hh Float.defs.hh \
+  /usr/include/c++/4.3/cmath /usr/include/math.h \
+  /usr/include/bits/huge_val.h /usr/include/bits/huge_valf.h \
+  /usr/include/bits/huge_vall.h /usr/include/bits/inf.h \
+  /usr/include/bits/nan.h /usr/include/bits/mathdef.h \
+  /usr/include/bits/mathcalls.h /usr/include/bits/mathinline.h \
+  /usr/include/c++/4.3/bits/cmath.tcc Float.inlines.hh checked.inlines.hh \
+  checked_int.inlines.hh /usr/include/c++/4.3/cerrno /usr/include/errno.h \
+  /usr/include/bits/errno.h /usr/include/linux/errno.h \
+  /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/errno-base.h checked_float.inlines.hh \
+  checked_mpz.inlines.hh /usr/include/c++/4.3/sstream \
+  /usr/include/c++/4.3/bits/sstream.tcc checked_mpq.inlines.hh \
+  checked_ext.inlines.hh DB_Row.templates.hh Checked_Number.types.hh \
+  Coefficient_traits_template.hh DB_Matrix.inlines.hh \
+  Checked_Number.defs.hh Checked_Number.inlines.hh \
+  checked_numeric_limits.hh Checked_Number.templates.hh \
+  /usr/include/c++/4.3/iomanip distances.defs.hh distances.types.hh \
+  distances.inlines.hh DB_Matrix.templates.hh Bit_Matrix.defs.hh \
+  Bit_Matrix.types.hh Linear_System.defs.hh Linear_System.types.hh \
+  Row.types.hh Bit_Row.types.hh Matrix.defs.hh Matrix.types.hh \
+  Row.defs.hh Coefficient.defs.hh Coefficient.types.hh \
+  GMP_Integer.types.hh GMP_Integer.defs.hh GMP_Integer.inlines.hh \
+  Coefficient.inlines.hh Row.inlines.hh math_utilities.defs.hh \
+  math_utilities.inlines.hh Matrix.inlines.hh Topology.hh \
+  Linear_Row.defs.hh Linear_Row.types.hh Linear_Row.inlines.hh \
+  Linear_System.inlines.hh Bit_Row.defs.hh Bit_Row.inlines.hh \
+  /usr/include/strings.h Bit_Matrix.inlines.hh BDS_Status.idefs.hh \
+  BDS_Status.inlines.hh BD_Shape.inlines.hh Constraint_System.defs.hh \
+  Constraint_System.inlines.hh Constraint.defs.hh \
+  Scalar_Products.types.hh Linear_Expression.defs.hh \
+  Grid_Generator.types.hh Grid_Generator_System.types.hh \
+  Linear_Expression.inlines.hh Constraint.inlines.hh C_Polyhedron.defs.hh \
+  C_Polyhedron.types.hh NNC_Polyhedron.types.hh Polyhedron.defs.hh \
+  Generator_System.defs.hh Poly_Con_Relation.defs.hh \
+  Poly_Con_Relation.inlines.hh Generator_System.inlines.hh \
+  Generator.defs.hh Generator.inlines.hh Congruence_System.defs.hh \
+  Grid_Certificate.types.hh Congruence_System.inlines.hh \
+  Congruence.defs.hh Congruence.inlines.hh Grid_Generator_System.defs.hh \
+  Grid_Generator_System.inlines.hh Grid_Generator.defs.hh \
+  Grid_Generator.inlines.hh Poly_Gen_Relation.defs.hh \
+  Poly_Gen_Relation.inlines.hh BHRZ03_Certificate.types.hh \
+  H79_Certificate.types.hh Ph_Status.idefs.hh Ph_Status.inlines.hh \
+  Polyhedron.inlines.hh /usr/include/c++/4.3/deque \
+  /usr/include/c++/4.3/bits/stl_deque.h \
+  /usr/include/c++/4.3/bits/deque.tcc Polyhedron.templates.hh \
+  MIP_Problem.defs.hh MIP_Problem.types.hh Variables_Set.defs.hh \
+  Variables_Set.inlines.hh MIP_Problem.inlines.hh \
+  MIP_Problem.templates.hh C_Polyhedron.inlines.hh Grid.defs.hh \
+  Grid_Status.idefs.hh Grid_Status.inlines.hh Grid.inlines.hh \
+  Grid.templates.hh Octagonal_Shape.defs.hh OR_Matrix.defs.hh \
+  OR_Matrix.types.hh OR_Matrix.inlines.hh OR_Matrix.templates.hh \
+  Og_Status.idefs.hh Og_Status.inlines.hh Octagonal_Shape.inlines.hh \
+  Octagonal_Shape.templates.hh BD_Shape.templates.hh
+
+../ppl-config.h:
+
+/usr/include/stdint.h:
+
+/usr/include/features.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-32.h:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/inttypes.h:
+
+BD_Shape.defs.hh:
+
+BD_Shape.types.hh:
+
+globals.defs.hh:
+
+globals.types.hh:
+
+/usr/include/c++/4.3/cstddef:
+
+/usr/include/c++/4.3/i486-linux-gnu/bits/c++config.h:
+
+/usr/include/c++/4.3/i486-linux-gnu/bits/os_defines.h:
+
+/usr/include/c++/4.3/i486-linux-gnu/bits/cpu_defines.h:
+
+/usr/lib/gcc/i486-linux-gnu/4.3.3/include/stddef.h:
+
+C_Integer.hh:
+
+meta_programming.hh:
+
+/usr/include/gmpxx.h:
+
+/usr/include/c++/4.3/iosfwd:
+
+/usr/include/c++/4.3/bits/stringfwd.h:
+
+/usr/include/c++/4.3/bits/postypes.h:
+
+/usr/include/c++/4.3/cwchar:
+
+/usr/include/wchar.h:
+
+/usr/include/stdio.h:
+
+/usr/lib/gcc/i486-linux-gnu/4.3.3/include/stdarg.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/bits/wchar2.h:
+
+/usr/include/c++/4.3/cstring:
+
+/usr/include/string.h:
+
+/usr/include/bits/string3.h:
+
+/usr/include/c++/4.3/string:
+
+/usr/include/c++/4.3/bits/char_traits.h:
+
+/usr/include/c++/4.3/bits/stl_algobase.h:
+
+/usr/include/c++/4.3/bits/functexcept.h:
+
+/usr/include/c++/4.3/exception_defines.h:
+
+/usr/include/c++/4.3/bits/cpp_type_traits.h:
+
+/usr/include/c++/4.3/ext/type_traits.h:
+
+/usr/include/c++/4.3/ext/numeric_traits.h:
+
+/usr/include/c++/4.3/bits/stl_pair.h:
+
+/usr/include/c++/4.3/bits/stl_move.h:
+
+/usr/include/c++/4.3/bits/concept_check.h:
+
+/usr/include/c++/4.3/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/4.3/bits/stl_iterator_base_funcs.h:
+
+/usr/include/c++/4.3/bits/stl_iterator.h:
+
+/usr/include/c++/4.3/debug/debug.h:
+
+/usr/include/c++/4.3/cstdio:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/include/bits/stdio2.h:
+
+/usr/include/c++/4.3/bits/allocator.h:
+
+/usr/include/c++/4.3/i486-linux-gnu/bits/c++allocator.h:
+
+/usr/include/c++/4.3/ext/new_allocator.h:
+
+/usr/include/c++/4.3/new:
+
+/usr/include/c++/4.3/exception:
+
+/usr/include/c++/4.3/bits/localefwd.h:
+
+/usr/include/c++/4.3/i486-linux-gnu/bits/c++locale.h:
+
+/usr/include/c++/4.3/clocale:
+
+/usr/include/locale.h:
+
+/usr/include/bits/locale.h:
+
+/usr/include/c++/4.3/cctype:
+
+/usr/include/ctype.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/c++/4.3/bits/ostream_insert.h:
+
+/usr/include/c++/4.3/cxxabi-forced.h:
+
+/usr/include/c++/4.3/bits/stl_function.h:
+
+/usr/include/c++/4.3/backward/binders.h:
+
+/usr/include/c++/4.3/bits/basic_string.h:
+
+/usr/include/c++/4.3/ext/atomicity.h:
+
+/usr/include/c++/4.3/i486-linux-gnu/bits/gthr.h:
+
+/usr/include/c++/4.3/i486-linux-gnu/bits/gthr-default.h:
+
+/usr/include/pthread.h:
+
+/usr/include/sched.h:
+
+/usr/include/time.h:
+
+/usr/include/bits/sched.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/signal.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/bits/setjmp.h:
+
+/usr/include/unistd.h:
+
+/usr/include/bits/posix_opt.h:
+
+/usr/include/bits/environments.h:
+
+/usr/include/bits/confname.h:
+
+/usr/include/getopt.h:
+
+/usr/include/bits/unistd.h:
+
+/usr/include/c++/4.3/i486-linux-gnu/bits/atomic_word.h:
+
+/usr/include/c++/4.3/bits/basic_string.tcc:
+
+/usr/include/c++/4.3/stdexcept:
+
+/usr/include/c++/4.3/cfloat:
+
+/usr/lib/gcc/i486-linux-gnu/4.3.3/include/float.h:
+
+/usr/local/include/gmp.h:
+
+/usr/include/c++/4.3/climits:
+
+/usr/lib/gcc/i486-linux-gnu/4.3.3/include-fixed/limits.h:
+
+/usr/lib/gcc/i486-linux-gnu/4.3.3/include-fixed/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/bits/xopen_lim.h:
+
+Slow_Copy.hh:
+
+Temp.defs.hh:
+
+Temp.inlines.hh:
+
+Temp.templates.hh:
+
+globals.inlines.hh:
+
+/usr/include/c++/4.3/limits:
+
+/usr/include/c++/4.3/cassert:
+
+/usr/include/assert.h:
+
+Constraint.types.hh:
+
+Generator.types.hh:
+
+Congruence.types.hh:
+
+Linear_Expression.types.hh:
+
+Constraint_System.types.hh:
+
+Generator_System.types.hh:
+
+Congruence_System.types.hh:
+
+Poly_Con_Relation.types.hh:
+
+Poly_Gen_Relation.types.hh:
+
+Polyhedron.types.hh:
+
+Box.types.hh:
+
+Grid.types.hh:
+
+Octagonal_Shape.types.hh:
+
+Variable.defs.hh:
+
+Variable.types.hh:
+
+Init.types.hh:
+
+/usr/include/c++/4.3/set:
+
+/usr/include/c++/4.3/bits/stl_tree.h:
+
+/usr/include/c++/4.3/bits/stl_set.h:
+
+/usr/include/c++/4.3/bits/stl_multiset.h:
+
+Variable.inlines.hh:
+
+Variables_Set.types.hh:
+
+DB_Matrix.defs.hh:
+
+DB_Matrix.types.hh:
+
+DB_Row.defs.hh:
+
+DB_Row.types.hh:
+
+Ptr_Iterator.defs.hh:
+
+Ptr_Iterator.types.hh:
+
+/usr/include/c++/4.3/iterator:
+
+/usr/include/c++/4.3/ostream:
+
+/usr/include/c++/4.3/ios:
+
+/usr/include/c++/4.3/bits/ios_base.h:
+
+/usr/include/c++/4.3/bits/locale_classes.h:
+
+/usr/include/c++/4.3/bits/locale_classes.tcc:
+
+/usr/include/c++/4.3/streambuf:
+
+/usr/include/c++/4.3/bits/streambuf.tcc:
+
+/usr/include/c++/4.3/bits/basic_ios.h:
+
+/usr/include/c++/4.3/bits/locale_facets.h:
+
+/usr/include/c++/4.3/cwctype:
+
+/usr/include/wctype.h:
+
+/usr/include/c++/4.3/i486-linux-gnu/bits/ctype_base.h:
+
+/usr/include/c++/4.3/bits/streambuf_iterator.h:
+
+/usr/include/c++/4.3/i486-linux-gnu/bits/ctype_inline.h:
+
+/usr/include/c++/4.3/bits/locale_facets.tcc:
+
+/usr/include/c++/4.3/bits/basic_ios.tcc:
+
+/usr/include/c++/4.3/bits/ostream.tcc:
+
+/usr/include/c++/4.3/istream:
+
+/usr/include/c++/4.3/bits/istream.tcc:
+
+/usr/include/c++/4.3/bits/stream_iterator.h:
+
+Ptr_Iterator.inlines.hh:
+
+/usr/include/c++/4.3/algorithm:
+
+/usr/include/c++/4.3/bits/stl_algo.h:
+
+/usr/include/c++/4.3/cstdlib:
+
+/usr/include/stdlib.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/alloca.h:
+
+/usr/include/bits/stdlib.h:
+
+/usr/include/c++/4.3/bits/algorithmfwd.h:
+
+/usr/include/c++/4.3/bits/stl_heap.h:
+
+/usr/include/c++/4.3/bits/stl_tempbuf.h:
+
+/usr/include/c++/4.3/bits/stl_construct.h:
+
+/usr/include/c++/4.3/bits/stl_uninitialized.h:
+
+/usr/include/c++/4.3/vector:
+
+/usr/include/c++/4.3/bits/stl_vector.h:
+
+/usr/include/c++/4.3/bits/stl_bvector.h:
+
+/usr/include/c++/4.3/bits/vector.tcc:
+
+DB_Row.inlines.hh:
+
+/usr/include/c++/4.3/iostream:
+
+checked.defs.hh:
+
+mp_std_bits.defs.hh:
+
+mp_std_bits.inlines.hh:
+
+Rounding_Dir.defs.hh:
+
+Result.defs.hh:
+
+Result.inlines.hh:
+
+fpu.defs.hh:
+
+fpu.types.hh:
+
+fpu-ia32.inlines.hh:
+
+compiler.hh:
+
+/usr/include/c++/4.3/csetjmp:
+
+/usr/include/setjmp.h:
+
+/usr/include/c++/4.3/csignal:
+
+/usr/include/bits/signum.h:
+
+/usr/include/bits/siginfo.h:
+
+/usr/include/bits/sigaction.h:
+
+/usr/include/bits/sigcontext.h:
+
+/usr/include/bits/sigstack.h:
+
+/usr/include/sys/ucontext.h:
+
+/usr/include/bits/sigthread.h:
+
+Rounding_Dir.inlines.hh:
+
+Numeric_Format.defs.hh:
+
+Float.defs.hh:
+
+/usr/include/c++/4.3/cmath:
+
+/usr/include/math.h:
+
+/usr/include/bits/huge_val.h:
+
+/usr/include/bits/huge_valf.h:
+
+/usr/include/bits/huge_vall.h:
+
+/usr/include/bits/inf.h:
+
+/usr/include/bits/nan.h:
+
+/usr/include/bits/mathdef.h:
+
+/usr/include/bits/mathcalls.h:
+
+/usr/include/bits/mathinline.h:
+
+/usr/include/c++/4.3/bits/cmath.tcc:
+
+Float.inlines.hh:
+
+checked.inlines.hh:
+
+checked_int.inlines.hh:
+
+/usr/include/c++/4.3/cerrno:
+
+/usr/include/errno.h:
+
+/usr/include/bits/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/asm/errno.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+checked_float.inlines.hh:
+
+checked_mpz.inlines.hh:
+
+/usr/include/c++/4.3/sstream:
+
+/usr/include/c++/4.3/bits/sstream.tcc:
+
+checked_mpq.inlines.hh:
+
+checked_ext.inlines.hh:
+
+DB_Row.templates.hh:
+
+Checked_Number.types.hh:
+
+Coefficient_traits_template.hh:
+
+DB_Matrix.inlines.hh:
+
+Checked_Number.defs.hh:
+
+Checked_Number.inlines.hh:
+
+checked_numeric_limits.hh:
+
+Checked_Number.templates.hh:
+
+/usr/include/c++/4.3/iomanip:
+
+distances.defs.hh:
+
+distances.types.hh:
+
+distances.inlines.hh:
+
+DB_Matrix.templates.hh:
+
+Bit_Matrix.defs.hh:
+
+Bit_Matrix.types.hh:
+
+Linear_System.defs.hh:
+
+Linear_System.types.hh:
+
+Row.types.hh:
+
+Bit_Row.types.hh:
+
+Matrix.defs.hh:
+
+Matrix.types.hh:
+
+Row.defs.hh:
+
+Coefficient.defs.hh:
+
+Coefficient.types.hh:
+
+GMP_Integer.types.hh:
+
+GMP_Integer.defs.hh:
+
+GMP_Integer.inlines.hh:
+
+Coefficient.inlines.hh:
+
+Row.inlines.hh:
+
+math_utilities.defs.hh:
+
+math_utilities.inlines.hh:
+
+Matrix.inlines.hh:
+
+Topology.hh:
+
+Linear_Row.defs.hh:
+
+Linear_Row.types.hh:
+
+Linear_Row.inlines.hh:
+
+Linear_System.inlines.hh:
+
+Bit_Row.defs.hh:
+
+Bit_Row.inlines.hh:
+
+/usr/include/strings.h:
+
+Bit_Matrix.inlines.hh:
+
+BDS_Status.idefs.hh:
+
+BDS_Status.inlines.hh:
+
+BD_Shape.inlines.hh:
+
+Constraint_System.defs.hh:
+
+Constraint_System.inlines.hh:
+
+Constraint.defs.hh:
+
+Scalar_Products.types.hh:
+
+Linear_Expression.defs.hh:
+
+Grid_Generator.types.hh:
+
+Grid_Generator_System.types.hh:
+
+Linear_Expression.inlines.hh:
+
+Constraint.inlines.hh:
+
+C_Polyhedron.defs.hh:
+
+C_Polyhedron.types.hh:
+
+NNC_Polyhedron.types.hh:
+
+Polyhedron.defs.hh:
+
+Generator_System.defs.hh:
+
+Poly_Con_Relation.defs.hh:
+
+Poly_Con_Relation.inlines.hh:
+
+Generator_System.inlines.hh:
+
+Generator.defs.hh:
+
+Generator.inlines.hh:
+
+Congruence_System.defs.hh:
+
+Grid_Certificate.types.hh:
+
+Congruence_System.inlines.hh:
+
+Congruence.defs.hh:
+
+Congruence.inlines.hh:
+
+Grid_Generator_System.defs.hh:
+
+Grid_Generator_System.inlines.hh:
+
+Grid_Generator.defs.hh:
+
+Grid_Generator.inlines.hh:
+
+Poly_Gen_Relation.defs.hh:
+
+Poly_Gen_Relation.inlines.hh:
+
+BHRZ03_Certificate.types.hh:
+
+H79_Certificate.types.hh:
+
+Ph_Status.idefs.hh:
+
+Ph_Status.inlines.hh:
+
+Polyhedron.inlines.hh:
+
+/usr/include/c++/4.3/deque:
+
+/usr/include/c++/4.3/bits/stl_deque.h:
+
+/usr/include/c++/4.3/bits/deque.tcc:
+
+Polyhedron.templates.hh:
+
+MIP_Problem.defs.hh:
+
+MIP_Problem.types.hh:
+
+Variables_Set.defs.hh:
+
+Variables_Set.inlines.hh:
+
+MIP_Problem.inlines.hh:
+
+MIP_Problem.templates.hh:
+
+C_Polyhedron.inlines.hh:
+
+Grid.defs.hh:
+
+Grid_Status.idefs.hh:
+
+Grid_Status.inlines.hh:
+
+Grid.inlines.hh:
+
+Grid.templates.hh:
+
+Octagonal_Shape.defs.hh:
+
+OR_Matrix.defs.hh:
+
+OR_Matrix.types.hh:
+
+OR_Matrix.inlines.hh:
+
+OR_Matrix.templates.hh:
+
+Og_Status.idefs.hh:
+
+Og_Status.inlines.hh:
+
+Octagonal_Shape.inlines.hh:
+
+Octagonal_Shape.templates.hh:
+
+BD_Shape.templates.hh:

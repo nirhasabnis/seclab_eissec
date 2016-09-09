@@ -1,0 +1,43 @@
+files.o: ../../libcpp/files.c config.h ../../libcpp/system.h \
+ ../../libcpp/../include/filenames.h ../../libcpp/../include/libiberty.h \
+ ../../libcpp/../include/ansidecl.h ../../libcpp/../include/safe-ctype.h \
+ ../../libcpp/include/cpplib.h ../../libcpp/include/symtab.h \
+ ../../libcpp/../include/obstack.h ../../libcpp/include/line-map.h \
+ ../../libcpp/internal.h ../../libcpp/include/symtab.h \
+ ../../libcpp/include/cpp-id-data.h ../../libcpp/include/cpplib.h \
+ ../../libcpp/include/mkdeps.h ../../libcpp/../include/hashtab.h \
+ ../../libcpp/../include/md5.h
+
+config.h:
+
+../../libcpp/system.h:
+
+../../libcpp/../include/filenames.h:
+
+../../libcpp/../include/libiberty.h:
+
+../../libcpp/../include/ansidecl.h:
+
+../../libcpp/../include/safe-ctype.h:
+
+../../libcpp/include/cpplib.h:
+
+../../libcpp/include/symtab.h:
+
+../../libcpp/../include/obstack.h:
+
+../../libcpp/include/line-map.h:
+
+../../libcpp/internal.h:
+
+../../libcpp/include/symtab.h:
+
+../../libcpp/include/cpp-id-data.h:
+
+../../libcpp/include/cpplib.h:
+
+../../libcpp/include/mkdeps.h:
+
+../../libcpp/../include/hashtab.h:
+
+../../libcpp/../include/md5.h:

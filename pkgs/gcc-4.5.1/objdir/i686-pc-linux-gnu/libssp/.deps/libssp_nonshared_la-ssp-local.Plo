@@ -1,0 +1,3 @@
+libssp_nonshared_la-ssp-local.lo: ../../../libssp/ssp-local.c config.h
+
+config.h:

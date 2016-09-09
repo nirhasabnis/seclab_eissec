@@ -1,0 +1,50 @@
+# This file is a shell script that caches the results of configure
+# tests run on this system so they can be shared between configure
+# scripts and configure runs, see configure's option --config-cache.
+# It is not useful on other systems.  If it contains results you don't
+# want to keep, you may remove or edit it.
+#
+# config.status only pays attention to the cache file if you give it
+# the --recheck option to rerun configure.
+#
+# `ac_cv_env_foo' variables (set or unset) will be overridden when
+# loading this file, other *unset* `ac_cv_foo' will be assigned the
+# following values.
+
+ac_cv_build=${ac_cv_build=i686-pc-linux-gnu}
+ac_cv_c_compiler_gnu=${ac_cv_c_compiler_gnu=yes}
+ac_cv_env_CC_set=set
+ac_cv_env_CC_value='/home/niranjan/labwork/gcc-4.5.1/objdir/./gcc/xgcc -B/home/niranjan/labwork/gcc-4.5.1/objdir/./gcc/ -B/home/niranjan/labwork/gcc-4.5.1/objdir/../installdir/i686-pc-linux-gnu/bin/ -B/home/niranjan/labwork/gcc-4.5.1/objdir/../installdir/i686-pc-linux-gnu/lib/ -isystem /home/niranjan/labwork/gcc-4.5.1/objdir/../installdir/i686-pc-linux-gnu/include -isystem /home/niranjan/labwork/gcc-4.5.1/objdir/../installdir/i686-pc-linux-gnu/sys-include   '
+ac_cv_env_CFLAGS_set=set
+ac_cv_env_CFLAGS_value='-O2 -g'
+ac_cv_env_CPPFLAGS_set=set
+ac_cv_env_CPPFLAGS_value=
+ac_cv_env_CPP_set=
+ac_cv_env_CPP_value=
+ac_cv_env_LDFLAGS_set=set
+ac_cv_env_LDFLAGS_value=
+ac_cv_env_LIBS_set=
+ac_cv_env_LIBS_value=
+ac_cv_env_build_alias_set=set
+ac_cv_env_build_alias_value=i686-pc-linux-gnu
+ac_cv_env_host_alias_set=set
+ac_cv_env_host_alias_value=i686-pc-linux-gnu
+ac_cv_env_target_alias_set=set
+ac_cv_env_target_alias_value=i686-pc-linux-gnu
+ac_cv_host=${ac_cv_host=i686-pc-linux-gnu}
+ac_cv_objext=${ac_cv_objext=o}
+ac_cv_prog_AR=${ac_cv_prog_AR=ar}
+ac_cv_prog_AWK=${ac_cv_prog_AWK=gawk}
+ac_cv_prog_CC=${ac_cv_prog_CC='/home/niranjan/labwork/gcc-4.5.1/objdir/./gcc/xgcc -B/home/niranjan/labwork/gcc-4.5.1/objdir/./gcc/ -B/home/niranjan/labwork/gcc-4.5.1/objdir/../installdir/i686-pc-linux-gnu/bin/ -B/home/niranjan/labwork/gcc-4.5.1/objdir/../installdir/i686-pc-linux-gnu/lib/ -isystem /home/niranjan/labwork/gcc-4.5.1/objdir/../installdir/i686-pc-linux-gnu/include -isystem /home/niranjan/labwork/gcc-4.5.1/objdir/../installdir/i686-pc-linux-gnu/sys-include   '}
+ac_cv_prog_CPP=${ac_cv_prog_CPP='/home/niranjan/labwork/gcc-4.5.1/objdir/./gcc/xgcc -B/home/niranjan/labwork/gcc-4.5.1/objdir/./gcc/ -B/home/niranjan/labwork/gcc-4.5.1/objdir/../installdir/i686-pc-linux-gnu/bin/ -B/home/niranjan/labwork/gcc-4.5.1/objdir/../installdir/i686-pc-linux-gnu/lib/ -isystem /home/niranjan/labwork/gcc-4.5.1/objdir/../installdir/i686-pc-linux-gnu/include -isystem /home/niranjan/labwork/gcc-4.5.1/objdir/../installdir/i686-pc-linux-gnu/sys-include    -E'}
+ac_cv_prog_LIPO=${ac_cv_prog_LIPO=lipo}
+ac_cv_prog_NM=${ac_cv_prog_NM=/home/niranjan/labwork/gcc-4.5.1/objdir/./gcc/nm}
+ac_cv_prog_RANLIB=${ac_cv_prog_RANLIB=ranlib}
+ac_cv_prog_STRIP=${ac_cv_prog_STRIP=strip}
+ac_cv_prog_cc_c89=${ac_cv_prog_cc_c89=}
+ac_cv_prog_cc_g=${ac_cv_prog_cc_g=yes}
+gcc_cv_have_cc_tls=${gcc_cv_have_cc_tls=yes}
+gcc_cv_use_emutls=${gcc_cv_use_emutls=no}
+libgcc_cv_dfp=${libgcc_cv_dfp=yes}
+libgcc_cv_fixed_point=${libgcc_cv_fixed_point=no}
+libgcc_cv_hidden_visibility_attribute=${libgcc_cv_hidden_visibility_attribute=yes}

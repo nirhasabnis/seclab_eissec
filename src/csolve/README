@@ -1,0 +1,18 @@
+Contains constraint solver related files.
+
+Subdirectories
+----------------
+
+measure: contains files developed to measure performance of approach, especially
+         to get at the overhead of fork/clone/undo etc.
+
+nconsolve: new design of constraint solver should be developed here, but
+           as of now, contains outdated stuff (11/20/13).
+
+Files
+------
+
+cons_solve.{c,h}: constraint solver API (C)
+{n,}cons_solv.P: {new, old} version of the constraint solver (Prolog)
+replaycs.c: Logs interactions with the constraint solver, and can replay them.
+t*.c: Test programs (to test the API and solver)

@@ -1,0 +1,67 @@
+sprintf-chk.lo: ../../../libssp/sprintf-chk.c config.h ssp/ssp.h \
+ /home/niranjan/labwork/gcc-4.5.1/objdir/./gcc/include/stdarg.h \
+ /home/niranjan/labwork/gcc-4.5.1/objdir/./gcc/include-fixed/limits.h \
+ /home/niranjan/labwork/gcc-4.5.1/objdir/./gcc/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/features.h \
+ /usr/include/bits/predefs.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-32.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/stdio.h \
+ /home/niranjan/labwork/gcc-4.5.1/objdir/./gcc/include/stddef.h \
+ /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h
+
+config.h:
+
+ssp/ssp.h:
+
+/home/niranjan/labwork/gcc-4.5.1/objdir/./gcc/include/stdarg.h:
+
+/home/niranjan/labwork/gcc-4.5.1/objdir/./gcc/include-fixed/limits.h:
+
+/home/niranjan/labwork/gcc-4.5.1/objdir/./gcc/include-fixed/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/features.h:
+
+/usr/include/bits/predefs.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-32.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/stdio.h:
+
+/home/niranjan/labwork/gcc-4.5.1/objdir/./gcc/include/stddef.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:

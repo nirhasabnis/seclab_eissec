@@ -1,0 +1,1 @@
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:`pwd`/ppl-0.10/installdir/lib/:`pwd`/gmp-4.3.2/installdir/lib/:`pwd`/mpfr-3.0.0/installdir/lib/:`pwd`/mpc-0.8.2/installdir/lib/:`pwd`/libelf-0.8.12/installdir/lib/:`pwd`/libelf-0.8.12/installdir/lib/

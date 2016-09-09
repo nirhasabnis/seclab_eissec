@@ -1,0 +1,1 @@
+../configure --prefix=`pwd`/../installdir --disable-bootstrap --enable-languages=c --with-gmp=`pwd`/../gmp_req/installdir --with-mpc=`pwd`/../mpc-0.8.2/installdir --with-ppl=`pwd`/../ppl-0.10/installdir --with-cloog=`pwd`/../cloog-ppl --with-libelf=`pwd`/../libelf-0.8.12/installdir --with-mpfr=`pwd`/../mpfr-3.0.0/installdir

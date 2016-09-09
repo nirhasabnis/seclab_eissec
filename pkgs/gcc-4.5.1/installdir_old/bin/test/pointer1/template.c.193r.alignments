@@ -1,0 +1,109 @@
+
+;; Function func (func)
+
+(note 1 0 3 NOTE_INSN_DELETED)
+
+(note 3 1 16 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(insn/f 16 3 17 2 template.c:6 (set (mem:SI (pre_dec:SI (reg/f:SI 7 sp)) [0 S4 A8])
+        (reg/f:SI 6 bp)) -1 (nil))
+
+(insn/f 17 16 18 2 template.c:6 (set (reg/f:SI 6 bp)
+        (reg/f:SI 7 sp)) -1 (nil))
+
+(insn/f 18 17 19 2 template.c:6 (parallel [
+            (set (reg/f:SI 7 sp)
+                (plus:SI (reg/f:SI 7 sp)
+                    (const_int -24 [0xffffffffffffffe8])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) -1 (nil))
+
+(note 19 18 2 2 NOTE_INSN_PROLOGUE_END)
+
+(note 2 19 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 5 2 6 2 template.c:7 (set (reg/f:SI 0 ax [orig:58 D.2762 ] [58])
+        (symbol_ref/f:SI ("*.LC0") [flags 0x2] <string_cst 0xb77b48dc>)) 47 {*movsi_1} (nil))
+
+(insn 6 5 7 2 template.c:7 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (reg/f:SI 0 ax [orig:58 D.2762 ] [58])) 47 {*movsi_1} (nil))
+
+(call_insn 7 6 20 2 template.c:7 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0xb7716f00 printf>) [0 S1 A8])
+            (const_int 4 [0x4]))) 907 {*call_value_0} (nil)
+    (nil))
+
+(note 20 7 21 2 NOTE_INSN_EPILOGUE_BEG)
+
+(insn 21 20 22 2 template.c:8 (parallel [
+            (set (reg/f:SI 7 sp)
+                (plus:SI (reg/f:SI 6 bp)
+                    (const_int 4 [0x4])))
+            (set (reg/f:SI 6 bp)
+                (mem:SI (reg/f:SI 6 bp) [0 S4 A8]))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) -1 (nil))
+
+(jump_insn 22 21 23 2 template.c:8 (return) -1 (nil))
+
+(barrier 23 22 15)
+
+(note 15 23 0 NOTE_INSN_DELETED)
+
+;; Function main (main)
+
+(note 1 0 3 NOTE_INSN_DELETED)
+
+(note 3 1 22 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(insn/f 22 3 23 2 template.c:11 (set (mem:SI (pre_dec:SI (reg/f:SI 7 sp)) [0 S4 A8])
+        (reg/f:SI 6 bp)) -1 (nil))
+
+(insn/f 23 22 24 2 template.c:11 (set (reg/f:SI 6 bp)
+        (reg/f:SI 7 sp)) -1 (nil))
+
+(insn/f 24 23 25 2 template.c:11 (parallel [
+            (set (reg/f:SI 7 sp)
+                (and:SI (reg/f:SI 7 sp)
+                    (const_int -16 [0xfffffffffffffff0])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(note 25 24 2 2 NOTE_INSN_PROLOGUE_END)
+
+(note 2 25 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(call_insn 5 2 6 2 template.c:12 (call (mem:QI (symbol_ref:SI ("func") [flags 0x3] <function_decl 0xb75ec100 func>) [0 S1 A8])
+        (const_int 0 [0x0])) 647 {*call_0} (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(insn 6 5 17 2 template.c:13 (set (reg:SI 0 ax [orig:58 D.2767 ] [58])
+        (const_int 0 [0x0])) 47 {*movsi_1} (nil))
+
+(insn 17 6 26 2 template.c:14 (use (reg/i:SI 0 ax)) -1 (nil))
+
+(note 26 17 27 2 NOTE_INSN_EPILOGUE_BEG)
+
+(insn 27 26 28 2 template.c:14 (parallel [
+            (set (reg/f:SI 7 sp)
+                (plus:SI (reg/f:SI 6 bp)
+                    (const_int 0 [0x0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) -1 (nil))
+
+(insn 28 27 29 2 template.c:14 (parallel [
+            (set (reg/f:SI 6 bp)
+                (mem:SI (reg/f:SI 7 sp) [0 S4 A8]))
+            (set (reg/f:SI 7 sp)
+                (plus:SI (reg/f:SI 7 sp)
+                    (const_int 4 [0x4])))
+        ]) -1 (nil))
+
+(jump_insn 29 28 30 2 template.c:14 (return) -1 (nil))
+
+(barrier 30 29 21)
+
+(note 21 30 0 NOTE_INSN_DELETED)

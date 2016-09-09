@@ -1,0 +1,1081 @@
+
+;; Function main (main)
+
+(note 1 0 3 NOTE_INSN_DELETED)
+
+(note 3 1 125 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(insn/f 125 3 126 insertion.c:4 (set (mem:SI (pre_dec:SI (reg/f:SI 7 sp)) [0 S4 A8])
+        (reg/f:SI 6 bp)) 38 {*pushsi2} (nil))
+
+(insn/f 126 125 127 insertion.c:4 (set (reg/f:SI 6 bp)
+        (reg/f:SI 7 sp)) 44 {*movsi_1} (nil))
+
+(insn/f 127 126 128 insertion.c:4 (parallel [
+            (set (reg/f:SI 7 sp)
+                (and:SI (reg/f:SI 7 sp)
+                    (const_int -16 [0xfffffff0])))
+            (clobber (reg:CC 17 flags))
+        ]) 289 {*andsi_1} (nil))
+
+(insn/f 128 127 129 insertion.c:4 (parallel [
+            (set (reg/f:SI 7 sp)
+                (plus:SI (reg/f:SI 7 sp)
+                    (const_int -64 [0xffffffc0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) 692 {pro_epilogue_adjust_stack_1} (nil))
+
+(note 129 128 2 NOTE_INSN_PROLOGUE_END)
+
+(note 2 129 5 NOTE_INSN_FUNCTION_BEG)
+
+(insn 5 2 6 insertion.c:5 (set (mem/s/j:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 28 [0x1c])) [0 arr+0 S4 A32])
+        (const_int 25 [0x19])) 44 {*movsi_1} (nil))
+
+(insn 6 5 7 insertion.c:5 (set (mem/s/j:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 32 [0x20])) [0 arr+4 S4 A32])
+        (const_int 17 [0x11])) 44 {*movsi_1} (nil))
+
+(insn 7 6 8 insertion.c:5 (set (mem/s/j:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 36 [0x24])) [0 arr+8 S4 A32])
+        (const_int 31 [0x1f])) 44 {*movsi_1} (nil))
+
+(insn 8 7 9 insertion.c:5 (set (mem/s/j:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 40 [0x28])) [0 arr+12 S4 A32])
+        (const_int 13 [0xd])) 44 {*movsi_1} (nil))
+
+(insn 9 8 10 insertion.c:5 (set (mem/s/j:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 44 [0x2c])) [0 arr+16 S4 A32])
+        (const_int 2 [0x2])) 44 {*movsi_1} (nil))
+
+(insn 10 9 11 insertion.c:8 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (symbol_ref/f:SI ("*.LC0") [flags 0x2]  <string_cst 0xb77a5a00>)) 44 {*movsi_1} (nil))
+
+(call_insn 11 10 12 insertion.c:8 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("puts") [flags 0x41]  <function_decl 0xb77f7280 __builtin_puts>) [0 S1 A8])
+            (const_int 4 [0x4]))) 697 {*call_value_0} (nil)
+    (nil))
+
+(insn 12 11 13 insertion.c:9 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (symbol_ref/f:SI ("*.LC1") [flags 0x2]  <string_cst 0xb78e6790>)) 44 {*movsi_1} (nil))
+
+(call_insn 13 12 14 insertion.c:9 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("puts") [flags 0x41]  <function_decl 0xb77f7280 __builtin_puts>) [0 S1 A8])
+            (const_int 4 [0x4]))) 697 {*call_value_0} (nil)
+    (nil))
+
+(insn 14 13 113 insertion.c:11 (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 60 [0x3c])) [0 i+0 S4 A32])
+        (const_int 0 [0x0])) 44 {*movsi_1} (nil))
+
+(jump_insn 113 14 114 insertion.c:11 (set (pc)
+        (label_ref 25)) 478 {jump} (nil)
+ -> 25)
+
+(barrier 114 113 27)
+
+(code_label 27 114 17 3 "" [1 uses])
+
+(note 17 27 18 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 18 17 19 insertion.c:12 (set (reg:SI 0 ax [68])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 60 [0x3c])) [0 i+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 19 18 20 insertion.c:12 (set (reg:SI 1 dx [orig:58 D.2533 ] [58])
+        (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [68])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 20 19 21 insertion.c:12 (set (reg/f:SI 0 ax [orig:59 D.2534 ] [59])
+        (symbol_ref/f:SI ("*.LC2") [flags 0x2]  <string_cst 0xb78576ac>)) 44 {*movsi_1} (nil))
+
+(insn 21 20 22 insertion.c:12 (set (mem:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 1 dx [orig:58 D.2533 ] [58])) 44 {*movsi_1} (nil))
+
+(insn 22 21 23 insertion.c:12 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (reg/f:SI 0 ax [orig:59 D.2534 ] [59])) 44 {*movsi_1} (nil))
+
+(call_insn 23 22 24 insertion.c:12 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x41]  <function_decl 0xb77f3f00 printf>) [0 S1 A8])
+            (const_int 8 [0x8]))) 697 {*call_value_0} (nil)
+    (nil))
+
+(insn 24 23 25 insertion.c:11 (parallel [
+            (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                        (const_int 60 [0x3c])) [0 i+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                            (const_int 60 [0x3c])) [0 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (nil))
+
+(code_label 25 24 26 2 "" [1 uses])
+
+(note 26 25 28 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 28 26 29 insertion.c:11 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                    (const_int 60 [0x3c])) [0 i+0 S4 A32])
+            (const_int 4 [0x4]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 29 28 30 insertion.c:11 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 27)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 27)
+
+(note 30 29 31 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 31 30 115 insertion.c:14 (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 60 [0x3c])) [0 i+0 S4 A32])
+        (const_int 1 [0x1])) 44 {*movsi_1} (nil))
+
+(jump_insn 115 31 116 insertion.c:14 (set (pc)
+        (label_ref 86)) 478 {jump} (nil)
+ -> 86)
+
+(barrier 116 115 88)
+
+(code_label 88 116 34 10 "" [1 uses])
+
+(note 34 88 35 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 35 34 117 insertion.c:16 (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 56 [0x38])) [0 j+0 S4 A32])
+        (const_int 0 [0x0])) 44 {*movsi_1} (nil))
+
+(jump_insn 117 35 118 insertion.c:16 (set (pc)
+        (label_ref 78)) 478 {jump} (nil)
+ -> 78)
+
+(barrier 118 117 80)
+
+(code_label 80 118 38 9 "" [1 uses])
+
+(note 38 80 39 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(insn 39 38 40 insertion.c:18 (set (reg:SI 0 ax [69])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 56 [0x38])) [0 j+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 40 39 41 insertion.c:18 (set (reg:SI 1 dx [orig:60 D.2535 ] [60])
+        (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [69])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 41 40 42 insertion.c:18 (set (reg:SI 0 ax [70])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 60 [0x3c])) [0 i+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 42 41 43 insertion.c:18 (set (reg:SI 0 ax [orig:61 D.2536 ] [61])
+        (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [70])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 43 42 44 insertion.c:18 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg:SI 1 dx [orig:60 D.2535 ] [60])
+            (reg:SI 0 ax [orig:61 D.2536 ] [61]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 44 43 45 insertion.c:18 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 75)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 75)
+
+(note 45 44 46 [bb 8] NOTE_INSN_BASIC_BLOCK)
+
+(insn 46 45 47 insertion.c:20 (set (reg:SI 0 ax [71])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 56 [0x38])) [0 j+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 47 46 48 insertion.c:20 (set (reg:SI 0 ax [72])
+        (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [71])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 48 47 49 insertion.c:20 (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 48 [0x30])) [0 temp+0 S4 A32])
+        (reg:SI 0 ax [72])) 44 {*movsi_1} (nil))
+
+(insn 49 48 50 insertion.c:21 (set (reg:SI 0 ax [73])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 60 [0x3c])) [0 i+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 50 49 51 insertion.c:21 (set (reg:SI 1 dx [orig:62 D.2539 ] [62])
+        (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [73])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 51 50 52 insertion.c:21 (set (reg:SI 0 ax [74])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 56 [0x38])) [0 j+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 52 51 53 insertion.c:21 (set (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [74])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])
+        (reg:SI 1 dx [orig:62 D.2539 ] [62])) 44 {*movsi_1} (nil))
+
+(insn 53 52 54 insertion.c:23 (set (reg:SI 0 ax [75])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 60 [0x3c])) [0 i+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 54 53 119 insertion.c:23 (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 52 [0x34])) [0 k+0 S4 A32])
+        (reg:SI 0 ax [75])) 44 {*movsi_1} (nil))
+
+(jump_insn 119 54 120 insertion.c:23 (set (pc)
+        (label_ref 64)) 478 {jump} (nil)
+ -> 64)
+
+(barrier 120 119 66)
+
+(code_label 66 120 57 8 "" [1 uses])
+
+(note 57 66 58 [bb 9] NOTE_INSN_BASIC_BLOCK)
+
+(insn 58 57 59 insertion.c:24 (set (reg:SI 0 ax [76])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 52 [0x34])) [0 k+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 59 58 60 insertion.c:24 (parallel [
+            (set (reg:SI 0 ax [orig:63 D.2540 ] [63])
+                (plus:SI (reg:SI 0 ax [76])
+                    (const_int -1 [0xffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (expr_list:REG_EQUAL (plus:SI (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                    (const_int -12 [0xfffffff4])) [0 k+0 S4 A32])
+            (const_int -1 [0xffffffff]))
+        (nil)))
+
+(insn 60 59 61 insertion.c:24 (set (reg:SI 1 dx [orig:64 D.2541 ] [64])
+        (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [orig:63 D.2540 ] [63])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 61 60 62 insertion.c:24 (set (reg:SI 0 ax [77])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 52 [0x34])) [0 k+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 62 61 63 insertion.c:24 (set (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [77])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])
+        (reg:SI 1 dx [orig:64 D.2541 ] [64])) 44 {*movsi_1} (nil))
+
+(insn 63 62 64 insertion.c:23 (parallel [
+            (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                        (const_int 52 [0x34])) [0 k+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                            (const_int 52 [0x34])) [0 k+0 S4 A32])
+                    (const_int -1 [0xffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (nil))
+
+(code_label 64 63 65 7 "" [1 uses])
+
+(note 65 64 67 [bb 10] NOTE_INSN_BASIC_BLOCK)
+
+(insn 67 65 68 insertion.c:23 (set (reg:SI 0 ax [78])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 52 [0x34])) [0 k+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 68 67 69 insertion.c:23 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg:SI 0 ax [78])
+            (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                    (const_int 56 [0x38])) [0 j+0 S4 A32]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 69 68 70 insertion.c:23 (set (pc)
+        (if_then_else (gt (reg:CCGC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 66)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 66)
+
+(note 70 69 71 [bb 11] NOTE_INSN_BASIC_BLOCK)
+
+(insn 71 70 124 insertion.c:26 (set (reg:SI 0 ax [79])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 52 [0x34])) [0 k+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 124 71 73 insertion.c:26 (set (reg:SI 1 dx [orig:65 D.2542 ] [65])
+        (plus:SI (reg:SI 0 ax [79])
+            (const_int 1 [0x1]))) 196 {*lea_1} (nil))
+
+(insn 73 124 74 insertion.c:26 (set (reg:SI 0 ax [80])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 48 [0x30])) [0 temp+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 74 73 75 insertion.c:26 (set (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 1 dx [orig:65 D.2542 ] [65])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])
+        (reg:SI 0 ax [80])) 44 {*movsi_1} (nil))
+
+(code_label 75 74 76 6 "" [1 uses])
+
+(note 76 75 77 [bb 12] NOTE_INSN_BASIC_BLOCK)
+
+(insn 77 76 78 insertion.c:16 (parallel [
+            (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                        (const_int 56 [0x38])) [0 j+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                            (const_int 56 [0x38])) [0 j+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (nil))
+
+(code_label 78 77 79 5 "" [1 uses])
+
+(note 79 78 81 [bb 13] NOTE_INSN_BASIC_BLOCK)
+
+(insn 81 79 82 insertion.c:16 (set (reg:SI 0 ax [81])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 56 [0x38])) [0 j+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 82 81 83 insertion.c:16 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg:SI 0 ax [81])
+            (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                    (const_int 60 [0x3c])) [0 i+0 S4 A32]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 83 82 84 insertion.c:16 (set (pc)
+        (if_then_else (lt (reg:CCGC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 80)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 80)
+
+(note 84 83 85 [bb 14] NOTE_INSN_BASIC_BLOCK)
+
+(insn 85 84 86 insertion.c:14 (parallel [
+            (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                        (const_int 60 [0x3c])) [0 i+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                            (const_int 60 [0x3c])) [0 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (nil))
+
+(code_label 86 85 87 4 "" [1 uses])
+
+(note 87 86 89 [bb 15] NOTE_INSN_BASIC_BLOCK)
+
+(insn 89 87 90 insertion.c:14 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                    (const_int 60 [0x3c])) [0 i+0 S4 A32])
+            (const_int 4 [0x4]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 90 89 91 insertion.c:14 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 88)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 88)
+
+(note 91 90 92 [bb 16] NOTE_INSN_BASIC_BLOCK)
+
+(insn 92 91 93 insertion.c:31 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (symbol_ref/f:SI ("*.LC3") [flags 0x2]  <string_cst 0xb78e67e8>)) 44 {*movsi_1} (nil))
+
+(call_insn 93 92 94 insertion.c:31 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("puts") [flags 0x41]  <function_decl 0xb77f7280 __builtin_puts>) [0 S1 A8])
+            (const_int 4 [0x4]))) 697 {*call_value_0} (nil)
+    (nil))
+
+(insn 94 93 121 insertion.c:33 (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 60 [0x3c])) [0 i+0 S4 A32])
+        (const_int 0 [0x0])) 44 {*movsi_1} (nil))
+
+(jump_insn 121 94 122 insertion.c:33 (set (pc)
+        (label_ref 105)) 478 {jump} (nil)
+ -> 105)
+
+(barrier 122 121 107)
+
+(code_label 107 122 97 12 "" [1 uses])
+
+(note 97 107 98 [bb 17] NOTE_INSN_BASIC_BLOCK)
+
+(insn 98 97 99 insertion.c:34 (set (reg:SI 0 ax [82])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 60 [0x3c])) [0 i+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 99 98 100 insertion.c:34 (set (reg:SI 1 dx [orig:66 D.2543 ] [66])
+        (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [82])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 100 99 101 insertion.c:34 (set (reg/f:SI 0 ax [orig:67 D.2544 ] [67])
+        (symbol_ref/f:SI ("*.LC2") [flags 0x2]  <string_cst 0xb78576ac>)) 44 {*movsi_1} (nil))
+
+(insn 101 100 102 insertion.c:34 (set (mem:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 1 dx [orig:66 D.2543 ] [66])) 44 {*movsi_1} (nil))
+
+(insn 102 101 103 insertion.c:34 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (reg/f:SI 0 ax [orig:67 D.2544 ] [67])) 44 {*movsi_1} (nil))
+
+(call_insn 103 102 104 insertion.c:34 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x41]  <function_decl 0xb77f3f00 printf>) [0 S1 A8])
+            (const_int 8 [0x8]))) 697 {*call_value_0} (nil)
+    (nil))
+
+(insn 104 103 105 insertion.c:33 (parallel [
+            (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                        (const_int 60 [0x3c])) [0 i+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                            (const_int 60 [0x3c])) [0 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (nil))
+
+(code_label 105 104 106 11 "" [1 uses])
+
+(note 106 105 108 [bb 18] NOTE_INSN_BASIC_BLOCK)
+
+(insn 108 106 109 insertion.c:33 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                    (const_int 60 [0x3c])) [0 i+0 S4 A32])
+            (const_int 4 [0x4]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 109 108 112 insertion.c:33 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 107)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 107)
+
+(note 112 109 130 [bb 19] NOTE_INSN_BASIC_BLOCK)
+
+(note 130 112 131 NOTE_INSN_EPILOGUE_BEG)
+
+(insn/f 131 130 132 insertion.c:36 (parallel [
+            (set (reg/f:SI 7 sp)
+                (plus:SI (reg/f:SI 6 bp)
+                    (const_int 4 [0x4])))
+            (set (reg/f:SI 6 bp)
+                (mem:SI (reg/f:SI 6 bp) [0 S4 A8]))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) 500 {leave} (expr_list:REG_CFA_RESTORE (reg/f:SI 6 bp)
+        (expr_list:REG_CFA_ADJUST_CFA (set (reg/f:SI 7 sp)
+                (plus:SI (reg/f:SI 6 bp)
+                    (const_int 4 [0x4])))
+            (nil))))
+
+(jump_insn 132 131 133 insertion.c:36 (return) 490 {return_internal} (nil))
+
+(barrier 133 132 123)
+
+(note 123 133 0 NOTE_INSN_DELETED)
+
+;; Function main (main)
+
+(note 1 0 3 NOTE_INSN_DELETED)
+
+(note 3 1 185 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(insn/f 185 3 186 insertion.c:4 (set (mem:SI (pre_dec:SI (reg/f:SI 7 sp)) [0 S4 A8])
+        (reg/f:SI 6 bp)) 38 {*pushsi2} (nil))
+
+(insn/f 186 185 187 insertion.c:4 (set (reg/f:SI 6 bp)
+        (reg/f:SI 7 sp)) 44 {*movsi_1} (nil))
+
+(insn/f 187 186 188 insertion.c:4 (parallel [
+            (set (reg/f:SI 7 sp)
+                (and:SI (reg/f:SI 7 sp)
+                    (const_int -16 [0xfffffff0])))
+            (clobber (reg:CC 17 flags))
+        ]) 289 {*andsi_1} (nil))
+
+(insn/f 188 187 189 insertion.c:4 (parallel [
+            (set (reg/f:SI 7 sp)
+                (plus:SI (reg/f:SI 7 sp)
+                    (const_int -64 [0xffffffc0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) 692 {pro_epilogue_adjust_stack_1} (nil))
+
+(note 189 188 2 NOTE_INSN_PROLOGUE_END)
+
+(note 2 189 5 NOTE_INSN_FUNCTION_BEG)
+
+(insn 5 2 6 insertion.c:5 (set (mem/s/j:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 28 [0x1c])) [0 arr+0 S4 A32])
+        (const_int 25 [0x19])) 44 {*movsi_1} (nil))
+
+(insn 6 5 7 insertion.c:5 (set (mem/s/j:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 32 [0x20])) [0 arr+4 S4 A32])
+        (const_int 17 [0x11])) 44 {*movsi_1} (nil))
+
+(insn 7 6 8 insertion.c:5 (set (mem/s/j:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 36 [0x24])) [0 arr+8 S4 A32])
+        (const_int 31 [0x1f])) 44 {*movsi_1} (nil))
+
+(insn 8 7 9 insertion.c:5 (set (mem/s/j:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 40 [0x28])) [0 arr+12 S4 A32])
+        (const_int 13 [0xd])) 44 {*movsi_1} (nil))
+
+(insn 9 8 134 insertion.c:5 (set (mem/s/j:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 44 [0x2c])) [0 arr+16 S4 A32])
+        (const_int 2 [0x2])) 44 {*movsi_1} (nil))
+
+(insn 134 9 135 (set:SI (reg:SI 0 ax [83])
+        (reg/f:SI 7 sp)) 44 {*movsi_1} (nil))
+
+(insn 135 134 136 (set (reg:CCZ 17 flags [0])
+        (compare:CCZ (reg:SI 0 ax [83])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 136 135 164 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags [0])
+                (const_int 0 [0x0]))
+            (label_ref 139)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 139)
+
+(note 164 136 137 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(call_insn 137 164 138 insertion.c:8 (call (mem:QI (symbol_ref:SI ("abort")) [0 S1 A8])
+        (const_int 0 [0x0])) 484 {*call_0} (nil)
+    (nil))
+
+(barrier 138 137 139)
+
+(code_label 139 138 165 13 "" [1 uses])
+
+(note 165 139 10 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 10 165 11 insertion.c:8 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (symbol_ref/f:SI ("*.LC0") [flags 0x2]  <string_cst 0xb77a5a00>)) 44 {*movsi_1} (nil))
+
+(call_insn 11 10 140 insertion.c:8 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("puts") [flags 0x41]  <function_decl 0xb77f7280 __builtin_puts>) [0 S1 A8])
+            (const_int 4 [0x4]))) 697 {*call_value_0} (nil)
+    (nil))
+
+(insn 140 11 141 (set:SI (reg:SI 0 ax [84])
+        (reg/f:SI 7 sp)) 44 {*movsi_1} (nil))
+
+(insn 141 140 142 (set (reg:CCZ 17 flags [0])
+        (compare:CCZ (reg:SI 0 ax [84])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 142 141 166 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags [0])
+                (const_int 0 [0x0]))
+            (label_ref 145)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 145)
+
+(note 166 142 143 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(call_insn 143 166 144 insertion.c:9 (call (mem:QI (symbol_ref:SI ("abort")) [0 S1 A8])
+        (const_int 0 [0x0])) 484 {*call_0} (nil)
+    (nil))
+
+(barrier 144 143 145)
+
+(code_label 145 144 167 14 "" [1 uses])
+
+(note 167 145 12 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 12 167 13 insertion.c:9 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (symbol_ref/f:SI ("*.LC1") [flags 0x2]  <string_cst 0xb78e6790>)) 44 {*movsi_1} (nil))
+
+(call_insn 13 12 14 insertion.c:9 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("puts") [flags 0x41]  <function_decl 0xb77f7280 __builtin_puts>) [0 S1 A8])
+            (const_int 4 [0x4]))) 697 {*call_value_0} (nil)
+    (nil))
+
+(insn 14 13 174 insertion.c:11 (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 60 [0x3c])) [0 i+0 S4 A32])
+        (const_int 0 [0x0])) 44 {*movsi_1} (nil))
+
+(jump_insn 174 14 175 insertion.c:11 (set (pc)
+        (label_ref 25)) 478 {jump} (nil)
+ -> 25)
+
+(barrier 175 174 27)
+
+(code_label 27 175 17 3 "" [1 uses])
+
+(note 17 27 18 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(insn 18 17 19 insertion.c:12 (set (reg:SI 0 ax [68])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 60 [0x3c])) [0 i+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 19 18 20 insertion.c:12 (set (reg:SI 1 dx [orig:58 D.2533 ] [58])
+        (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [68])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 20 19 21 insertion.c:12 (set (reg/f:SI 0 ax [orig:59 D.2534 ] [59])
+        (symbol_ref/f:SI ("*.LC2") [flags 0x2]  <string_cst 0xb78576ac>)) 44 {*movsi_1} (nil))
+
+(insn 21 20 146 insertion.c:12 (set (mem:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 1 dx [orig:58 D.2533 ] [58])) 44 {*movsi_1} (nil))
+
+(insn 146 21 147 (set:SI (reg:SI 1 dx [85])
+        (reg/f:SI 7 sp)) 44 {*movsi_1} (nil))
+
+(insn 147 146 148 (set (reg:CCZ 17 flags [0])
+        (compare:CCZ (reg:SI 1 dx [85])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 148 147 168 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags [0])
+                (const_int 0 [0x0]))
+            (label_ref 151)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 151)
+
+(note 168 148 149 [bb 8] NOTE_INSN_BASIC_BLOCK)
+
+(call_insn 149 168 150 insertion.c:12 (call (mem:QI (symbol_ref:SI ("abort")) [0 S1 A8])
+        (const_int 0 [0x0])) 484 {*call_0} (nil)
+    (nil))
+
+(barrier 150 149 151)
+
+(code_label 151 150 169 15 "" [1 uses])
+
+(note 169 151 22 [bb 9] NOTE_INSN_BASIC_BLOCK)
+
+(insn 22 169 23 insertion.c:12 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (reg/f:SI 0 ax [orig:59 D.2534 ] [59])) 44 {*movsi_1} (nil))
+
+(call_insn 23 22 24 insertion.c:12 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x41]  <function_decl 0xb77f3f00 printf>) [0 S1 A8])
+            (const_int 8 [0x8]))) 697 {*call_value_0} (nil)
+    (nil))
+
+(insn 24 23 25 insertion.c:11 (parallel [
+            (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                        (const_int 60 [0x3c])) [0 i+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                            (const_int 60 [0x3c])) [0 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (nil))
+
+(code_label 25 24 26 2 "" [1 uses])
+
+(note 26 25 28 [bb 10] NOTE_INSN_BASIC_BLOCK)
+
+(insn 28 26 29 insertion.c:11 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                    (const_int 60 [0x3c])) [0 i+0 S4 A32])
+            (const_int 4 [0x4]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 29 28 30 insertion.c:11 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 27)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 27)
+
+(note 30 29 31 [bb 11] NOTE_INSN_BASIC_BLOCK)
+
+(insn 31 30 176 insertion.c:14 (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 60 [0x3c])) [0 i+0 S4 A32])
+        (const_int 1 [0x1])) 44 {*movsi_1} (nil))
+
+(jump_insn 176 31 177 insertion.c:14 (set (pc)
+        (label_ref 86)) 478 {jump} (nil)
+ -> 86)
+
+(barrier 177 176 88)
+
+(code_label 88 177 34 10 "" [1 uses])
+
+(note 34 88 35 [bb 12] NOTE_INSN_BASIC_BLOCK)
+
+(insn 35 34 178 insertion.c:16 (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 56 [0x38])) [0 j+0 S4 A32])
+        (const_int 0 [0x0])) 44 {*movsi_1} (nil))
+
+(jump_insn 178 35 179 insertion.c:16 (set (pc)
+        (label_ref 78)) 478 {jump} (nil)
+ -> 78)
+
+(barrier 179 178 80)
+
+(code_label 80 179 38 9 "" [1 uses])
+
+(note 38 80 39 [bb 13] NOTE_INSN_BASIC_BLOCK)
+
+(insn 39 38 40 insertion.c:18 (set (reg:SI 0 ax [69])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 56 [0x38])) [0 j+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 40 39 41 insertion.c:18 (set (reg:SI 1 dx [orig:60 D.2535 ] [60])
+        (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [69])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 41 40 42 insertion.c:18 (set (reg:SI 0 ax [70])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 60 [0x3c])) [0 i+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 42 41 43 insertion.c:18 (set (reg:SI 0 ax [orig:61 D.2536 ] [61])
+        (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [70])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 43 42 44 insertion.c:18 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg:SI 1 dx [orig:60 D.2535 ] [60])
+            (reg:SI 0 ax [orig:61 D.2536 ] [61]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 44 43 45 insertion.c:18 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 75)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 75)
+
+(note 45 44 46 [bb 14] NOTE_INSN_BASIC_BLOCK)
+
+(insn 46 45 47 insertion.c:20 (set (reg:SI 0 ax [71])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 56 [0x38])) [0 j+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 47 46 48 insertion.c:20 (set (reg:SI 0 ax [72])
+        (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [71])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 48 47 49 insertion.c:20 (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 48 [0x30])) [0 temp+0 S4 A32])
+        (reg:SI 0 ax [72])) 44 {*movsi_1} (nil))
+
+(insn 49 48 50 insertion.c:21 (set (reg:SI 0 ax [73])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 60 [0x3c])) [0 i+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 50 49 51 insertion.c:21 (set (reg:SI 1 dx [orig:62 D.2539 ] [62])
+        (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [73])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 51 50 52 insertion.c:21 (set (reg:SI 0 ax [74])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 56 [0x38])) [0 j+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 52 51 53 insertion.c:21 (set (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [74])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])
+        (reg:SI 1 dx [orig:62 D.2539 ] [62])) 44 {*movsi_1} (nil))
+
+(insn 53 52 54 insertion.c:23 (set (reg:SI 0 ax [75])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 60 [0x3c])) [0 i+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 54 53 180 insertion.c:23 (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 52 [0x34])) [0 k+0 S4 A32])
+        (reg:SI 0 ax [75])) 44 {*movsi_1} (nil))
+
+(jump_insn 180 54 181 insertion.c:23 (set (pc)
+        (label_ref 64)) 478 {jump} (nil)
+ -> 64)
+
+(barrier 181 180 66)
+
+(code_label 66 181 57 8 "" [1 uses])
+
+(note 57 66 58 [bb 15] NOTE_INSN_BASIC_BLOCK)
+
+(insn 58 57 59 insertion.c:24 (set (reg:SI 0 ax [76])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 52 [0x34])) [0 k+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 59 58 60 insertion.c:24 (parallel [
+            (set (reg:SI 0 ax [orig:63 D.2540 ] [63])
+                (plus:SI (reg:SI 0 ax [76])
+                    (const_int -1 [0xffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (expr_list:REG_EQUAL (plus:SI (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                    (const_int -12 [0xfffffff4])) [0 k+0 S4 A32])
+            (const_int -1 [0xffffffff]))
+        (nil)))
+
+(insn 60 59 61 insertion.c:24 (set (reg:SI 1 dx [orig:64 D.2541 ] [64])
+        (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [orig:63 D.2540 ] [63])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 61 60 62 insertion.c:24 (set (reg:SI 0 ax [77])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 52 [0x34])) [0 k+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 62 61 63 insertion.c:24 (set (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [77])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])
+        (reg:SI 1 dx [orig:64 D.2541 ] [64])) 44 {*movsi_1} (nil))
+
+(insn 63 62 64 insertion.c:23 (parallel [
+            (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                        (const_int 52 [0x34])) [0 k+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                            (const_int 52 [0x34])) [0 k+0 S4 A32])
+                    (const_int -1 [0xffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (nil))
+
+(code_label 64 63 65 7 "" [1 uses])
+
+(note 65 64 67 [bb 16] NOTE_INSN_BASIC_BLOCK)
+
+(insn 67 65 68 insertion.c:23 (set (reg:SI 0 ax [78])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 52 [0x34])) [0 k+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 68 67 69 insertion.c:23 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg:SI 0 ax [78])
+            (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                    (const_int 56 [0x38])) [0 j+0 S4 A32]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 69 68 70 insertion.c:23 (set (pc)
+        (if_then_else (gt (reg:CCGC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 66)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 66)
+
+(note 70 69 71 [bb 17] NOTE_INSN_BASIC_BLOCK)
+
+(insn 71 70 124 insertion.c:26 (set (reg:SI 0 ax [79])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 52 [0x34])) [0 k+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 124 71 73 insertion.c:26 (set (reg:SI 0 ax [orig:65 D.2542 ] [65])
+        (plus:SI (reg:SI 0 ax [79])
+            (const_int 1 [0x1]))) 196 {*lea_1} (nil))
+
+(insn 73 124 74 insertion.c:26 (set (reg:SI 1 dx [80])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 48 [0x30])) [0 temp+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 74 73 75 insertion.c:26 (set (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [orig:65 D.2542 ] [65])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])
+        (reg:SI 1 dx [80])) 44 {*movsi_1} (nil))
+
+(code_label 75 74 76 6 "" [1 uses])
+
+(note 76 75 77 [bb 18] NOTE_INSN_BASIC_BLOCK)
+
+(insn 77 76 78 insertion.c:16 (parallel [
+            (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                        (const_int 56 [0x38])) [0 j+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                            (const_int 56 [0x38])) [0 j+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (nil))
+
+(code_label 78 77 79 5 "" [1 uses])
+
+(note 79 78 81 [bb 19] NOTE_INSN_BASIC_BLOCK)
+
+(insn 81 79 82 insertion.c:16 (set (reg:SI 0 ax [81])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 56 [0x38])) [0 j+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 82 81 83 insertion.c:16 (set (reg:CCGC 17 flags)
+        (compare:CCGC (reg:SI 0 ax [81])
+            (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                    (const_int 60 [0x3c])) [0 i+0 S4 A32]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 83 82 84 insertion.c:16 (set (pc)
+        (if_then_else (lt (reg:CCGC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 80)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 80)
+
+(note 84 83 85 [bb 20] NOTE_INSN_BASIC_BLOCK)
+
+(insn 85 84 86 insertion.c:14 (parallel [
+            (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                        (const_int 60 [0x3c])) [0 i+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                            (const_int 60 [0x3c])) [0 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (nil))
+
+(code_label 86 85 87 4 "" [1 uses])
+
+(note 87 86 89 [bb 21] NOTE_INSN_BASIC_BLOCK)
+
+(insn 89 87 90 insertion.c:14 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                    (const_int 60 [0x3c])) [0 i+0 S4 A32])
+            (const_int 4 [0x4]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 90 89 91 insertion.c:14 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 88)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 88)
+
+(note 91 90 152 [bb 22] NOTE_INSN_BASIC_BLOCK)
+
+(insn 152 91 153 (set:SI (reg:SI 0 ax [86])
+        (reg/f:SI 7 sp)) 44 {*movsi_1} (nil))
+
+(insn 153 152 154 (set (reg:CCZ 17 flags [0])
+        (compare:CCZ (reg:SI 0 ax [86])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 154 153 170 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags [0])
+                (const_int 0 [0x0]))
+            (label_ref 157)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 157)
+
+(note 170 154 155 [bb 23] NOTE_INSN_BASIC_BLOCK)
+
+(call_insn 155 170 156 insertion.c:31 (call (mem:QI (symbol_ref:SI ("abort")) [0 S1 A8])
+        (const_int 0 [0x0])) 484 {*call_0} (nil)
+    (nil))
+
+(barrier 156 155 157)
+
+(code_label 157 156 171 16 "" [1 uses])
+
+(note 171 157 92 [bb 24] NOTE_INSN_BASIC_BLOCK)
+
+(insn 92 171 93 insertion.c:31 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (symbol_ref/f:SI ("*.LC3") [flags 0x2]  <string_cst 0xb78e67e8>)) 44 {*movsi_1} (nil))
+
+(call_insn 93 92 94 insertion.c:31 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("puts") [flags 0x41]  <function_decl 0xb77f7280 __builtin_puts>) [0 S1 A8])
+            (const_int 4 [0x4]))) 697 {*call_value_0} (nil)
+    (nil))
+
+(insn 94 93 182 insertion.c:33 (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 60 [0x3c])) [0 i+0 S4 A32])
+        (const_int 0 [0x0])) 44 {*movsi_1} (nil))
+
+(jump_insn 182 94 183 insertion.c:33 (set (pc)
+        (label_ref 105)) 478 {jump} (nil)
+ -> 105)
+
+(barrier 183 182 107)
+
+(code_label 107 183 97 12 "" [1 uses])
+
+(note 97 107 98 [bb 25] NOTE_INSN_BASIC_BLOCK)
+
+(insn 98 97 99 insertion.c:34 (set (reg:SI 0 ax [82])
+        (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 60 [0x3c])) [0 i+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 99 98 100 insertion.c:34 (set (reg:SI 1 dx [orig:66 D.2543 ] [66])
+        (mem/s/j:SI (plus:SI (plus:SI (mult:SI (reg:SI 0 ax [82])
+                        (const_int 4 [0x4]))
+                    (reg/f:SI 7 sp))
+                (const_int 28 [0x1c])) [0 arr S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 100 99 101 insertion.c:34 (set (reg/f:SI 0 ax [orig:67 D.2544 ] [67])
+        (symbol_ref/f:SI ("*.LC2") [flags 0x2]  <string_cst 0xb78576ac>)) 44 {*movsi_1} (nil))
+
+(insn 101 100 158 insertion.c:34 (set (mem:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 1 dx [orig:66 D.2543 ] [66])) 44 {*movsi_1} (nil))
+
+(insn 158 101 159 (set:SI (reg:SI 1 dx [87])
+        (reg/f:SI 7 sp)) 44 {*movsi_1} (nil))
+
+(insn 159 158 160 (set (reg:CCZ 17 flags [0])
+        (compare:CCZ (reg:SI 1 dx [87])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 160 159 172 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags [0])
+                (const_int 0 [0x0]))
+            (label_ref 163)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 163)
+
+(note 172 160 161 [bb 26] NOTE_INSN_BASIC_BLOCK)
+
+(call_insn 161 172 162 insertion.c:34 (call (mem:QI (symbol_ref:SI ("abort")) [0 S1 A8])
+        (const_int 0 [0x0])) 484 {*call_0} (nil)
+    (nil))
+
+(barrier 162 161 163)
+
+(code_label 163 162 173 17 "" [1 uses])
+
+(note 173 163 102 [bb 27] NOTE_INSN_BASIC_BLOCK)
+
+(insn 102 173 103 insertion.c:34 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (reg/f:SI 0 ax [orig:67 D.2544 ] [67])) 44 {*movsi_1} (nil))
+
+(call_insn 103 102 104 insertion.c:34 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x41]  <function_decl 0xb77f3f00 printf>) [0 S1 A8])
+            (const_int 8 [0x8]))) 697 {*call_value_0} (nil)
+    (nil))
+
+(insn 104 103 105 insertion.c:33 (parallel [
+            (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                        (const_int 60 [0x3c])) [0 i+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                            (const_int 60 [0x3c])) [0 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (nil))
+
+(code_label 105 104 106 11 "" [1 uses])
+
+(note 106 105 108 [bb 28] NOTE_INSN_BASIC_BLOCK)
+
+(insn 108 106 109 insertion.c:33 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                    (const_int 60 [0x3c])) [0 i+0 S4 A32])
+            (const_int 4 [0x4]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 109 108 112 insertion.c:33 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 107)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 107)
+
+(note 112 109 132 [bb 29] NOTE_INSN_BASIC_BLOCK)
+
+(jump_insn 132 112 133 insertion.c:36 (return) 490 {return_internal} (nil))
+
+(barrier 133 132 123)
+
+(note 123 133 184 NOTE_INSN_DELETED)
+
+(note 184 123 0 NOTE_INSN_DELETED)

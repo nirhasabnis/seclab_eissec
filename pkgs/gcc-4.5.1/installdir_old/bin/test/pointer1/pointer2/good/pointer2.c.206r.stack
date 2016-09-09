@@ -1,0 +1,112 @@
+
+;; Function main (main)
+
+(note 1 0 3 NOTE_INSN_DELETED)
+
+(note 3 1 32 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(insn/f 32 3 33 2 ../pointer2.c:6 (set (mem:SI (pre_dec:SI (reg/f:SI 7 sp)) [0 S4 A8])
+        (reg/f:SI 6 bp)) -1 (nil))
+
+(insn/f 33 32 34 2 ../pointer2.c:6 (set (reg/f:SI 6 bp)
+        (reg/f:SI 7 sp)) -1 (nil))
+
+(insn/f 34 33 35 2 ../pointer2.c:6 (parallel [
+            (set (reg/f:SI 7 sp)
+                (and:SI (reg/f:SI 7 sp)
+                    (const_int -16 [0xfffffff0])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn/f 35 34 36 2 ../pointer2.c:6 (parallel [
+            (set (reg/f:SI 7 sp)
+                (plus:SI (reg/f:SI 7 sp)
+                    (const_int -32 [0xffffffe0])))
+            (clobber (reg:CC 17 flags))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) -1 (nil))
+
+(note 36 35 2 2 NOTE_INSN_PROLOGUE_END)
+
+(note 2 36 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 5 2 6 2 ../pointer2.c:7 (set (mem/f/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 28 [0x1c])) [0 c+0 S4 A32])
+        (const_int 0 [0x0])) 44 {*movsi_1} (nil))
+
+(insn 6 5 23 2 ../pointer2.c:8 (set (reg/f:SI 0 ax [61])
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 28 [0x1c])) [0 c+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 23 6 24 2 (set:SI (reg:SI 1 dx [64])
+        (reg/f:SI 0 ax [61])) 44 {*movsi_1} (nil))
+
+(insn 24 23 25 2 (set (reg:CCZ 17 flags [0])
+        (compare:CCZ (reg:SI 1 dx [64])
+            (const_int 0 [0x0]))) 2 {*cmpsi_ccno_1} (nil))
+
+(jump_insn 25 24 29 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags [0])
+                (const_int 0 [0x0]))
+            (label_ref 28)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 28)
+
+(note 29 25 26 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(call_insn 26 29 27 3 ../pointer2.c:8 (call (mem:QI (symbol_ref:SI ("abort")) [0 S1 A8])
+        (const_int 0 [0x0])) 484 {*call_0} (nil)
+    (nil))
+
+(barrier 27 26 28)
+
+(code_label 28 27 30 4 2 "" [1 uses])
+
+(note 30 28 7 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 7 30 8 4 ../pointer2.c:8 (set (reg:QI 0 ax [62])
+        (mem:QI (reg/f:SI 0 ax [61]) [0 S1 A8])) 53 {*movqi_1} (nil))
+
+(insn 8 7 9 4 ../pointer2.c:8 (set (mem/c/i:QI (plus:SI (reg/f:SI 7 sp)
+                (const_int 27 [0x1b])) [0 d+0 S1 A8])
+        (reg:QI 0 ax [62])) 53 {*movqi_1} (nil))
+
+(insn 9 8 10 4 ../pointer2.c:9 (set (reg:SI 0 ax [orig:58 D.3782 ] [58])
+        (sign_extend:SI (mem/c/i:QI (plus:SI (reg/f:SI 7 sp)
+                    (const_int 27 [0x1b])) [0 d+0 S1 A8]))) 96 {extendqisi2} (nil))
+
+(insn 10 9 11 4 ../pointer2.c:9 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (reg:SI 0 ax [orig:58 D.3782 ] [58])) 44 {*movsi_1} (nil))
+
+(call_insn 11 10 12 4 ../pointer2.c:9 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("putchar") [flags 0x41]  <function_decl 0xb76ec080 __builtin_putchar>) [0 S1 A8])
+            (const_int 4 [0x4]))) 697 {*call_value_0} (nil)
+    (nil))
+
+(insn 12 11 20 4 ../pointer2.c:10 (set (reg:SI 0 ax [orig:59 D.3783 ] [59])
+        (const_int 0 [0x0])) 44 {*movsi_1} (nil))
+
+(insn 20 12 37 4 ../pointer2.c:11 (use (reg/i:SI 0 ax)) -1 (nil))
+
+(note 37 20 38 4 NOTE_INSN_EPILOGUE_BEG)
+
+(insn/f 38 37 39 4 ../pointer2.c:11 (parallel [
+            (set (reg/f:SI 7 sp)
+                (plus:SI (reg/f:SI 6 bp)
+                    (const_int 4 [0x4])))
+            (set (reg/f:SI 6 bp)
+                (mem:SI (reg/f:SI 6 bp) [0 S4 A8]))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) -1 (expr_list:REG_CFA_RESTORE (reg/f:SI 6 bp)
+        (expr_list:REG_CFA_ADJUST_CFA (set (reg/f:SI 7 sp)
+                (plus:SI (reg/f:SI 6 bp)
+                    (const_int 4 [0x4])))
+            (nil))))
+
+(jump_insn 39 38 40 4 ../pointer2.c:11 (return) -1 (nil))
+
+(barrier 40 39 31)
+
+(note 31 40 0 NOTE_INSN_DELETED)
+starting the processing of deferred insns
+ending the processing of deferred insns

@@ -1,0 +1,60 @@
+_sd_to_usi.o: ../../../libgcc/config/libbid/_sd_to_usi.c \
+ ../../../libgcc/config/libbid/bid_conf.h \
+ ../../../libgcc/config/libbid/bid_functions.h \
+ ../../../libgcc/config/libbid/bid_gcc_intrinsics.h ../.././gcc/tconfig.h \
+ ../.././gcc/auto-host.h ../../../libgcc/../include/ansidecl.h \
+ ../../../libgcc/../gcc/coretypes.h ../.././gcc/tm.h \
+ ../.././gcc/options.h ../../../libgcc/../gcc/config/vxworks-dummy.h \
+ ../../../libgcc/../gcc/config/i386/i386.h \
+ ../../../libgcc/../gcc/config/i386/unix.h \
+ ../../../libgcc/../gcc/config/i386/att.h \
+ ../../../libgcc/../gcc/config/dbxelf.h \
+ ../../../libgcc/../gcc/config/elfos.h \
+ ../../../libgcc/../gcc/config/svr4.h \
+ ../../../libgcc/../gcc/config/linux.h \
+ ../../../libgcc/../gcc/config/glibc-stdint.h \
+ ../../../libgcc/../gcc/config/i386/linux.h \
+ ../../../libgcc/../gcc/config/tm-dwarf2.h \
+ ../../../libgcc/../gcc/defaults.h
+
+../../../libgcc/config/libbid/bid_conf.h:
+
+../../../libgcc/config/libbid/bid_functions.h:
+
+../../../libgcc/config/libbid/bid_gcc_intrinsics.h:
+
+../.././gcc/tconfig.h:
+
+../.././gcc/auto-host.h:
+
+../../../libgcc/../include/ansidecl.h:
+
+../../../libgcc/../gcc/coretypes.h:
+
+../.././gcc/tm.h:
+
+../.././gcc/options.h:
+
+../../../libgcc/../gcc/config/vxworks-dummy.h:
+
+../../../libgcc/../gcc/config/i386/i386.h:
+
+../../../libgcc/../gcc/config/i386/unix.h:
+
+../../../libgcc/../gcc/config/i386/att.h:
+
+../../../libgcc/../gcc/config/dbxelf.h:
+
+../../../libgcc/../gcc/config/elfos.h:
+
+../../../libgcc/../gcc/config/svr4.h:
+
+../../../libgcc/../gcc/config/linux.h:
+
+../../../libgcc/../gcc/config/glibc-stdint.h:
+
+../../../libgcc/../gcc/config/i386/linux.h:
+
+../../../libgcc/../gcc/config/tm-dwarf2.h:
+
+../../../libgcc/../gcc/defaults.h:

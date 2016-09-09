@@ -1,0 +1,187 @@
+
+;; Function main (main)
+
+
+3 basic blocks, 2 edges.
+
+Basic block 0 , next 2, loop_depth 0, count 0, freq 0, maybe hot.
+Predecessors: 
+Successors:  2 (fallthru)
+
+Basic block 2 , prev 0, next 1, loop_depth 0, count 0, freq 0, maybe hot.
+Predecessors:  ENTRY (fallthru)
+Successors:  EXIT [100.0%]  (fallthru)
+
+Basic block 1 , prev 2, loop_depth 0, count 0, freq 0, maybe hot.
+Predecessors:  2 [100.0%]  (fallthru)
+Successors: 
+
+
+
+try_optimize_cfg iteration 1
+
+(note 3 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 5 2 6 2 alltype.c:7 (set (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                (const_int -8 [0xfffffff8])) [0 i+0 S4 A64])
+        (const_int 0 [0x0])) 44 {*movsi_1} (nil))
+
+(insn 6 5 7 2 alltype.c:8 (set (reg/f:SI 58 [ D.3784 ])
+        (symbol_ref/f:SI ("*.LC0") [flags 0x2]  <string_cst 0xb7608240>)) 44 {*movsi_1} (nil))
+
+(insn 7 6 8 2 alltype.c:8 (parallel [
+            (set (reg:SI 79)
+                (plus:SI (reg/f:SI 20 frame)
+                    (const_int -8 [0xfffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (nil))
+
+(insn 8 7 9 2 alltype.c:8 (set (mem/f/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 79)) 44 {*movsi_1} (expr_list:REG_EQUAL (plus:SI (reg/f:SI 20 frame)
+            (const_int -8 [0xfffffff8]))
+        (nil)))
+
+(insn 9 8 10 2 alltype.c:8 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (reg/f:SI 58 [ D.3784 ])) 44 {*movsi_1} (nil))
+
+(call_insn 10 9 11 2 alltype.c:8 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("*__isoc99_scanf") [flags 0x41]  <function_decl 0xb772f500 scanf>) [0 S1 A8])
+            (const_int 8 [0x8]))) 697 {*call_value_0} (nil)
+    (nil))
+
+(insn 11 10 12 2 alltype.c:10 (set (reg:SI 59 [ i.0 ])
+        (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                (const_int -8 [0xfffffff8])) [0 i+0 S4 A64])) 44 {*movsi_1} (nil))
+
+(insn 12 11 13 2 alltype.c:10 (set (mem/c/i:QI (plus:SI (reg/f:SI 20 frame)
+                (const_int -1 [0xffffffff])) [0 al+0 S1 A8])
+        (subreg:QI (reg:SI 59 [ i.0 ]) 0)) 53 {*movqi_1} (nil))
+
+(insn 13 12 14 2 alltype.c:11 (set (reg:SI 60 [ i.1 ])
+        (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                (const_int -8 [0xfffffff8])) [0 i+0 S4 A64])) 44 {*movsi_1} (nil))
+
+(insn 14 13 15 2 alltype.c:11 (parallel [
+            (set (reg:SI 61 [ D.3787 ])
+                (and:SI (reg:SI 60 [ i.1 ])
+                    (const_int 65280 [0xff00])))
+            (clobber (reg:CC 17 flags))
+        ]) 289 {*andsi_1} (nil))
+
+(insn 15 14 16 2 alltype.c:11 (parallel [
+            (set (reg:SI 62 [ D.3788 ])
+                (ashiftrt:SI (reg:SI 61 [ D.3787 ])
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 17 flags))
+        ]) 398 {*ashrsi3_1} (nil))
+
+(insn 16 15 17 2 alltype.c:11 (set (mem/c/i:QI (plus:SI (reg/f:SI 20 frame)
+                (const_int -2 [0xfffffffe])) [0 ah+0 S1 A8])
+        (subreg:QI (reg:SI 62 [ D.3788 ]) 0)) 53 {*movqi_1} (nil))
+
+(insn 17 16 18 2 alltype.c:14 (set (reg:SI 63 [ i.2 ])
+        (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                (const_int -8 [0xfffffff8])) [0 i+0 S4 A64])) 44 {*movsi_1} (nil))
+
+(insn 18 17 19 2 alltype.c:14 (set (reg:QI 64 [ D.3790 ])
+        (subreg:QI (reg:SI 63 [ i.2 ]) 0)) 53 {*movqi_1} (nil))
+
+(insn 19 18 20 2 alltype.c:14 (set (mem/s/j:QI (plus:SI (reg/f:SI 20 frame)
+                (const_int -10 [0xfffffff6])) [0 ax+0 S1 A16])
+        (reg:QI 64 [ D.3790 ])) 53 {*movqi_1} (nil))
+
+(insn 20 19 21 2 alltype.c:15 (set (reg:SI 65 [ i.3 ])
+        (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                (const_int -8 [0xfffffff8])) [0 i+0 S4 A64])) 44 {*movsi_1} (nil))
+
+(insn 21 20 22 2 alltype.c:15 (parallel [
+            (set (reg:SI 66 [ D.3792 ])
+                (and:SI (reg:SI 65 [ i.3 ])
+                    (const_int 65280 [0xff00])))
+            (clobber (reg:CC 17 flags))
+        ]) 289 {*andsi_1} (nil))
+
+(insn 22 21 23 2 alltype.c:15 (parallel [
+            (set (reg:SI 67 [ D.3793 ])
+                (ashiftrt:SI (reg:SI 66 [ D.3792 ])
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 17 flags))
+        ]) 398 {*ashrsi3_1} (nil))
+
+(insn 23 22 24 2 alltype.c:15 (set (reg:QI 68 [ D.3794 ])
+        (subreg:QI (reg:SI 67 [ D.3793 ]) 0)) 53 {*movqi_1} (nil))
+
+(insn 24 23 25 2 alltype.c:15 (set (mem/s/j:QI (plus:SI (reg/f:SI 20 frame)
+                (const_int -9 [0xfffffff7])) [0 ax+1 S1 A8])
+        (reg:QI 68 [ D.3794 ])) 53 {*movqi_1} (nil))
+
+(insn 25 24 26 2 alltype.c:17 (set (reg:SI 69 [ D.3795 ])
+        (sign_extend:SI (mem/c/i:QI (plus:SI (reg/f:SI 20 frame)
+                    (const_int -1 [0xffffffff])) [0 al+0 S1 A8]))) 96 {extendqisi2} (nil))
+
+(insn 26 25 27 2 alltype.c:17 (set (reg:SI 70 [ D.3796 ])
+        (sign_extend:SI (mem/c/i:QI (plus:SI (reg/f:SI 20 frame)
+                    (const_int -2 [0xfffffffe])) [0 ah+0 S1 A8]))) 96 {extendqisi2} (nil))
+
+(insn 27 26 28 2 alltype.c:17 (set (reg:QI 71 [ D.3797 ])
+        (mem/s/j:QI (plus:SI (reg/f:SI 20 frame)
+                (const_int -10 [0xfffffff6])) [0 ax+0 S1 A16])) 53 {*movqi_1} (nil))
+
+(insn 28 27 29 2 alltype.c:17 (set (reg:SI 72 [ D.3798 ])
+        (sign_extend:SI (reg:QI 71 [ D.3797 ]))) 96 {extendqisi2} (nil))
+
+(insn 29 28 30 2 alltype.c:17 (set (reg:QI 73 [ D.3799 ])
+        (mem/s/j:QI (plus:SI (reg/f:SI 20 frame)
+                (const_int -9 [0xfffffff7])) [0 ax+1 S1 A8])) 53 {*movqi_1} (nil))
+
+(insn 30 29 31 2 alltype.c:17 (set (reg:SI 74 [ D.3800 ])
+        (sign_extend:SI (reg:QI 73 [ D.3799 ]))) 96 {extendqisi2} (nil))
+
+(insn 31 30 32 2 alltype.c:17 (set (reg:SI 75 [ i.4 ])
+        (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                (const_int -8 [0xfffffff8])) [0 i+0 S4 A64])) 44 {*movsi_1} (nil))
+
+(insn 32 31 33 2 alltype.c:17 (set (reg/f:SI 76 [ D.3802 ])
+        (symbol_ref/f:SI ("*.LC1") [flags 0x2]  <string_cst 0xb7605570>)) 44 {*movsi_1} (nil))
+
+(insn 33 32 34 2 alltype.c:17 (set (mem:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 20 [0x14])) [0 S4 A32])
+        (reg:SI 69 [ D.3795 ])) 44 {*movsi_1} (nil))
+
+(insn 34 33 35 2 alltype.c:17 (set (mem:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 16 [0x10])) [0 S4 A32])
+        (reg:SI 70 [ D.3796 ])) 44 {*movsi_1} (nil))
+
+(insn 35 34 36 2 alltype.c:17 (set (mem:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 12 [0xc])) [0 S4 A32])
+        (reg:SI 72 [ D.3798 ])) 44 {*movsi_1} (nil))
+
+(insn 36 35 37 2 alltype.c:17 (set (mem:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 8 [0x8])) [0 S4 A32])
+        (reg:SI 74 [ D.3800 ])) 44 {*movsi_1} (nil))
+
+(insn 37 36 38 2 alltype.c:17 (set (mem:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 75 [ i.4 ])) 44 {*movsi_1} (nil))
+
+(insn 38 37 39 2 alltype.c:17 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (reg/f:SI 76 [ D.3802 ])) 44 {*movsi_1} (nil))
+
+(call_insn 39 38 40 2 alltype.c:17 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x41]  <function_decl 0xb772bf00 printf>) [0 S1 A8])
+            (const_int 24 [0x18]))) 697 {*call_value_0} (nil)
+    (nil))
+
+(insn 40 39 41 2 alltype.c:18 (set (reg:SI 77 [ D.3803 ])
+        (const_int 0 [0x0])) 44 {*movsi_1} (nil))
+
+(insn 41 40 45 2 alltype.c:18 (set (reg:SI 78 [ <retval> ])
+        (reg:SI 77 [ D.3803 ])) 44 {*movsi_1} (nil))
+
+(insn 45 41 48 2 alltype.c:19 (set (reg/i:SI 0 ax)
+        (reg:SI 78 [ <retval> ])) 44 {*movsi_1} (nil))
+
+(insn 48 45 0 2 alltype.c:19 (use (reg/i:SI 0 ax)) -1 (nil))

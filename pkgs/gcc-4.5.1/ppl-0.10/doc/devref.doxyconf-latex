@@ -1,0 +1,486 @@
+# Doxyfile 1.5.7.1
+
+#---------------------------------------------------------------------------
+# Project related configuration options
+#---------------------------------------------------------------------------
+DOXYFILE_ENCODING      = UTF-8
+PROJECT_NAME           = PPL
+PROJECT_NUMBER         = 0.10
+OUTPUT_DIRECTORY       = .
+CREATE_SUBDIRS         = NO
+OUTPUT_LANGUAGE        = English
+BRIEF_MEMBER_DESC      = YES
+REPEAT_BRIEF           = YES
+ABBREVIATE_BRIEF       = 
+ALWAYS_DETAILED_SEC    = NO
+INLINE_INHERITED_MEMB  = NO
+FULL_PATH_NAMES        = NO
+STRIP_FROM_PATH        = 
+STRIP_FROM_INC_PATH    = 
+SHORT_NAMES            = NO
+JAVADOC_AUTOBRIEF      = NO
+QT_AUTOBRIEF           = NO
+MULTILINE_CPP_IS_BRIEF = NO
+INHERIT_DOCS           = YES
+SEPARATE_MEMBER_PAGES  = NO
+TAB_SIZE               = 8
+ALIASES                = 
+OPTIMIZE_OUTPUT_FOR_C  = NO
+OPTIMIZE_OUTPUT_JAVA   = NO
+OPTIMIZE_FOR_FORTRAN   = NO
+OPTIMIZE_OUTPUT_VHDL   = NO
+BUILTIN_STL_SUPPORT    = NO
+CPP_CLI_SUPPORT        = NO
+SIP_SUPPORT            = NO
+IDL_PROPERTY_SUPPORT   = YES
+DISTRIBUTE_GROUP_DOC   = NO
+SUBGROUPING            = YES
+TYPEDEF_HIDES_STRUCT   = NO
+SYMBOL_CACHE_SIZE      = 0
+#---------------------------------------------------------------------------
+# Build related configuration options
+#---------------------------------------------------------------------------
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+EXTRACT_LOCAL_METHODS  = NO
+EXTRACT_ANON_NSPACES   = NO
+HIDE_UNDOC_MEMBERS     = NO
+HIDE_UNDOC_CLASSES     = NO
+HIDE_FRIEND_COMPOUNDS  = NO
+HIDE_IN_BODY_DOCS      = NO
+INTERNAL_DOCS          = YES
+CASE_SENSE_NAMES       = YES
+HIDE_SCOPE_NAMES       = NO
+SHOW_INCLUDE_FILES     = YES
+INLINE_INFO            = YES
+SORT_MEMBER_DOCS       = YES
+SORT_BRIEF_DOCS        = NO
+SORT_GROUP_NAMES       = NO
+SORT_BY_SCOPE_NAME     = NO
+GENERATE_TODOLIST      = YES
+GENERATE_TESTLIST      = YES
+GENERATE_BUGLIST       = YES
+GENERATE_DEPRECATEDLIST= YES
+ENABLED_SECTIONS       = Include_Implementation_Details
+MAX_INITIALIZER_LINES  = 5
+SHOW_USED_FILES        = YES
+SHOW_DIRECTORIES       = NO
+SHOW_FILES             = YES
+SHOW_NAMESPACES        = YES
+FILE_VERSION_FILTER    = 
+LAYOUT_FILE            = 
+#---------------------------------------------------------------------------
+# configuration options related to warning and progress messages
+#---------------------------------------------------------------------------
+QUIET                  = YES
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = NO
+WARN_FORMAT            = "$file:$line: $text "
+WARN_LOGFILE           = 
+#---------------------------------------------------------------------------
+# configuration options related to the input files
+#---------------------------------------------------------------------------
+INPUT                  = ./definitions.dox \
+                         ./../src/namespaces.hh \
+                         ../src/version.hh \
+                         ./../src/version.cc \
+                         ./../src/meta_programming.hh \
+                         ./../src/Float.defs.hh \
+                         ./../src/Float.inlines.hh \
+                         ./../src/Float.cc \
+                         ./../src/Checked_Number.types.hh \
+                         ./../src/Checked_Number.defs.hh \
+                         ./../src/Checked_Number.inlines.hh \
+                         ./../src/Checked_Number.cc \
+                         ./../src/GMP_Integer.types.hh \
+                         ./../src/GMP_Integer.defs.hh \
+                         ./../src/GMP_Integer.inlines.hh \
+                         ./../src/Coefficient_traits_template.hh \
+                         ./../src/Coefficient.types.hh \
+                         ./../src/Coefficient.defs.hh \
+                         ./../src/Coefficient.inlines.hh \
+                         ./../src/Coefficient.cc \
+                         ./../src/checked.defs.hh \
+                         ./../src/checked.inlines.hh \
+                         ./../src/checked_float.inlines.hh \
+                         ./../src/checked_int.inlines.hh \
+                         ./../src/checked_mpq.inlines.hh \
+                         ./../src/checked_mpz.inlines.hh \
+                         ./../src/checked.cc \
+                         ./../src/Init.types.hh \
+                         ./../src/Init.defs.hh \
+                         ./../src/Init.inlines.hh \
+                         ./../src/Init.cc \
+                         ./../src/initializer.hh \
+                         ./../src/globals.types.hh \
+                         ./../src/globals.defs.hh \
+                         ./../src/globals.inlines.hh \
+                         ./../src/globals.cc \
+                         ./../src/math_utilities.defs.hh \
+                         ./../src/math_utilities.inlines.hh \
+                         ./../src/distances.types.hh \
+                         ./../src/distances.defs.hh \
+                         ./../src/distances.inlines.hh \
+                         ./../src/stdiobuf.types.hh \
+                         ./../src/stdiobuf.defs.hh \
+                         ./../src/stdiobuf.inlines.hh \
+                         ./../src/stdiobuf.cc \
+                         ./../src/Topology.hh \
+                         ./../src/Row.types.hh \
+                         ./../src/Row.defs.hh \
+                         ./../src/Row.inlines.hh \
+                         ./../src/Row.cc \
+                         ./../src/Matrix.types.hh \
+                         ./../src/Matrix.defs.hh \
+                         ./../src/Matrix.inlines.hh \
+                         ./../src/Matrix.cc \
+                         ./../src/Linear_Row.types.hh \
+                         ./../src/Linear_Row.defs.hh \
+                         ./../src/Linear_Row.inlines.hh \
+                         ./../src/Linear_Row.cc \
+                         ./../src/Linear_System.types.hh \
+                         ./../src/Linear_System.defs.hh \
+                         ./../src/Linear_System.inlines.hh \
+                         ./../src/Linear_System.cc \
+                         ./../src/MIP_Problem.types.hh \
+                         ./../src/MIP_Problem.defs.hh \
+                         ./../src/MIP_Problem.inlines.hh \
+                         ./../src/MIP_Problem.cc \
+                         ./../src/Bit_Row.types.hh \
+                         ./../src/Bit_Row.defs.hh \
+                         ./../src/Bit_Row.inlines.hh \
+                         ./../src/Bit_Row.cc \
+                         ./../src/Bit_Matrix.types.hh \
+                         ./../src/Bit_Matrix.defs.hh \
+                         ./../src/Bit_Matrix.inlines.hh \
+                         ./../src/Bit_Matrix.cc \
+                         ./../src/Variable.types.hh \
+                         ./../src/Variable.defs.hh \
+                         ./../src/Variable.inlines.hh \
+                         ./../src/Variable.cc \
+                         ./../src/Variables_Set.types.hh \
+                         ./../src/Variables_Set.defs.hh \
+                         ./../src/Variables_Set.inlines.hh \
+                         ./../src/Variables_Set.cc \
+                         ./../src/Linear_Expression.types.hh \
+                         ./../src/Linear_Expression.defs.hh \
+                         ./../src/Linear_Expression.inlines.hh \
+                         ./../src/Linear_Expression.cc \
+                         ./../src/Constraint.types.hh \
+                         ./../src/Constraint.defs.hh \
+                         ./../src/Constraint.inlines.hh \
+                         ./../src/Constraint.cc \
+                         ./../src/Congruence.types.hh \
+                         ./../src/Congruence.defs.hh \
+                         ./../src/Congruence.inlines.hh \
+                         ./../src/Congruence.cc \
+                         ./../src/Generator.types.hh \
+                         ./../src/Generator.defs.hh \
+                         ./../src/Generator.inlines.hh \
+                         ./../src/Generator.cc \
+                         ./../src/Grid_Generator.types.hh \
+                         ./../src/Grid_Generator.defs.hh \
+                         ./../src/Grid_Generator.inlines.hh \
+                         ./../src/Grid_Generator.cc \
+                         ./../src/Constraint_System.types.hh \
+                         ./../src/Constraint_System.defs.hh \
+                         ./../src/Constraint_System.inlines.hh \
+                         ./../src/Constraint_System.cc \
+                         ./../src/Congruence_System.types.hh \
+                         ./../src/Congruence_System.defs.hh \
+                         ./../src/Congruence_System.inlines.hh \
+                         ./../src/Congruence_System.cc \
+                         ./../src/Generator_System.defs.hh \
+                         ./../src/Generator_System.types.hh \
+                         ./../src/Generator_System.inlines.hh \
+                         ./../src/Generator_System.cc \
+                         ./../src/Grid_Generator_System.defs.hh \
+                         ./../src/Grid_Generator_System.types.hh \
+                         ./../src/Grid_Generator_System.inlines.hh \
+                         ./../src/Grid_Generator_System.cc \
+                         ./../src/Scalar_Products.types.hh \
+                         ./../src/Scalar_Products.defs.hh \
+                         ./../src/Scalar_Products.inlines.hh \
+                         ./../src/Scalar_Products.cc \
+                         ./../src/Ph_Status.idefs.hh \
+                         ./../src/Ph_Status.inlines.hh \
+                         ./../src/Ph_Status.cc \
+                         ./../src/Polyhedron.types.hh \
+                         ./../src/Polyhedron.defs.hh \
+                         ./../src/Polyhedron.inlines.hh \
+                         ./../src/Polyhedron.templates.hh \
+                         ./../src/Polyhedron_public.cc \
+                         ./../src/Polyhedron_nonpublic.cc \
+                         ./../src/Polyhedron_widenings.cc \
+                         ./../src/Polyhedron_chdims.cc \
+                         ./../src/conversion.cc \
+                         ./../src/minimize.cc \
+                         ./../src/simplify.cc \
+                         ./../src/Grid.types.hh \
+                         ./../src/Grid.defs.hh \
+                         ./../src/Grid.inlines.hh \
+                         ./../src/Grid.templates.hh \
+                         ./../src/Grid_public.cc \
+                         ./../src/Grid_nonpublic.cc \
+                         ./../src/Grid_conversion.cc \
+                         ./../src/Grid_simplify.cc \
+                         ./../src/Grid_widenings.cc \
+                         ./../src/Grid_chdims.cc \
+                         ./../src/Poly_Con_Relation.types.hh \
+                         ./../src/Poly_Con_Relation.defs.hh \
+                         ./../src/Poly_Con_Relation.inlines.hh \
+                         ./../src/Poly_Con_Relation.cc \
+                         ./../src/Poly_Gen_Relation.types.hh \
+                         ./../src/Poly_Gen_Relation.defs.hh \
+                         ./../src/Poly_Gen_Relation.inlines.hh \
+                         ./../src/Poly_Gen_Relation.cc \
+                         ./../src/Interval_Restriction.defs.hh \
+                         ./../src/Interval_Info.types.hh \
+                         ./../src/Interval_Info.defs.hh \
+                         ./../src/Interval_Info.inlines.hh \
+                         ./../src/Interval.types.hh \
+                         ./../src/Interval.defs.hh \
+                         ./../src/Interval.inlines.hh \
+                         ./../src/C_Polyhedron.types.hh \
+                         ./../src/C_Polyhedron.defs.hh \
+                         ./../src/C_Polyhedron.inlines.hh \
+                         ./../src/C_Polyhedron.cc \
+                         ./../src/NNC_Polyhedron.types.hh \
+                         ./../src/NNC_Polyhedron.defs.hh \
+                         ./../src/NNC_Polyhedron.inlines.hh \
+                         ./../src/NNC_Polyhedron.cc \
+                         ./../src/Widening_Function.types.hh \
+                         ./../src/Widening_Function.defs.hh \
+                         ./../src/Widening_Function.inlines.hh \
+                         ./../src/BHRZ03_Certificate.types.hh \
+                         ./../src/BHRZ03_Certificate.defs.hh \
+                         ./../src/BHRZ03_Certificate.inlines.hh \
+                         ./../src/BHRZ03_Certificate.cc \
+                         ./../src/H79_Certificate.types.hh \
+                         ./../src/H79_Certificate.defs.hh \
+                         ./../src/H79_Certificate.inlines.hh \
+                         ./../src/H79_Certificate.cc \
+                         ./../src/Grid_Certificate.types.hh \
+                         ./../src/Grid_Certificate.defs.hh \
+                         ./../src/Grid_Certificate.inlines.hh \
+                         ./../src/Grid_Certificate.cc \
+                         ./../src/Determinate.defs.hh \
+                         ./../src/Determinate.inlines.hh \
+                         ./../src/iterator_to_const.types.hh \
+                         ./../src/iterator_to_const.defs.hh \
+                         ./../src/iterator_to_const.inlines.hh \
+                         ./../src/Powerset.types.hh \
+                         ./../src/Powerset.defs.hh \
+                         ./../src/Powerset.inlines.hh \
+                         ./../src/Powerset.templates.hh \
+                         ./../src/Pointset_Powerset.types.hh \
+                         ./../src/Pointset_Powerset.defs.hh \
+                         ./../src/Pointset_Powerset.inlines.hh \
+                         ./../src/Pointset_Powerset.templates.hh \
+                         ./../src/Pointset_Powerset.cc \
+                         ./../src/Partially_Reduced_Product.types.hh \
+                         ./../src/Partially_Reduced_Product.defs.hh \
+                         ./../src/Partially_Reduced_Product.inlines.hh \
+                         ./../src/Partially_Reduced_Product.templates.hh \
+                         ./../src/algorithms.hh \
+                         ./../src/Box.types.hh \
+                         ./../src/Box.defs.hh \
+                         ./../src/Box.inlines.hh \
+                         ./../src/Box.templates.hh \
+                         ./../src/Box.cc \
+                         ./../src/DB_Row.types.hh \
+                         ./../src/DB_Row.defs.hh \
+                         ./../src/DB_Row.inlines.hh \
+                         ./../src/DB_Row.templates.hh \
+                         ./../src/DB_Matrix.types.hh \
+                         ./../src/DB_Matrix.defs.hh \
+                         ./../src/DB_Matrix.inlines.hh \
+                         ./../src/DB_Matrix.templates.hh \
+                         ./../src/BD_Shape.types.hh \
+                         ./../src/BD_Shape.defs.hh \
+                         ./../src/BD_Shape.inlines.hh \
+                         ./../src/BD_Shape.templates.hh \
+                         ./../src/BD_Shape.cc \
+                         ./../src/OR_Matrix.types.hh \
+                         ./../src/OR_Matrix.defs.hh \
+                         ./../src/OR_Matrix.inlines.hh \
+                         ./../src/OR_Matrix.templates.hh \
+                         ./../src/Octagonal_Shape.types.hh \
+                         ./../src/Octagonal_Shape.defs.hh \
+                         ./../src/Octagonal_Shape.inlines.hh \
+                         ./../src/Octagonal_Shape.templates.hh \
+                         ./../src/Octagonal_Shape.cc \
+                         ./gpl.dox \
+                         ./fdl.dox
+INPUT_ENCODING         = UTF-8
+FILE_PATTERNS          = *.hh \
+                         *.cc \
+                         *.dox
+RECURSIVE              = YES
+EXCLUDE                = 
+EXCLUDE_SYMLINKS       = NO
+EXCLUDE_PATTERNS       = 
+EXCLUDE_SYMBOLS        = 
+EXAMPLE_PATH           = 
+EXAMPLE_PATTERNS       = 
+EXAMPLE_RECURSIVE      = NO
+IMAGE_PATH             = 
+INPUT_FILTER           = 
+FILTER_PATTERNS        = 
+FILTER_SOURCE_FILES    = NO
+#---------------------------------------------------------------------------
+# configuration options related to source browsing
+#---------------------------------------------------------------------------
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+STRIP_CODE_COMMENTS    = YES
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+REFERENCES_LINK_SOURCE = YES
+USE_HTAGS              = NO
+VERBATIM_HEADERS       = YES
+#---------------------------------------------------------------------------
+# configuration options related to the alphabetical class index
+#---------------------------------------------------------------------------
+ALPHABETICAL_INDEX     = NO
+COLS_IN_ALPHA_INDEX    = 5
+IGNORE_PREFIX          = 
+#---------------------------------------------------------------------------
+# configuration options related to the HTML output
+#---------------------------------------------------------------------------
+GENERATE_HTML          = NO
+HTML_OUTPUT            = ppl-devref-0.10-html
+HTML_FILE_EXTENSION    = .html
+HTML_HEADER            = 
+HTML_FOOTER            = 
+HTML_STYLESHEET        = 
+HTML_ALIGN_MEMBERS     = YES
+HTML_DYNAMIC_SECTIONS  = NO
+GENERATE_DOCSET        = NO
+DOCSET_FEEDNAME        = "Doxygen generated docs"
+DOCSET_BUNDLE_ID       = org.doxygen.Project
+GENERATE_HTMLHELP      = NO
+CHM_FILE               = 
+HHC_LOCATION           = 
+GENERATE_CHI           = NO
+CHM_INDEX_ENCODING     = 
+BINARY_TOC             = NO
+TOC_EXPAND             = NO
+GENERATE_QHP           = NO
+QCH_FILE               = 
+QHP_NAMESPACE          = org.doxygen.Project
+QHP_VIRTUAL_FOLDER     = doc
+QHG_LOCATION           = 
+DISABLE_INDEX          = NO
+ENUM_VALUES_PER_LINE   = 4
+GENERATE_TREEVIEW      = YES
+TREEVIEW_WIDTH         = 250
+FORMULA_FONTSIZE       = 10
+#---------------------------------------------------------------------------
+# configuration options related to the LaTeX output
+#---------------------------------------------------------------------------
+GENERATE_LATEX         = YES
+LATEX_OUTPUT           = devref.latex-dir
+LATEX_CMD_NAME         = latex
+MAKEINDEX_CMD_NAME     = makeindex
+COMPACT_LATEX          = YES
+PAPER_TYPE             = a4wide
+EXTRA_PACKAGES         = ppl
+LATEX_HEADER           = ./devref.tex
+PDF_HYPERLINKS         = YES
+USE_PDFLATEX           = YES
+LATEX_BATCHMODE        = YES
+LATEX_HIDE_INDICES     = NO
+#---------------------------------------------------------------------------
+# configuration options related to the RTF output
+#---------------------------------------------------------------------------
+GENERATE_RTF           = NO
+RTF_OUTPUT             = rtf
+COMPACT_RTF            = NO
+RTF_HYPERLINKS         = YES
+RTF_STYLESHEET_FILE    = 
+RTF_EXTENSIONS_FILE    = 
+#---------------------------------------------------------------------------
+# configuration options related to the man page output
+#---------------------------------------------------------------------------
+GENERATE_MAN           = NO
+MAN_OUTPUT             = man
+MAN_EXTENSION          = .3
+MAN_LINKS              = NO
+#---------------------------------------------------------------------------
+# configuration options related to the XML output
+#---------------------------------------------------------------------------
+GENERATE_XML           = NO
+XML_OUTPUT             = xml
+XML_SCHEMA             = 
+XML_DTD                = 
+XML_PROGRAMLISTING     = YES
+#---------------------------------------------------------------------------
+# configuration options for the AutoGen Definitions output
+#---------------------------------------------------------------------------
+GENERATE_AUTOGEN_DEF   = NO
+#---------------------------------------------------------------------------
+# configuration options related to the Perl module output
+#---------------------------------------------------------------------------
+GENERATE_PERLMOD       = NO
+PERLMOD_LATEX          = NO
+PERLMOD_PRETTY         = YES
+PERLMOD_MAKEVAR_PREFIX = 
+#---------------------------------------------------------------------------
+# Configuration options related to the preprocessor   
+#---------------------------------------------------------------------------
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = YES
+SEARCH_INCLUDES        = YES
+INCLUDE_PATH           = 
+INCLUDE_FILE_PATTERNS  = 
+PREDEFINED             = PPL_DOXYGEN_INCLUDE_IMPLEMENTATION_DETAILS
+EXPAND_AS_DEFINED      = PPL_OUTPUT_DECLARATIONS
+SKIP_FUNCTION_MACROS   = YES
+#---------------------------------------------------------------------------
+# Configuration::additions related to external references   
+#---------------------------------------------------------------------------
+TAGFILES               = 
+GENERATE_TAGFILE       = 
+ALLEXTERNALS           = NO
+EXTERNAL_GROUPS        = YES
+PERL_PATH              = /usr/bin/perl
+#---------------------------------------------------------------------------
+# Configuration options related to the dot tool   
+#---------------------------------------------------------------------------
+CLASS_DIAGRAMS         = YES
+MSCGEN_PATH            = 
+HIDE_UNDOC_RELATIONS   = YES
+HAVE_DOT               = YES
+DOT_FONTNAME           = FreeSans
+DOT_FONTSIZE           = 10
+DOT_FONTPATH           = 
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+GROUP_GRAPHS           = YES
+UML_LOOK               = NO
+TEMPLATE_RELATIONS     = YES
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+CALL_GRAPH             = NO
+CALLER_GRAPH           = NO
+GRAPHICAL_HIERARCHY    = YES
+DIRECTORY_GRAPH        = NO
+DOT_IMAGE_FORMAT       = png
+DOT_PATH               = 
+DOTFILE_DIRS           = 
+DOT_GRAPH_MAX_NODES    = 50
+MAX_DOT_GRAPH_DEPTH    = 0
+DOT_TRANSPARENT        = NO
+DOT_MULTI_TARGETS      = NO
+GENERATE_LEGEND        = YES
+DOT_CLEANUP            = YES
+#---------------------------------------------------------------------------
+# Configuration::additions related to the search engine   
+#---------------------------------------------------------------------------
+SEARCHENGINE           = NO

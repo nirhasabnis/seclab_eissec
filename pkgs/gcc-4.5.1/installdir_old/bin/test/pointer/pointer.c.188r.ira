@@ -1,0 +1,149 @@
+
+;; Function main (main)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+df_worklist_dataflow_doublequeue:n_basic_blocks 3 n_edges 2 count 3 (    1)
+Building IRA IR
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+
+Pass 0 for finding pseudo/allocno costs
+
+    r63: preferred GENERAL_REGS, alternative NO_REGS, cover GENERAL_REGS
+    a4 (r63,l0) best GENERAL_REGS, cover GENERAL_REGS
+    r62: preferred GENERAL_REGS, alternative NO_REGS, cover GENERAL_REGS
+    a5 (r62,l0) best GENERAL_REGS, cover GENERAL_REGS
+    r61: preferred AREG, alternative GENERAL_REGS, cover GENERAL_REGS
+    a0 (r61,l0) best AREG, cover GENERAL_REGS
+    r60: preferred GENERAL_REGS, alternative NO_REGS, cover GENERAL_REGS
+    a1 (r60,l0) best GENERAL_REGS, cover GENERAL_REGS
+    r59: preferred GENERAL_REGS, alternative NO_REGS, cover GENERAL_REGS
+    a2 (r59,l0) best GENERAL_REGS, cover GENERAL_REGS
+    r58: preferred GENERAL_REGS, alternative NO_REGS, cover GENERAL_REGS
+    a3 (r58,l0) best GENERAL_REGS, cover GENERAL_REGS
+
+  a0(r61,l0) costs: AREG:-1,-1 DREG:0,0 CREG:0,0 BREG:0,0 SIREG:0,0 DIREG:0,0 AD_REGS:0,0 CLOBBERED_REGS:0,0 Q_REGS:0,0 NON_Q_REGS:0,0 GENERAL_REGS:0,0 MEM:7
+  a1(r60,l0) costs: AREG:0,0 DREG:0,0 CREG:0,0 BREG:0,0 SIREG:0,0 DIREG:0,0 AD_REGS:0,0 CLOBBERED_REGS:0,0 Q_REGS:0,0 NON_Q_REGS:0,0 GENERAL_REGS:0,0 MEM:7
+  a2(r59,l0) costs: AREG:0,0 DREG:0,0 CREG:0,0 BREG:0,0 SIREG:0,0 DIREG:0,0 AD_REGS:0,0 CLOBBERED_REGS:0,0 Q_REGS:0,0 NON_Q_REGS:0,0 GENERAL_REGS:0,0 MEM:8
+  a3(r58,l0) costs: AREG:0,0 DREG:0,0 CREG:0,0 BREG:0,0 SIREG:0,0 DIREG:0,0 AD_REGS:0,0 CLOBBERED_REGS:0,0 Q_REGS:0,0 NON_Q_REGS:0,0 GENERAL_REGS:0,0 MEM:8
+  a4(r63,l0) costs: AREG:0,0 DREG:0,0 CREG:0,0 BREG:0,0 SIREG:0,0 DIREG:0,0 AD_REGS:0,0 CLOBBERED_REGS:0,0 Q_REGS:0,0 NON_Q_REGS:0,0 GENERAL_REGS:0,0 MEM:8
+  a5(r62,l0) costs: AREG:0,0 DREG:0,0 CREG:0,0 BREG:0,0 SIREG:0,0 DIREG:0,0 AD_REGS:0,0 CLOBBERED_REGS:0,0 Q_REGS:0,0 NON_Q_REGS:0,0 GENERAL_REGS:0,0 MEM:8
+
+   Insn 22(l0): point = 0
+   Insn 19(l0): point = 2
+   Insn 15(l0): point = 4
+   Insn 14(l0): point = 6
+   Insn 13(l0): point = 8
+   Insn 12(l0): point = 10
+   Insn 11(l0): point = 12
+   Insn 10(l0): point = 14
+   Insn 9(l0): point = 16
+   Insn 8(l0): point = 18
+   Insn 7(l0): point = 20
+   Insn 6(l0): point = 22
+   Insn 5(l0): point = 24
+ a0(r61): [3..4]
+ a1(r60): [5..6]
+ a2(r59): [11..14]
+ a3(r58): [13..16]
+ a4(r63): [17..18]
+ a5(r62): [21..22]
+Compressing live ranges: from 27 to 12 - 44%
+Ranges after the compression:
+ a0(r61): [0..1]
+ a1(r60): [2..3]
+ a2(r59): [4..6]
+ a3(r58): [5..7]
+ a4(r63): [8..9]
+ a5(r62): [10..11]
+  regions=1, blocks=3, points=12
+    allocnos=6, copies=0, conflicts=0, ranges=6
+Disposition:
+    3:r58  l0     1    2:r59  l0     0    1:r60  l0     0    0:r61  l0     0
+    5:r62  l0     0    4:r63  l0     0
++++Costs: overall -1, reg -1, mem 0, ld 0, st 0, move 0
++++       move loops 0, new jumps 0
+insn=5, live_throughout: 7, dead_or_set: 
+insn=6, live_throughout: 7, dead_or_set: 62
+insn=7, live_throughout: 7, dead_or_set: 62
+insn=8, live_throughout: 7, dead_or_set: 63
+insn=9, live_throughout: 7, dead_or_set: 58, 63
+insn=10, live_throughout: 7, 58, dead_or_set: 59
+insn=11, live_throughout: 7, 59, dead_or_set: 58
+insn=12, live_throughout: 7, dead_or_set: 59
+insn=13, live_throughout: 7, dead_or_set: 0
+insn=14, live_throughout: 7, dead_or_set: 60
+insn=15, live_throughout: 7, dead_or_set: 60, 61
+insn=19, live_throughout: 7, dead_or_set: 0, 61
+insn=22, live_throughout: 0, 7, dead_or_set: 
+changing reg in insn 9
+changing reg in insn 11
+changing reg in insn 10
+changing reg in insn 12
+changing reg in insn 14
+changing reg in insn 15
+changing reg in insn 15
+changing reg in insn 19
+changing reg in insn 6
+changing reg in insn 7
+changing reg in insn 8
+changing reg in insn 9
+deleting insn with uid = 15.
+deleting insn with uid = 19.
+starting the processing of deferred insns
+ending the processing of deferred insns
+verify found no changes in insn with uid = 13.
+(note 1 0 3 NOTE_INSN_DELETED)
+
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 5 2 6 2 pointer.c:7 (set (mem/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 24 [0x18])) [0 i+0 S4 A64])
+        (const_int 100 [0x64])) 44 {*movsi_1} (nil))
+
+(insn 6 5 7 2 pointer.c:8 (parallel [
+            (set (reg:SI 0 ax [62])
+                (plus:SI (reg/f:SI 7 sp)
+                    (const_int 24 [0x18])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (nil))
+
+(insn 7 6 8 2 pointer.c:8 (set (mem/f/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 28 [0x1c])) [0 p+0 S4 A32])
+        (reg:SI 0 ax [62])) 44 {*movsi_1} (expr_list:REG_EQUAL (plus:SI (reg/f:SI 7 sp)
+            (const_int 24 [0x18]))
+        (nil)))
+
+(insn 8 7 9 2 pointer.c:9 (set (reg/f:SI 0 ax [63])
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 28 [0x1c])) [0 p+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 9 8 10 2 pointer.c:9 (set (reg:SI 1 dx [orig:58 D.3782 ] [58])
+        (mem:SI (reg/f:SI 0 ax [63]) [0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 10 9 11 2 pointer.c:9 (set (reg/f:SI 0 ax [orig:59 D.3783 ] [59])
+        (symbol_ref/f:SI ("*.LC0") [flags 0x2]  <string_cst 0xb751df90>)) 44 {*movsi_1} (nil))
+
+(insn 11 10 12 2 pointer.c:9 (set (mem:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 1 dx [orig:58 D.3782 ] [58])) 44 {*movsi_1} (nil))
+
+(insn 12 11 13 2 pointer.c:9 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (reg/f:SI 0 ax [orig:59 D.3783 ] [59])) 44 {*movsi_1} (nil))
+
+(call_insn 13 12 14 2 pointer.c:9 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x41]  <function_decl 0xb7669f00 printf>) [0 S1 A8])
+            (const_int 8 [0x8]))) 697 {*call_value_0} (nil)
+    (nil))
+
+(insn 14 13 22 2 pointer.c:10 (set (reg:SI 0 ax [orig:60 D.3784 ] [60])
+        (const_int 0 [0x0])) 44 {*movsi_1} (nil))
+
+(insn 22 14 25 2 pointer.c:11 (use (reg/i:SI 0 ax)) -1 (nil))
+
+(note 25 22 0 NOTE_INSN_DELETED)

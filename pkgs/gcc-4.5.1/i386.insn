@@ -1,0 +1,1085 @@
+adc{b}	{%2, %0|%0, %2}
+adc{l}	{%2, %0|%0, %2}
+adc{q}	{%2, %0|%0, %2}
+adc{w}	{%2, %0|%0, %2}
+add{b}	%0, %0
+add{b}	{%1, %0|%0, %1}
+add{b}	{%2, %0|%0, %2}
+add{b}	{%2, %h0|%h0, %2}
+add{b}	{%h2, %h0|%h0, %h2}
+add{l}	%0, %0
+add{l}	{%1, %0|%0, %1}
+add{l}	{%2, %0|%0, %2}
+add{l}	{%%gs:0, %0|%0, DWORD PTR gs:0}
+add{l}	%k0, %k0
+add{l}	{%k2, %k0|%k0, %k2}
+addpd	{%2, %0|%0, %2}
+addps	{%2, %0|%0, %2}
+add{q}	{%1, %0|%0, %1}
+add{q}	{%2, %0|%0, %2}
+addsd	{%2, %0|%0, %2}
+addss	{%2, %0|%0, %2}
+addsubpd	{%2, %0|%0, %2}
+addsubps	{%2, %0|%0, %2}
+add{w}	%0, %0
+add{w}	{%2, %0|%0, %2}
+aesdec	{%2, %0|%0, %2}
+aesdeclast	{%2, %0|%0, %2}
+aesenc	{%2, %0|%0, %2}
+aesenclast	{%2, %0|%0, %2}
+and{b}	{%1, %0|%0, %1}
+and{b}	{%2, %0|%0, %2}
+and{b}	{%2, %h0|%h0, %2}
+and{b}	{%h2, %h0|%h0, %h2}
+and{l}	{%2, %0|%0, %2}
+and{l}	{%2, %k0|%k0, %2}
+and{l}	{%k2, %k0|%k0, %k2}
+andnpd	{%2, %0|%0, %2}
+andnps	{%2, %0|%0, %2}
+andpd	{%2, %0|%0, %2}
+andps	{%2, %0|%0, %2}
+and{w}	{%2, %0|%0, %2}
+blendpd	{%3, %2, %0|%0, %2, %3}
+blendps	{%3, %2, %0|%0, %2, %3}
+blendvpd	{%3, %2, %0|%0, %2, %3}
+blendvps	{%3, %2, %0|%0, %2, %3}
+bsf{l}	{%1, %0|%0, %1}
+bsr{l}	{%1, %0|%0, %1}
+bsr{w}	{%1, %0|%0, %1}
+bswap	%0
+bt{l}	{%1, %0|%0, %1}
+call	%A0
+call	%A1
+call	___chkstk
+call	%P0
+call	%P1
+	call	%P2
+	call	%P3
+{cbtw|cbw}
+clflush	%a0
+{cltd|cdq}
+cmov%O2%C1	{%2, %0|%0, %2}
+cmov%O2%c1	{%3, %0|%0, %3}
+cmp{b}	{%1, %0|%0, %1}
+cmp{b}	{%1, %h0|%h0, %1}
+cmp{b}	{%h1, %0|%0, %h1}
+cmp{b}	{%h1, %h0|%h0, %h1}
+cmp%D1sd	{%3, %0|%0, %3}
+cmp%D1ss	{%3, %0|%0, %3}
+cmp%D3pd	{%2, %0|%0, %2}
+cmp%D3ps	{%2, %0|%0, %2}
+cmp%D3sd	{%2, %0|%0, %2}
+cmp%D3ss	{%2, %0|%0, %2}
+cmp{l}	{%1, %0|%0, %1}
+cmp{q}	{%1, %0|%0, %1}
+cmp{w}	{%1, %0|%0, %1}
+crc32{b}	{%2, %0|%0, %2}
+crc32{l}	{%2, %0|%0, %2}
+crc32{w}	{%2, %0|%0, %2}
+cvtdq2ps	{%1, %0|%0, %1}
+cvtpd2dq	{%1, %0|%0, %1}
+cvtpd2pi	{%1, %0|%0, %1}
+cvtpd2ps	{%1, %0|%0, %1}
+cvtpi2pd	{%1, %0|%0, %1}
+cvtpi2ps	{%2, %0|%0, %2}
+cvtps2dq	{%1, %0|%0, %1}
+cvtps2pi	{%1, %0|%0, %1}
+cvtsd2ss	{%2, %0|%0, %2}
+cvtsi2sd	{%2, %0|%0, %2}
+cvtsi2ss	{%2, %0|%0, %2}
+cvtss2sd	{%2, %0|%0, %2}
+cvttpd2dq	{%1, %0|%0, %1}
+cvttpd2pi	{%1, %0|%0, %1}
+cvttps2dq	{%1, %0|%0, %1}
+cvttps2pi	{%1, %0|%0, %1}
+{cwtl|cwde}
+dec{b}	%0
+dec{b}	%h0
+dec{l}	%0
+dec{l}	%k0
+dec{q}	%0
+dec{w}	%0
+div{b}	%2
+div{l}	%3
+divpd	{%2, %0|%0, %2}
+divps	{%2, %0|%0, %2}
+divsd	{%2, %0|%0, %2}
+divss	{%2, %0|%0, %2}
+div{w}	%3
+dppd	{%3, %2, %0|%0, %2, %3}
+dpps	{%3, %2, %0|%0, %2, %3}
+emms
+extrq	{%2, %0|%0, %2}
+extrq	{%3, %2, %0|%0, %2, %3}
+f2xm1
+fabs
+fchs
+	fclex
+fcmov%F1	{%2, %0|%0, %2}
+fcmov%f1	{%3, %0|%0, %3}
+fcos
+femms
+fild%Z1	%1
+fldcw	%0
+	fldcw	%2
+	fldcw	%2
+fldcw	%3
+fldcw	%3
+fnstcw	%0
+	fnstsw	%0
+fnstsw	%0
+fpatan
+fprem
+fprem1
+fptan
+frndint
+	frndint
+	frndint
+fscale
+fsin
+fsincos
+fsqrt
+fxam
+fxch	%0
+fxch	%1
+fxtract
+fyl2x
+fyl2xp1
+haddpd	{%2, %0|%0, %2}
+haddps	{%2, %0|%0, %2}
+hsubpd	{%2, %0|%0, %2}
+hsubps	{%2, %0|%0, %2}
+idiv{b}	%2
+idiv{l}	%3
+idiv{w}	%3
+imul{b}	%2
+imul{l}	%2
+imul{l}	{%2, %0|%0, %2}
+imul{l}	{%2, %1, %0|%0, %1, %2}
+imul{w}	{%2, %0|%0, %2}
+imul{w}	{%2, %1, %0|%0, %1, %2}
+inc{b}	%0
+inc{b}	%h0
+inc{l}	%0
+inc{l}	%k0
+inc{q}	%0
+inc{w}	%0
+insertps	{$0x10, %2, %0|%0, %2, 0x10}
+insertps	{$0xe, %2, %0|%0, %2, 0xe}
+insertps	{%3, %2, %0|%0, %2, %3}
+insertq	{%2, %0|%0, %2}
+insertq	{%4, %3, %2, %0|%0, %2, %3, %4}
+%+j%c1	%l0
+%+j%C1	%l0
+jmp	%A0
+jmp	%A1
+jmp	%l0
+jmp	%P0
+jmp	%P1
+lddqu	{%1, %0|%0, %1}
+lea{l}	{%a1, %0|%0, %a1}
+lea{l}	{%a2, %0|%0, %a2}
+lea{l}	{%a2@TLSDESC(%1), %0|%0, %a2@TLSDESC[%1]}
+lea{l}	{%&@tlsldm(%1), %0|%0, %&@tlsldm[%1]}
+lea{q}	{%a2, %0|%0, %a2}
+leave
+lfence
+llwpcb	%0
+lock{%;} add{b}	{%1, %0|%0, %1}
+lock{%;} add{l}	{%1, %0|%0, %1}
+lock{%;} add{w}	{%1, %0|%0, %1}
+lock{%;} and{b}	{%1, %0|%0, %1}
+lock{%;} and{l}	{%1, %0|%0, %1}
+lock{%;} and{w}	{%1, %0|%0, %1}
+	lock{%;} cmpxchg8b	%1
+lock{%;} cmpxchg8b	%1
+lock{%;} cmpxchg{b}	{%3, %1|%1, %3}
+lock{%;} cmpxchg{l}	{%3, %1|%1, %3}
+lock{%;} cmpxchg{w}	{%3, %1|%1, %3}
+lock{%;} dec{b}	%0
+lock{%;} dec{l}	%0
+lock{%;} dec{w}	%0
+lock{%;} inc{b}	%0
+lock{%;} inc{l}	%0
+lock{%;} inc{w}	%0
+lock{%;} or{b}	{%1, %0|%0, %1}
+lock{%;} or{l}	{$0, (%%esp)|DWORD PTR [esp], 0}
+lock{%;} or{l}	{%1, %0|%0, %1}
+lock{%;} or{w}	{%1, %0|%0, %1}
+lock{%;} sub{b}	{%1, %0|%0, %1}
+lock{%;} sub{l}	{%1, %0|%0, %1}
+lock{%;} sub{w}	{%1, %0|%0, %1}
+lock{%;} xadd{b}	{%0, %1|%1, %0}
+lock{%;} xadd{l}	{%0, %1|%1, %0}
+lock{%;} xadd{w}	{%0, %1|%1, %0}
+lock{%;} xor{b}	{%1, %0|%0, %1}
+lock{%;} xor{l}	{%1, %0|%0, %1}
+lock{%;} xor{w}	{%1, %0|%0, %1}
+lwpins	{%2, %1, %0|%0, %1, %2}
+lwpval	{%2, %1, %0|%0, %1, %2}
+lzcnt{l}	{%1, %0|%0, %1}
+lzcnt{w}	{%1, %0|%0, %1}
+maskmovq	{%2, %1|%1, %2}
+maxpd	{%2, %0|%0, %2}
+maxps	{%2, %0|%0, %2}
+maxsd	{%2, %0|%0, %2}
+maxss	{%2, %0|%0, %2}
+mfence
+minpd	{%2, %0|%0, %2}
+minps	{%2, %0|%0, %2}
+minsd	{%2, %0|%0, %2}
+minss	{%2, %0|%0, %2}
+monitor	%0, %1, %2
+movapd	{%1, %0|%0, %1}
+movaps	{%1, %0|%0, %1}
+mov{b}	{%1, %0|%0, %1}
+mov{b}	{%b1, %h0|%h0, %b1}
+movbe	{%1, %0|%0, %1}
+mov{b}	{%h1, %0|%0, %h1}
+mov{b}	{%h1, %h0|%h0, %h1}
+movd	{%1, %0|%0, %1}
+movd	{%2, %0|%0, %2}
+movddup	{%1, %0|%0, %1}
+movddup	{%H1, %0|%0, %H1}
+movdq2q	{%1, %0|%0, %1}
+movdqa	{%1, %0|%0, %1}
+movdqu	{%1, %0|%0, %1}
+movhlps	{%1, %0|%0, %1}
+movhlps	{%2, %0|%0, %2}
+movhpd	{%1, %0|%0, %1}
+movhpd	{%2, %0|%0, %2}
+movhpd	{%H1, %0|%0, %H1}
+movhps	{%1, %0|%0, %1}
+movhps	{%1, %H0|%H0, %1}
+movhps	{%2, %0|%0, %2}
+movhps	{%H1, %0|%0, %H1}
+mov{l}	{%1, %0|%0, %1}
+mov{l}	{%1, %2|%2, %1}
+mov{l}	{%1, %3|%3, %1}
+mov{l}	{%1, %3|%3, %1}
+	mov{l}	{%2, %0|%0, %2}
+	mov{l}	{%2, %0|%0, %2}
+mov{l}	{%%gs:0, %0|%0, DWORD PTR gs:0}
+mov{l}	{%%gs:%P1, %2|%2, DWORD PTR gs:%P1}
+movlhps	%0, %0
+movlhps	{%2, %0|%0, %2}
+mov{l}	{%k1, %k0|%k0, %k1}
+movlpd	{%1, %0|%0, %1}
+movlpd	{%2, %0|%0, %2}
+movlpd	{%2, %H0|%H0, %2}
+movlpd	{%H1, %0|%0, %H1}
+movlps	{%1, %0|%0, %1}
+movlps	{%2, %0|%0, %2}
+movlps	{%2, %H0|%H0, %2}
+movlps	{%H1, %0|%0, %H1}
+movlps	{%H2, %0|%0, %H2}
+movl.s	{%1, %0|%0, %1}
+movntdq	{%1, %0|%0, %1}
+movnti	{%1, %0|%0, %1}
+movntpd	{%1, %0|%0, %1}
+movntps	{%1, %0|%0, %1}
+movntq	{%1, %0|%0, %1}
+movntsd	{%1, %0|%0, %1}
+movntss	{%1, %0|%0, %1}
+movq	{%1, %0|%0, %1}
+movq2dq	{%1, %0|%0, %1}
+movq	{%H1, %0|%0, %H1}
+movsb
+movs{bl|x}	{%1, %0|%0, %1}
+movs{bl|x}	{%h1, %0|%0, %h1}
+movs{bl|x}	{%h1, %k0|%k0, %h1}
+movs{bw|x}	{%1, %0|%0, %1}
+movsd	{%1, %0|%0, %1}
+movsd	{%2, %0|%0, %2}
+movs{l|d}
+movss	{%1, %0|%0, %1}
+movss	{%2, %0|%0, %2}
+movsw
+movs{wl|x}	{%1, %0|%0, %1}
+movupd	{%1, %0|%0, %1}
+movups	{%1, %0|%0, %1}
+mov{w}	{%1, %0|%0, %1}
+movz{bl|x}	{%1, %0|%0, %1}
+movz{bl|x}	{%1, %k0|%k0, %1}
+movz{bl|x}	{%b1, %k0|%k0, %b1}
+movz{bl|x}	{%h1, %0|%0, %h1}
+movz{bl|x}	{%h1, %k0|%k0, %h1}
+movz{wl|x}	{%1, %0|%0, %1}
+movz{wl|x}	{%1, %k0|%k0, %1}
+mpsadbw	{%3, %2, %0|%0, %2, %3}
+mul{b}	%2
+mul{l}	%2
+mulpd	{%2, %0|%0, %2}
+mulps	{%2, %0|%0, %2}
+mulsd	{%2, %0|%0, %2}
+mulss	{%2, %0|%0, %2}
+mwait
+neg{b}	%0
+neg{l}	%0
+neg{q}	%0
+neg{w}	%0
+not{b}	%0
+not{l}	%0
+not{l}	%k0
+not{q}	%0
+not{w}	%0
+or{b}	{%1, %0|%0, %1}
+or{b}	{%2, %0|%0, %2}
+or{b}	{%2, %h0|%h0, %2}
+or{b}	{%h2, %h0|%h0, %h2}
+or{l}	{%1, %0|%0, %1}
+or{l}	{%2, %0|%0, %2}
+or{l}	{%k2, %k0|%k0, %k2}
+orpd	{%2, %0|%0, %2}
+orps	{%2, %0|%0, %2}
+or{q}	{%2, %0|%0, %2}
+or{w}	{%2, %0|%0, %2}
+pabsb	{%1, %0|%0, %1}
+pabsd	{%1, %0|%0, %1}
+pabsw	{%1, %0|%0, %1}
+packssdw	{%2, %0|%0, %2}
+packsswb	{%2, %0|%0, %2}
+packusdw	{%2, %0|%0, %2}
+packuswb	{%2, %0|%0, %2}
+paddb	{%2, %0|%0, %2}
+paddd	{%2, %0|%0, %2}
+paddq	{%2, %0|%0, %2}
+paddsb	{%2, %0|%0, %2}
+paddsw	{%2, %0|%0, %2}
+paddusb	{%2, %0|%0, %2}
+paddusw	{%2, %0|%0, %2}
+paddw	{%2, %0|%0, %2}
+palignr	{%3, %2, %0|%0, %2, %3}
+pand	{%2, %0|%0, %2}
+pandn	{%2, %0|%0, %2}
+pavgb	{%2, %0|%0, %2}
+pavgusb	{%2, %0|%0, %2}
+pavgw	{%2, %0|%0, %2}
+pblendvb	{%3, %2, %0|%0, %2, %3}
+pblendw	{%3, %2, %0|%0, %2, %3}
+pclmulqdq	{%3, %2, %0|%0, %2, %3}
+pcmpeqb	{%2, %0|%0, %2}
+pcmpeqd	{%2, %0|%0, %2}
+pcmpeqq	{%2, %0|%0, %2}
+pcmpeqw	{%2, %0|%0, %2}
+pcmpgtb	{%2, %0|%0, %2}
+pcmpgtd	{%2, %0|%0, %2}
+pcmpgtq	{%2, %0|%0, %2}
+pcmpgtw	{%2, %0|%0, %2}
+pextrw	{%2, %1, %0|%0, %1, %2}
+pf2id	{%1, %0|%0, %1}
+pf2iw	{%1, %0|%0, %1}
+pfacc	{%2, %0|%0, %2}
+pfadd	{%2, %0|%0, %2}
+pfcmpeq	{%2, %0|%0, %2}
+pfcmpge	{%2, %0|%0, %2}
+pfcmpgt	{%2, %0|%0, %2}
+pfmax	{%2, %0|%0, %2}
+pfmin	{%2, %0|%0, %2}
+pfmul	{%2, %0|%0, %2}
+pfnacc	{%2, %0|%0, %2}
+pfpnacc	{%2, %0|%0, %2}
+pfrcp	{%1, %0|%0, %1}
+pfrcpit1	{%2, %0|%0, %2}
+pfrcpit2	{%2, %0|%0, %2}
+pfrsqit1	{%2, %0|%0, %2}
+pfrsqrt	{%1, %0|%0, %1}
+pfsub	{%2, %0|%0, %2}
+pfsubr	{%1, %0|%0, %1}
+phaddd	{%2, %0|%0, %2}
+phaddsw	{%2, %0|%0, %2}
+phaddw	{%2, %0|%0, %2}
+phsubd	{%2, %0|%0, %2}
+phsubsw	{%2, %0|%0, %2}
+phsubw	{%2, %0|%0, %2}
+pi2fd	{%1, %0|%0, %1}
+pi2fw	{%1, %0|%0, %1}
+pinsrb	{%3, %2, %0|%0, %2, %3}
+pinsrb	{%3, %k2, %0|%0, %k2, %3}
+pinsrd	{$0, %2, %0|%0, %2, 0}
+pinsrd	{$0x1, %2, %0|%0, %2, 0x1}
+pinsrd	{%3, %2, %0|%0, %2, %3}
+pinsrw	{%3, %2, %0|%0, %2, %3}
+pinsrw	{%3, %k2, %0|%0, %k2, %3}
+pmaddubsw	{%2, %0|%0, %2}
+pmaddwd	{%2, %0|%0, %2}
+pmaxsb	{%2, %0|%0, %2}
+pmaxsd	{%2, %0|%0, %2}
+pmaxsw	{%2, %0|%0, %2}
+pmaxub	{%2, %0|%0, %2}
+pmaxud	{%2, %0|%0, %2}
+pmaxuw	{%2, %0|%0, %2}
+pminsb	{%2, %0|%0, %2}
+pminsd	{%2, %0|%0, %2}
+pminsw	{%2, %0|%0, %2}
+pminub	{%2, %0|%0, %2}
+pminud	{%2, %0|%0, %2}
+pminuw	{%2, %0|%0, %2}
+pmovmskb	{%1, %0|%0, %1}
+pmuldq	{%2, %0|%0, %2}
+pmulhrsw	{%2, %0|%0, %2}
+pmulhrw	{%2, %0|%0, %2}
+pmulhuw	{%2, %0|%0, %2}
+pmulhw	{%2, %0|%0, %2}
+pmulld	{%2, %0|%0, %2}
+pmullw	{%2, %0|%0, %2}
+pmuludq	{%2, %0|%0, %2}
+popcnt{l}	{%1, %0|%0, %1}
+popcnt{q}	{%1, %0|%0, %1}
+popcnt{w}	{%1, %0|%0, %1}
+pop{l}	%0
+popsi1
+por	{%2, %0|%0, %2}
+prefetch	%a0
+prefetchnta	%a0
+prefetcht0	%a0
+prefetcht1	%a0
+prefetcht2	%a0
+prefetchw	%a0
+psadbw	{%2, %0|%0, %2}
+pshufb	{%2, %0|%0, %2}
+pshufd	{$85, %1, %0|%0, %1, 85}
+pshufw	{$0, %0, %0|%0, %0, 0}
+pshufw	{%2, %1, %0|%0, %1, %2}
+psignb	{%2, %0|%0, %2}
+psignd	{%2, %0|%0, %2}
+psignw	{%2, %0|%0, %2}
+pslld	{%2, %0|%0, %2}
+pslldq	{%2, %0|%0, %2}
+psllq	{%2, %0|%0, %2}
+psllw	{%2, %0|%0, %2}
+psrad	{%2, %0|%0, %2}
+psraw	{%2, %0|%0, %2}
+psrld	{%2, %0|%0, %2}
+psrldq	{%2, %0|%0, %2}
+psrldq	{$8, %0|%0, 8}
+psrlq	{%2, %0|%0, %2}
+psrlw	{%2, %0|%0, %2}
+psubb	{%2, %0|%0, %2}
+psubd	{%2, %0|%0, %2}
+psubq	{%2, %0|%0, %2}
+psubsb	{%2, %0|%0, %2}
+psubsw	{%2, %0|%0, %2}
+psubusb	{%2, %0|%0, %2}
+psubusw	{%2, %0|%0, %2}
+psubw	{%2, %0|%0, %2}
+pswapd	{%1, %0|%0, %1}
+punpckhbw	{%2, %0|%0, %2}
+punpckhdq	%0, %0
+punpckhdq	{%2, %0|%0, %2}
+punpckhqdq	{%2, %0|%0, %2}
+punpckhwd	{%2, %0|%0, %2}
+punpcklbw	{%2, %0|%0, %2}
+punpckldq	%0, %0
+punpckldq	{%2, %0|%0, %2}
+punpcklqdq	%0, %0
+punpcklqdq	{%2, %0|%0, %2}
+punpcklwd	{%2, %0|%0, %2}
+push{l}	%1
+push{l}	%k1
+pxor	%0, %0
+pxor	{%2, %0|%0, %2}
+rcpss	{%1, %0|%0, %1}
+rdpmc
+rdtsc
+rdtscp
+rep{%;} movsb
+rep{%;} movs{l|d}
+repnz{%;} scasb
+rep{%;} stosb
+rep{%;} stos{l|d}
+repz{%;} cmpsb
+	ret
+ret	%0
+rol{b}	%0
+rol{b}	{%1, %0|%0, %1}
+rol{b}	{%2, %0|%0, %2}
+rol{b}	{%b1, %0|%0, %b1}
+rol{b}	{%b2, %0|%0, %b2}
+rol{l}	%0
+rol{l}	{%2, %0|%0, %2}
+rol{l}	{%b2, %0|%0, %b2}
+rol{w}	%0
+rol{w}	{%2, %0|%0, %2}
+rol{w}	{$8, %0|%0, 8}
+rol{w}	{%b2, %0|%0, %b2}
+ror{b}	%0
+ror{b}	{%1, %0|%0, %1}
+ror{b}	{%2, %0|%0, %2}
+ror{b}	{%b1, %0|%0, %b1}
+ror{b}	{%b2, %0|%0, %b2}
+ror{l}	%0
+ror{l}	{%2, %0|%0, %2}
+ror{l}	{%b2, %0|%0, %b2}
+ror{w}	%0
+ror{w}	{%2, %0|%0, %2}
+ror{w}	{%b2, %0|%0, %b2}
+roundsd	{%3, %2, %0|%0, %2, %3}
+roundss	{%3, %2, %0|%0, %2, %3}
+rsqrtss	{%1, %0|%0, %1}
+sahf
+sal{b}	%0
+sal{b}	{%2, %0|%0, %2}
+sal{b}	{%b2, %0|%0, %b2}
+sal{l}	%0
+sal{l}	{%2, %0|%0, %2}
+sal{l}	{%2, %k0|%k0, %2}
+sal{l}	{%b2, %0|%0, %b2}
+sal{l}	{%b2, %k0|%k0, %b2}
+sal{w}	%0
+sal{w}	{%2, %0|%0, %2}
+sal{w}	{%b2, %0|%0, %b2}
+sar{b}	%0
+sar{b}	{%1, %0|%0, %1}
+sar{b}	{%2, %0|%0, %2}
+sar{b}	{%b1, %0|%0, %b1}
+sar{b}	{%b2, %0|%0, %b2}
+sar{l}	%0
+sar{l}	{%2, %0|%0, %2}
+sar{l}	{%b2, %0|%0, %b2}
+sar{w}	%0
+sar{w}	{%2, %0|%0, %2}
+sar{w}	{%b2, %0|%0, %b2}
+sbb{b}	{%2, %0|%0, %2}
+sbb{l}	%0, %0
+sbb{l}	{%2, %0|%0, %2}
+sbb{q}	{%2, %0|%0, %2}
+sbb{w}	{%2, %0|%0, %2}
+set%C1	%0
+sfence
+shld{l}	{%s2%1, %0|%0, %1, %2}
+shr{b}	%0
+shr{b}	{%1, %0|%0, %1}
+shr{b}	{%2, %0|%0, %2}
+shr{b}	{%b1, %0|%0, %b1}
+shr{b}	{%b2, %0|%0, %b2}
+shrd{l}	{%s2%1, %0|%0, %1, %2}
+shr{l}	%0
+shr{l}	{%2, %0|%0, %2}
+shr{l}	{%b2, %0|%0, %b2}
+shr{w}	%0
+shr{w}	{%2, %0|%0, %2}
+shr{w}	{%b2, %0|%0, %b2}
+shufpd	{$1, %1, %0|%0, %1, 1}
+shufpd	{$2, %2, %0|%0, %2, 2}
+shufpd	{%3, %2, %0|%0, %2, %3}
+shufps	{$0, %0, %0|%0, %0, 0}
+shufps	{$0xe4, %1, %0|%0, %1, 0xe4}
+shufps	{$0xe4, %1, %2, %0|%0, %2, %1, 0xe4}
+shufps	{%3, %2, %0|%0, %2, %3}
+slwpcb	%0
+sqrtsd	{%1, %0|%0, %1}
+sqrtss	{%1, %0|%0, %1}
+stosb
+stos{l|d}
+stosw
+sub{b}	{%1, %0|%0, %1}
+sub{b}	{%2, %0|%0, %2}
+sub{l}	{%2, %0|%0, %2}
+sub{l}	{%2, %k0|%k0, %2}
+subpd	{%2, %0|%0, %2}
+subps	{%2, %0|%0, %2}
+sub{q}	{%2, %0|%0, %2}
+subsd	{%2, %0|%0, %2}
+subss	{%2, %0|%0, %2}
+sub{w}	{%2, %0|%0, %2}
+test{b}	%0, %0
+test{b}	{%1, %0|%0, %1}
+test{b}	{%1, %h0|%h0, %1}
+test{b}	%h0, %h0
+test{b}	{%h1, %h0|%h0, %h1}
+test{l}	%0, %0
+test{l}	{%1, %0|%0, %1}
+test{l}	{%1, %k0|%k0, %1}
+test{q}	%0, %0
+test{w}	%0, %0
+test{w}	{%1, %0|%0, %1}
+:%tp
+trap
+unpckhpd	%0, %0
+unpckhpd	{%2, %0|%0, %2}
+unpckhps	%0, %0
+unpckhps	{%2, %0|%0, %2}
+unpcklpd	%0, %0
+unpcklpd	{%2, %0|%0, %2}
+unpcklps	{%2, %0|%0, %2}
+vaddpd	{%2, %1, %0|%0, %1, %2}
+vaddps	{%2, %1, %0|%0, %1, %2}
+vaddsd	{%2, %1, %0|%0, %1, %2}
+vaddss	{%2, %1, %0|%0, %1, %2}
+vaddsubpd	{%2, %1, %0|%0, %1, %2}
+vaddsubps	{%2, %1, %0|%0, %1, %2}
+vaesdec	{%2, %1, %0|%0, %1, %2}
+vaesdeclast	{%2, %1, %0|%0, %1, %2}
+vaesenc	{%2, %1, %0|%0, %1, %2}
+vaesenclast	{%2, %1, %0|%0, %1, %2}
+%vaesimc	{%1, %0|%0, %1}
+%vaeskeygenassist	{%2, %1, %0|%0, %1, %2}
+vandnpd	{%2, %1, %0|%0, %1, %2}
+vandnps	{%2, %1, %0|%0, %1, %2}
+vandpd	{%2, %1, %0|%0, %1, %2}
+vandps	{%2, %1, %0|%0, %1, %2}
+vblendpd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vblendps	{%3, %2, %1, %0|%0, %1, %2, %3}
+vblendvpd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vblendvps	{%3, %2, %1, %0|%0, %1, %2, %3}
+vbroadcastf128	{%1, %0|%0, %1}
+vbroadcastsd	{%1, %0|%0, %1}
+vbroadcastss	{%1, %0|%0, %1}
+vcmp%D1sd	{%3, %2, %0|%0, %2, %3}
+vcmp%D1ss	{%3, %2, %0|%0, %2, %3}
+vcmp%D3pd	{%2, %1, %0|%0, %1, %2}
+vcmp%D3ps	{%2, %1, %0|%0, %1, %2}
+vcmp%D3sd	{%2, %1, %0|%0, %1, %2}
+vcmp%D3ss	{%2, %1, %0|%0, %1, %2}
+vcmppd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vcmpps	{%3, %2, %1, %0|%0, %1, %2, %3}
+vcmpsd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vcmpss	{%3, %2, %1, %0|%0, %1, %2, %3}
+%vcomisd	{%1, %0|%0, %1}
+%vcomiss	{%1, %0|%0, %1}
+%vcvtdq2pd	{%1, %0|%0, %1}
+vcvtdq2pd	{%1, %0|%0, %1}
+vcvtdq2ps	{%1, %0|%0, %1}
+vcvtpd2dq{x}	{%1, %0|%0, %1}
+vcvtpd2dq{y}	{%1, %0|%0, %1}
+vcvtpd2ps{x}	{%1, %0|%0, %1}
+vcvtpd2ps{y}	{%1, %0|%0, %1}
+vcvtps2dq	{%1, %0|%0, %1}
+%vcvtps2pd	{%1, %0|%0, %1}
+vcvtps2pd	{%1, %0|%0, %1}
+%vcvtsd2si	{%1, %0|%0, %1}
+%vcvtsd2ss	{%1, %d0|%d0, %1}
+vcvtsd2ss	{%2, %1, %0|%0, %1, %2}
+%vcvtsi2sd	{%1, %d0|%d0, %1}
+vcvtsi2sd	{%2, %1, %0|%0, %1, %2}
+%vcvtsi2ss	{%1, %d0|%d0, %1}
+vcvtsi2ss	{%2, %1, %0|%0, %1, %2}
+%vcvtss2sd	{%1, %d0|%d0, %1}
+vcvtss2sd	{%2, %1, %0|%0, %1, %2}
+%vcvtss2si	{%1, %0|%0, %1}
+vcvttpd2dq{x}	{%1, %0|%0, %1}
+vcvttpd2dq{y}	{%1, %0|%0, %1}
+vcvttps2dq	{%1, %0|%0, %1}
+%vcvttsd2si	{%1, %0|%0, %1}
+%vcvttss2si	{%1, %0|%0, %1}
+vdivpd	{%2, %1, %0|%0, %1, %2}
+vdivps	{%2, %1, %0|%0, %1, %2}
+vdivsd	{%2, %1, %0|%0, %1, %2}
+vdivss	{%2, %1, %0|%0, %1, %2}
+vdppd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vdpps	{%3, %2, %1, %0|%0, %1, %2, %3}
+vextractf128	{$0x0, %1, %0|%0, %1, 0x0}
+vextractf128	{$0x1, %1, %0|%0, %1, 0x1}
+%vextractps	{%2, %1, %0|%0, %1, %2}
+vfmaddpd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfmaddps	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfmaddsd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfmaddss	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfmaddsubpd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfmaddsubps	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfmsubaddpd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfmsubaddps	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfmsubpd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfmsubps	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfmsubsd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfmsubss	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfnmaddpd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfnmaddps	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfnmaddsd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfnmaddss	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfnmsubpd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfnmsubps	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfnmsubsd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfnmsubss	{%3, %2, %1, %0|%0, %1, %2, %3}
+vfrczpd	{%1, %0|%0, %1}
+vfrczps	{%1, %0|%0, %1}
+vfrczsd	{%2, %0|%0, %2}
+vfrczss	{%2, %0|%0, %2}
+vhaddpd	{%2, %1, %0|%0, %1, %2}
+vhaddps	{%2, %1, %0|%0, %1, %2}
+vhsubpd	{%2, %1, %0|%0, %1, %2}
+vhsubps	{%2, %1, %0|%0, %1, %2}
+vinsertf128	{$0x0, %2, %1, %0|%0, %1, %2, 0x0}
+vinsertf128	{$0x1, %2, %1, %0|%0, %1, %2, 0x1}
+vinsertf128	{$0x1, %2, %t1, %0|%0, %t1, %2, 0x1}
+vinsertf128	{$1, %1, %0, %0|%0, %0, %1, 1}
+vinsertps	{$0x10, %2, %1, %0|%0, %1, %2, 0x10}
+vinsertps	{$0xe, %2, %2, %0|%0, %2, %2, 0xe}
+vinsertps	{%3, %2, %1, %0|%0, %1, %2, %3}
+vlddqu	{%1, %0|%0, %1}
+%vldmxcsr	%0
+%vmaskmovdqu	{%2, %1|%1, %2}
+vmaskmovpd	{%1, %2, %0|%0, %2, %1}
+vmaskmovpd	{%2, %1, %0|%0, %1, %2}
+vmaskmovps	{%1, %2, %0|%0, %2, %1}
+vmaskmovps	{%2, %1, %0|%0, %1, %2}
+vmaxpd	{%2, %1, %0|%0, %1, %2}
+vmaxps	{%2, %1, %0|%0, %1, %2}
+vmaxsd	{%2, %1, %0|%0, %1, %2}
+vmaxss	{%2, %1, %0|%0, %1, %2}
+vminpd	{%2, %1, %0|%0, %1, %2}
+vminps	{%2, %1, %0|%0, %1, %2}
+vminsd	{%2, %1, %0|%0, %1, %2}
+vminss	{%2, %1, %0|%0, %1, %2}
+%vmovapd	{%1, %0|%0, %1}
+vmovapd	{%1, %0|%0, %1}
+vmovapd	{%1, %x0|%x0, %1}
+vmovapd	{%x1, %0|%0, %x1}
+%vmovaps	{%1, %0|%0, %1}
+vmovaps	{%1, %0|%0, %1}
+vmovaps	{%1, %x0|%x0, %1}
+vmovaps	{%x1, %0|%0, %x1}
+%vmovd	{%1, %0|%0, %1}
+vmovd	{%1, %0|%0, %1}
+vmovd	{%2, %0|%0, %2}
+%vmovddup	{%1, %0|%0, %1}
+vmovddup	{%1, %0|%0, %1}
+vmovddup	{%H1, %0|%0, %H1}
+%vmovdqa	{%1, %0|%0, %1}
+vmovdqa	{%1, %0|%0, %1}
+vmovdqa	{%1, %x0|%x0, %1}
+vmovdqa	{%x1, %0|%0, %x1}
+%vmovdqu	{%1, %0|%0, %1}
+vmovdqu	{%1, %0|%0, %1}
+%vmovhlps	{%1, %d0|%d0, %1}
+vmovhlps	{%2, %1, %0|%0, %1, %2}
+vmovhpd	{%1, %0|%0, %1}
+vmovhpd	{%2, %1, %0|%0, %1, %2}
+vmovhpd	{%H1, %2, %0|%0, %2, %H1}
+%vmovhps	{%1, %0|%0, %1}
+vmovhps	{%1, %0|%0, %1}
+vmovhps	{%1, %H0|%H0, %1}
+vmovhps	{%2, %0|%0, %2}
+vmovhps	{%2, %1, %0|%0, %1, %2}
+vmovhps	{%H1, %2, %0|%0, %2, %H1}
+vmovlhps	{%2, %1, %0|%0, %1, %2}
+vmovlpd	{%1, %0, %0|%0, %0, %1}
+%vmovlpd	{%1, %0|%0, %1}
+vmovlpd	{%1, %0|%0, %1}
+vmovlpd	{%2, %0|%0, %2}
+vmovlpd	{%2, %1, %0|%0, %1, %2}
+vmovlpd	{%2, %H0|%H0, %2}
+vmovlpd	{%H1, %2, %0|%0, %2, %H1}
+vmovlps	{%1, %0, %0|%0, %0, %1}
+vmovlps	{%1, %0|%0, %1}
+vmovlps	{%2, %0|%0, %2}
+vmovlps	{%2, %1, %0|%0, %1, %2}
+vmovlps	{%2, %H0|%H0, %2}
+%vmovlps	{%H1, %d0|%d0, %H1}
+vmovlps	{%H2, %1, %0|%0, %1, %H2}
+%vmovmskpd	{%1, %0|%0, %1}
+vmovmskpd	{%1, %0|%0, %1}
+%vmovmskps	{%1, %0|%0, %1}
+vmovmskps	{%1, %0|%0, %1}
+vmovntdq	{%1, %0|%0, %1}
+%vmovntdqa	{%1, %0|%0, %1}
+vmovntpd	{%1, %0|%0, %1}
+vmovntps	{%1, %0|%0, %1}
+%vmovq	{%1, %0|%0, %1}
+vmovq	{%1, %0|%0, %1}
+vmovq	{%H1, %0|%0, %H1}
+vmovsd	{%1, %0, %0|%0, %0, %1}
+vmovsd	{%1, %0|%0, %1}
+vmovsd	{%2, %0|%0, %2}
+vmovsd	{%2, %1, %0|%0, %1, %2}
+%vmovshdup	{%1, %0|%0, %1}
+vmovshdup	{%1, %0|%0, %1}
+%vmovsldup	{%1, %0|%0, %1}
+vmovsldup	{%1, %0|%0, %1}
+vmovss	{%1, %0, %0|%0, %0, %1}
+%vmovss	{%1, %0|%0, %1}
+vmovss	{%1, %0|%0, %1}
+%vmovss	{%1, %d0|%d0, %1}
+vmovss	{%2, %0|%0, %2}
+vmovss	{%2, %1, %0|%0, %1, %2}
+vmovupd	{%1, %0|%0, %1}
+%vmovups	{%1, %0|%0, %1}
+vmovups	{%1, %0|%0, %1}
+vmpsadbw	{%3, %2, %1, %0|%0, %1, %2, %3}
+vmulpd	{%2, %1, %0|%0, %1, %2}
+vmulps	{%2, %1, %0|%0, %1, %2}
+vmulsd	{%2, %1, %0|%0, %1, %2}
+vmulss	{%2, %1, %0|%0, %1, %2}
+vorpd	{%2, %1, %0|%0, %1, %2}
+vorps	{%2, %1, %0|%0, %1, %2}
+%vpabsb	{%1, %0|%0, %1}
+%vpabsd	{%1, %0|%0, %1}
+%vpabsw	{%1, %0|%0, %1}
+vpackssdw	{%2, %1, %0|%0, %1, %2}
+vpacksswb	{%2, %1, %0|%0, %1, %2}
+vpackusdw	{%2, %1, %0|%0, %1, %2}
+vpackuswb	{%2, %1, %0|%0, %1, %2}
+vpaddb	{%2, %1, %0|%0, %1, %2}
+vpaddd	{%2, %1, %0|%0, %1, %2}
+vpaddq	{%2, %1, %0|%0, %1, %2}
+vpaddsb	{%2, %1, %0|%0, %1, %2}
+vpaddsw	{%2, %1, %0|%0, %1, %2}
+vpaddusb	{%2, %1, %0|%0, %1, %2}
+vpaddusw	{%2, %1, %0|%0, %1, %2}
+vpaddw	{%2, %1, %0|%0, %1, %2}
+vpalignr	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpand	{%2, %1, %0|%0, %1, %2}
+vpandn	{%2, %1, %0|%0, %1, %2}
+vpavgb	{%2, %1, %0|%0, %1, %2}
+vpavgw	{%2, %1, %0|%0, %1, %2}
+vpblendvb	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpblendw	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpclmulqdq	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpcmov	{%1, %3, %2, %0|%0, %2, %3, %1}
+vpcmov	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpcmpeqb	{%2, %1, %0|%0, %1, %2}
+vpcmpeqd	{%2, %1, %0|%0, %1, %2}
+vpcmpeqq	{%2, %1, %0|%0, %1, %2}
+vpcmpeqw	{%2, %1, %0|%0, %1, %2}
+%vpcmpestri	{%5, %3, %1|%1, %3, %5}
+%vpcmpestri	{%6, %4, %2|%2, %4, %6}
+%vpcmpestrm	{%5, %3, %1|%1, %3, %5}
+%vpcmpestrm	{%6, %4, %2|%2, %4, %6}
+vpcmpgtb	{%2, %1, %0|%0, %1, %2}
+vpcmpgtd	{%2, %1, %0|%0, %1, %2}
+vpcmpgtq	{%2, %1, %0|%0, %1, %2}
+vpcmpgtw	{%2, %1, %0|%0, %1, %2}
+%vpcmpistri	{%3, %2, %1|%1, %2, %3}
+%vpcmpistri	{%4, %3, %2|%2, %3, %4}
+%vpcmpistrm	{%3, %2, %1|%1, %2, %3}
+%vpcmpistrm	{%4, %3, %2|%2, %3, %4}
+vpcomfalseb	{%2, %1, %0|%0, %1, %2}
+vpcomfalsed	{%2, %1, %0|%0, %1, %2}
+vpcomfalseq	{%2, %1, %0|%0, %1, %2}
+vpcomfalsew	{%2, %1, %0|%0, %1, %2}
+vpcomtrueb	{%2, %1, %0|%0, %1, %2}
+vpcomtrued	{%2, %1, %0|%0, %1, %2}
+vpcomtrueq	{%2, %1, %0|%0, %1, %2}
+vpcomtruew	{%2, %1, %0|%0, %1, %2}
+vpcom%Y1b	{%3, %2, %0|%0, %2, %3}
+vpcom%Y1d	{%3, %2, %0|%0, %2, %3}
+vpcom%Y1q	{%3, %2, %0|%0, %2, %3}
+vpcom%Y1ub	{%3, %2, %0|%0, %2, %3}
+vpcom%Y1ud	{%3, %2, %0|%0, %2, %3}
+vpcom%Y1uq	{%3, %2, %0|%0, %2, %3}
+vpcom%Y1uw	{%3, %2, %0|%0, %2, %3}
+vpcom%Y1w	{%3, %2, %0|%0, %2, %3}
+vperm2f128	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpermil2pd	{%4, %3, %2, %1, %0|%0, %1, %2, %3, %4}
+vpermil2ps	{%4, %3, %2, %1, %0|%0, %1, %2, %3, %4}
+vpermilpd	{%2, %1, %0|%0, %1, %2}
+vpermilps	{%2, %1, %0|%0, %1, %2}
+%vpextrb	{%2, %1, %0|%0, %1, %2}
+%vpextrd	{%2, %1, %0|%0, %1, %2}
+%vpextrw	{%2, %1, %0|%0, %1, %2}
+vphaddbd	{%1, %0|%0, %1}
+vphaddbq	{%1, %0|%0, %1}
+vphaddbw	{%1, %0|%0, %1}
+vphaddd	{%2, %1, %0|%0, %1, %2}
+vphadddq	{%1, %0|%0, %1}
+vphaddsw	{%2, %1, %0|%0, %1, %2}
+vphaddubd	{%1, %0|%0, %1}
+vphaddubq	{%1, %0|%0, %1}
+vphaddubw	{%1, %0|%0, %1}
+vphaddudq	{%1, %0|%0, %1}
+vphadduwd	{%1, %0|%0, %1}
+vphadduwq	{%1, %0|%0, %1}
+vphaddw	{%2, %1, %0|%0, %1, %2}
+vphaddwd	{%1, %0|%0, %1}
+vphaddwq	{%1, %0|%0, %1}
+%vphminposuw	{%1, %0|%0, %1}
+vphsubbw	{%1, %0|%0, %1}
+vphsubd	{%2, %1, %0|%0, %1, %2}
+vphsubdq	{%1, %0|%0, %1}
+vphsubsw	{%2, %1, %0|%0, %1, %2}
+vphsubw	{%2, %1, %0|%0, %1, %2}
+vphsubwd	{%1, %0|%0, %1}
+vpinsrb	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpinsrb	{%3, %k2, %1, %0|%0, %1, %k2, %3}
+vpinsrd	{$0, %2, %1, %0|%0, %1, %2, 0}
+vpinsrd	{$0x1, %2, %1, %0|%0, %1, %2, 0x1}
+vpinsrd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpinsrd	{%3, %k2, %1, %0|%0, %1, %k2, %3}
+vpinsrw	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpinsrw	{%3, %k2, %1, %0|%0, %1, %k2, %3}
+vpmacsdd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpmacsdqh	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpmacsdql	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpmacssdd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpmacssdqh	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpmacssdql	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpmacsswd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpmacssww	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpmacswd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpmacsww	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpmadcsswd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpmadcswd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vpmaddubsw	{%2, %1, %0|%0, %1, %2}
+vpmaddwd	{%2, %1, %0|%0, %1, %2}
+vpmaxsb	{%2, %1, %0|%0, %1, %2}
+vpmaxsd	{%2, %1, %0|%0, %1, %2}
+vpmaxsw	{%2, %1, %0|%0, %1, %2}
+vpmaxub	{%2, %1, %0|%0, %1, %2}
+vpmaxud	{%2, %1, %0|%0, %1, %2}
+vpmaxuw	{%2, %1, %0|%0, %1, %2}
+vpminsb	{%2, %1, %0|%0, %1, %2}
+vpminsd	{%2, %1, %0|%0, %1, %2}
+vpminsw	{%2, %1, %0|%0, %1, %2}
+vpminub	{%2, %1, %0|%0, %1, %2}
+vpminud	{%2, %1, %0|%0, %1, %2}
+vpminuw	{%2, %1, %0|%0, %1, %2}
+%vpmovmskb	{%1, %0|%0, %1}
+%vpmovsxbd	{%1, %0|%0, %1}
+%vpmovsxbq	{%1, %0|%0, %1}
+%vpmovsxbw	{%1, %0|%0, %1}
+%vpmovsxdq	{%1, %0|%0, %1}
+%vpmovsxwd	{%1, %0|%0, %1}
+%vpmovsxwq	{%1, %0|%0, %1}
+%vpmovzxbd	{%1, %0|%0, %1}
+%vpmovzxbq	{%1, %0|%0, %1}
+%vpmovzxbw	{%1, %0|%0, %1}
+%vpmovzxdq	{%1, %0|%0, %1}
+%vpmovzxwd	{%1, %0|%0, %1}
+%vpmovzxwq	{%1, %0|%0, %1}
+vpmuldq	{%2, %1, %0|%0, %1, %2}
+vpmulhrsw	{%2, %1, %0|%0, %1, %2}
+vpmulhuw	{%2, %1, %0|%0, %1, %2}
+vpmulhw	{%2, %1, %0|%0, %1, %2}
+vpmulld	{%2, %1, %0|%0, %1, %2}
+vpmullw	{%2, %1, %0|%0, %1, %2}
+vpmuludq	{%2, %1, %0|%0, %1, %2}
+vpor	{%2, %1, %0|%0, %1, %2}
+vpperm	{%3, %2, %1, %0|%0, %1, %2, %3}
+vprotb	{%2, %1, %0|%0, %1, %2}
+vprotb	{%3, %1, %0|%0, %1, %3}
+vprotd	{%2, %1, %0|%0, %1, %2}
+vprotd	{%3, %1, %0|%0, %1, %3}
+vprotq	{%2, %1, %0|%0, %1, %2}
+vprotq	{%3, %1, %0|%0, %1, %3}
+vprotw	{%2, %1, %0|%0, %1, %2}
+vprotw	{%3, %1, %0|%0, %1, %3}
+vpsadbw	{%2, %1, %0|%0, %1, %2}
+vpshab	{%2, %1, %0|%0, %1, %2}
+vpshad	{%2, %1, %0|%0, %1, %2}
+vpshaq	{%2, %1, %0|%0, %1, %2}
+vpshaw	{%2, %1, %0|%0, %1, %2}
+vpshlb	{%2, %1, %0|%0, %1, %2}
+vpshld	{%2, %1, %0|%0, %1, %2}
+vpshlq	{%2, %1, %0|%0, %1, %2}
+vpshlw	{%2, %1, %0|%0, %1, %2}
+vpshufb	{%2, %1, %0|%0, %1, %2}
+%vpshufd	{$0, %1, %0|%0, %1, 0}
+vpshufd	{$0, %1, %0|%0, %1, 0}
+%vpshufd	{%2, %1, %0|%0, %1, %2}
+%vpshufhw	{%2, %1, %0|%0, %1, %2}
+%vpshuflw	{%2, %1, %0|%0, %1, %2}
+vpsignb	{%2, %1, %0|%0, %1, %2}
+vpsignd	{%2, %1, %0|%0, %1, %2}
+vpsignw	{%2, %1, %0|%0, %1, %2}
+vpslld	{%2, %1, %0|%0, %1, %2}
+vpslldq	{%2, %1, %0|%0, %1, %2}
+vpsllq	{%2, %1, %0|%0, %1, %2}
+vpsllw	{%2, %1, %0|%0, %1, %2}
+vpsrad	{%2, %1, %0|%0, %1, %2}
+vpsraw	{%2, %1, %0|%0, %1, %2}
+vpsrld	{%2, %1, %0|%0, %1, %2}
+vpsrldq	{%2, %1, %0|%0, %1, %2}
+vpsrldq	{$8, %1, %0|%0, %1, 8}
+vpsrlq	{%2, %1, %0|%0, %1, %2}
+vpsrlw	{%2, %1, %0|%0, %1, %2}
+vpsubb	{%2, %1, %0|%0, %1, %2}
+vpsubd	{%2, %1, %0|%0, %1, %2}
+vpsubq	{%2, %1, %0|%0, %1, %2}
+vpsubsb	{%2, %1, %0|%0, %1, %2}
+vpsubsw	{%2, %1, %0|%0, %1, %2}
+vpsubusb	{%2, %1, %0|%0, %1, %2}
+vpsubusw	{%2, %1, %0|%0, %1, %2}
+vpsubw	{%2, %1, %0|%0, %1, %2}
+%vptest	{%1, %0|%0, %1}
+vptest	{%1, %0|%0, %1}
+vpunpckhbw	{%2, %1, %0|%0, %1, %2}
+vpunpckhdq	{%2, %1, %0|%0, %1, %2}
+vpunpckhqdq	{%2, %1, %0|%0, %1, %2}
+vpunpckhwd	{%2, %1, %0|%0, %1, %2}
+vpunpcklbw	{%2, %1, %0|%0, %1, %2}
+vpunpckldq	{%2, %1, %0|%0, %1, %2}
+vpunpcklqdq	{%1, %1, %0|%0, %1, %1}
+vpunpcklqdq	{%2, %1, %0|%0, %1, %2}
+vpunpcklwd	{%2, %1, %0|%0, %1, %2}
+vpxor	%0, %0, %0
+%vpxor	%0, %d0
+vpxor	{%2, %1, %0|%0, %1, %2}
+%vrcpps	{%1, %0|%0, %1}
+vrcpps	{%1, %0|%0, %1}
+vrcpss	{%1, %2, %0|%0, %2, %1}
+%vrcpss	{%1, %d0|%d0, %1}
+%vroundpd	{%2, %1, %0|%0, %1, %2}
+vroundpd	{%2, %1, %0|%0, %1, %2}
+%vroundps	{%2, %1, %0|%0, %1, %2}
+vroundps	{%2, %1, %0|%0, %1, %2}
+%vroundsd	{%2, %1, %d0|%d0, %1, %2}
+vroundsd	{%3, %2, %1, %0|%0, %1, %2, %3}
+%vroundss	{%2, %1, %d0|%d0, %1, %2}
+vroundss	{%3, %2, %1, %0|%0, %1, %2, %3}
+%vrsqrtps	{%1, %0|%0, %1}
+vrsqrtps	{%1, %0|%0, %1}
+vrsqrtss	{%1, %2, %0|%0, %2, %1}
+%vrsqrtss	{%1, %d0|%d0, %1}
+vshufpd	{%3, %2, %1, %0|%0, %1, %2, %3}
+vshufps	{$0, %1, %1, %0|%0, %1, %1, 0}
+vshufps	{%3, %2, %1, %0|%0, %1, %2, %3}
+%vsqrtpd	{%1, %0|%0, %1}
+vsqrtpd	{%1, %0|%0, %1}
+%vsqrtps	{%1, %0|%0, %1}
+vsqrtps	{%1, %0|%0, %1}
+vsqrtsd	{%1, %2, %0|%0, %2, %1}
+%vsqrtsd	{%1, %d0|%d0, %1}
+vsqrtss	{%1, %2, %0|%0, %2, %1}
+%vsqrtss	{%1, %d0|%d0, %1}
+%vstmxcsr	%0
+vsubpd	{%2, %1, %0|%0, %1, %2}
+vsubps	{%2, %1, %0|%0, %1, %2}
+vsubsd	{%2, %1, %0|%0, %1, %2}
+vsubss	{%2, %1, %0|%0, %1, %2}
+vtestpd	{%1, %0|%0, %1}
+vtestps	{%1, %0|%0, %1}
+%vucomisd	{%1, %0|%0, %1}
+%vucomiss	{%1, %0|%0, %1}
+vunpckhpd	{%1, %1, %0|%0, %1, %1}
+vunpckhpd	{%2, %1, %0|%0, %1, %2}
+vunpckhps	{%2, %1, %0|%0, %1, %2}
+vunpcklpd	{%2, %1, %0|%0, %1, %2}
+vunpcklps	{%2, %1, %0|%0, %1, %2}
+%vxorpd	%0, %d0
+vxorpd	{%2, %1, %0|%0, %1, %2}
+vxorps	%0, %0, %0
+%vxorps	%0, %d0
+vxorps	{%2, %1, %0|%0, %1, %2}
+vzeroall
+vzeroupper
+xchg{b}	%1, %0
+xchg{b}	{%1, %0|%0, %1}
+xchg{b}	{%h0, %b0|%b0, %h0}
+xchg{l}	%1, %0
+xchg{l}	{%1, %0|%0, %1}
+	xchg{l}	%%ebx, %3
+xchg{l}	%%ebx, %3
+xchg{l}	%k1, %k0
+xchg{w}	%1, %0
+xchg{w}	{%1, %0|%0, %1}
+xor{b}	%0, %0
+xor{b}	{%1, %0|%0, %1}
+xor{b}	{%2, %0|%0, %2}
+xor{b}	{%2, %h0|%h0, %2}
+xor{b}	{%h0, %b0|%b0, %h0}
+xor{b}	{%h2, %h0|%h0, %h2}
+xor{l}	%0, %0
+xor{l}	{%2, %0|%0, %2}
+	xor{l}	%2, %2
+	xor{l}	%2, %2
+	xor{l}	{%2, %3|%3, %2}
+	xor{l}	{%%gs:%P2, %3|%3, DWORD PTR gs:%P2}
+xor{l}	{%k2, %k0|%k0, %k2}
+xorpd	%0, %0
+xorpd	{%2, %0|%0, %2}
+xorps	%0, %0
+xorps	{%2, %0|%0, %2}
+xor{q}	{%2, %0|%0, %2}
+xor{w}	%0, %0
+xor{w}	{%2, %0|%0, %2}

@@ -1,0 +1,27 @@
+Time.lo: Time.cc ../pwl-config.h Time.defs.hh Time.types.hh \
+  Time.inlines.hh /usr/include/c++/4.3/cassert /usr/include/assert.h \
+  /usr/include/features.h /usr/include/sys/cdefs.h \
+  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+  /usr/include/gnu/stubs-32.h
+
+../pwl-config.h:
+
+Time.defs.hh:
+
+Time.types.hh:
+
+Time.inlines.hh:
+
+/usr/include/c++/4.3/cassert:
+
+/usr/include/assert.h:
+
+/usr/include/features.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-32.h:

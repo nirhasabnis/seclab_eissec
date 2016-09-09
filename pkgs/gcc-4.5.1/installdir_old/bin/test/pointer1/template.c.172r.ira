@@ -1,0 +1,128 @@
+
+;; Function func (func)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+df_worklist_dataflow_doublequeue:n_basic_blocks 3 n_edges 2 count 3 (    1)
+Building IRA IR
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+
+Pass 0 for finding allocno costs
+
+    r58: preferred GENERAL_REGS, alternative NO_REGS
+    a0 (r58,l0) best GENERAL_REGS, cover GENERAL_REGS
+
+  a0(r58,l0) costs: AREG:0,0 DREG:0,0 CREG:0,0 BREG:0,0 SIREG:0,0 DIREG:0,0 AD_REGS:0,0 CLOBBERED_REGS:0,0 Q_REGS:0,0 NON_Q_REGS:0,0 GENERAL_REGS:0,0 MEM:8
+
+   Insn 7(l0): point = 0
+   Insn 6(l0): point = 2
+   Insn 5(l0): point = 4
+ a0(r58): [3..4]
+Compressing live ranges: from 7 to 2 - 28%
+Ranges after the compression:
+ a0(r58): [0..1]
+  regions=1, blocks=3, points=2
+    allocnos=1, copies=0, conflicts=0, ranges=1
+Disposition:
+    0:r58  l0     0
++++Costs: overall 0, reg 0, mem 0, ld 0, st 0, move 0
++++       move loops 0, new jumps 0
+insn=5, live_throughout: 7, dead_or_set: 58
+insn=6, live_throughout: 7, dead_or_set: 58
+insn=7, live_throughout: 7, dead_or_set: 0
+changing reg in insn 5
+changing reg in insn 6
+starting the processing of deferred insns
+ending the processing of deferred insns
+verify found no changes in insn with uid = 7.
+(note 1 0 3 NOTE_INSN_DELETED)
+
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 5 2 6 2 template.c:7 (set (reg/f:SI 0 ax [orig:58 D.2762 ] [58])
+        (symbol_ref/f:SI ("*.LC0") [flags 0x2] <string_cst 0xb77b48dc>)) 47 {*movsi_1} (nil))
+
+(insn 6 5 7 2 template.c:7 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (reg/f:SI 0 ax [orig:58 D.2762 ] [58])) 47 {*movsi_1} (nil))
+
+(call_insn 7 6 15 2 template.c:7 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0xb7716f00 printf>) [0 S1 A8])
+            (const_int 4 [0x4]))) 907 {*call_value_0} (nil)
+    (nil))
+
+(note 15 7 0 NOTE_INSN_DELETED)
+
+;; Function main (main)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+df_worklist_dataflow_doublequeue:n_basic_blocks 3 n_edges 2 count 3 (    1)
+Building IRA IR
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+
+Pass 0 for finding allocno costs
+
+    r59: preferred AREG, alternative GENERAL_REGS
+    a0 (r59,l0) best AREG, cover GENERAL_REGS
+    r58: preferred GENERAL_REGS, alternative NO_REGS
+    a1 (r58,l0) best GENERAL_REGS, cover GENERAL_REGS
+
+  a0(r59,l0) costs: AREG:-1,-1 DREG:0,0 CREG:0,0 BREG:0,0 SIREG:0,0 DIREG:0,0 AD_REGS:0,0 CLOBBERED_REGS:0,0 Q_REGS:0,0 NON_Q_REGS:0,0 GENERAL_REGS:0,0 MEM:7
+  a1(r58,l0) costs: AREG:0,0 DREG:0,0 CREG:0,0 BREG:0,0 SIREG:0,0 DIREG:0,0 AD_REGS:0,0 CLOBBERED_REGS:0,0 Q_REGS:0,0 NON_Q_REGS:0,0 GENERAL_REGS:0,0 MEM:7
+
+   Insn 17(l0): point = 0
+   Insn 11(l0): point = 2
+   Insn 7(l0): point = 4
+   Insn 6(l0): point = 6
+   Insn 5(l0): point = 8
+ a0(r59): [3..4]
+ a1(r58): [5..6]
+Compressing live ranges: from 11 to 4 - 36%
+Ranges after the compression:
+ a0(r59): [0..1]
+ a1(r58): [2..3]
+  regions=1, blocks=3, points=4
+    allocnos=2, copies=0, conflicts=0, ranges=2
+Disposition:
+    1:r58  l0     0    0:r59  l0     0
++++Costs: overall -1, reg -1, mem 0, ld 0, st 0, move 0
++++       move loops 0, new jumps 0
+insn=5, live_throughout: 7, dead_or_set: 
+insn=6, live_throughout: 7, dead_or_set: 58
+insn=7, live_throughout: 7, dead_or_set: 58, 59
+insn=11, live_throughout: 7, dead_or_set: 0, 59
+insn=17, live_throughout: 0, 7, dead_or_set: 
+changing reg in insn 6
+changing reg in insn 7
+changing reg in insn 7
+changing reg in insn 11
+deleting insn with uid = 7.
+deleting insn with uid = 11.
+starting the processing of deferred insns
+ending the processing of deferred insns
+verify found no changes in insn with uid = 5.
+(note 1 0 3 NOTE_INSN_DELETED)
+
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(call_insn 5 2 6 2 template.c:12 (call (mem:QI (symbol_ref:SI ("func") [flags 0x3] <function_decl 0xb75ec100 func>) [0 S1 A8])
+        (const_int 0 [0x0])) 647 {*call_0} (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(insn 6 5 17 2 template.c:13 (set (reg:SI 0 ax [orig:58 D.2767 ] [58])
+        (const_int 0 [0x0])) 47 {*movsi_1} (nil))
+
+(insn 17 6 21 2 template.c:14 (use (reg/i:SI 0 ax)) -1 (nil))
+
+(note 21 17 0 NOTE_INSN_DELETED)

@@ -1,0 +1,115 @@
+
+;; Function main (main)
+
+
+6 basic blocks, 6 edges.
+
+Basic block 0 , next 2, loop_depth 0, count 0, freq 0, maybe hot.
+Predecessors: 
+Successors:  2 (fallthru)
+
+Basic block 2 , prev 0, next 4, loop_depth 0, count 0, freq 0, maybe hot.
+Predecessors:  ENTRY (fallthru)
+Successors:  5 [100.0%]  (fallthru)
+
+Basic block 4 , prev 2, next 5, loop_depth 0, count 0, freq 0, maybe hot.
+Predecessors:  5
+Successors:  5 (fallthru)
+
+Basic block 5 , prev 4, next 6, loop_depth 0, count 0, freq 0, maybe hot.
+Predecessors:  2 [100.0%]  (fallthru) 4 (fallthru)
+Successors:  4 6 (fallthru)
+
+Basic block 6 , prev 5, next 1, loop_depth 0, count 0, freq 0, maybe hot.
+Predecessors:  5 (fallthru)
+Successors:  EXIT [100.0%]  (fallthru)
+
+Basic block 1 , prev 6, loop_depth 0, count 0, freq 0, maybe hot.
+Predecessors:  6 [100.0%]  (fallthru)
+Successors: 
+
+
+
+try_optimize_cfg iteration 1
+
+(note 3 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 5 2 6 2 fact.c:7 (set (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                (const_int -8 [0xfffffff8])) [0 j+0 S4 A32])
+        (const_int 1 [0x1])) 44 {*movsi_1} (nil))
+
+(insn 6 5 16 2 fact.c:8 (set (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                (const_int -4 [0xfffffffc])) [0 i+0 S4 A32])
+        (const_int 1 [0x1])) 44 {*movsi_1} (nil))
+
+(code_label 16 6 9 3 3 "" [1 uses])
+
+(note 9 16 10 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 10 9 11 3 fact.c:9 (set (reg:SI 59)
+        (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                (const_int -8 [0xfffffff8])) [0 j+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 11 10 12 3 fact.c:9 (parallel [
+            (set (reg:SI 60)
+                (mult:SI (reg:SI 59)
+                    (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                            (const_int -4 [0xfffffffc])) [0 i+0 S4 A32])))
+            (clobber (reg:CC 17 flags))
+        ]) 262 {*mulsi3_1} (nil))
+
+(insn 12 11 13 3 fact.c:9 (set (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                (const_int -8 [0xfffffff8])) [0 j+0 S4 A32])
+        (reg:SI 60)) 44 {*movsi_1} (nil))
+
+(insn 13 12 14 3 fact.c:8 (parallel [
+            (set (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                        (const_int -4 [0xfffffffc])) [0 i+0 S4 A32])
+                (plus:SI (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                            (const_int -4 [0xfffffffc])) [0 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (nil))
+
+(code_label 14 13 15 4 2 "" [0 uses])
+
+(note 15 14 17 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 17 15 18 4 fact.c:8 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                    (const_int -4 [0xfffffffc])) [0 i+0 S4 A32])
+            (const_int 6 [0x6]))) 6 {*cmpsi_1} (nil))
+
+(jump_insn 18 17 19 4 fact.c:8 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0x0]))
+            (label_ref 16)
+            (pc))) 465 {*jcc_1} (nil)
+ -> 16)
+
+(note 19 18 20 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 20 19 21 5 fact.c:11 (set (reg/f:SI 58 [ D.2518 ])
+        (symbol_ref/f:SI ("*.LC0") [flags 0x2]  <string_cst 0xb77a72d0>)) 44 {*movsi_1} (nil))
+
+(insn 21 20 22 5 fact.c:11 (set (reg:SI 61)
+        (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                (const_int -8 [0xfffffff8])) [0 j+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 22 21 23 5 fact.c:11 (set (mem:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 8 [0x8])) [0 S4 A32])
+        (reg:SI 61)) 44 {*movsi_1} (nil))
+
+(insn 23 22 24 5 fact.c:11 (set (mem:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (const_int 6 [0x6])) 44 {*movsi_1} (nil))
+
+(insn 24 23 25 5 fact.c:11 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (reg/f:SI 58 [ D.2518 ])) 44 {*movsi_1} (nil))
+
+(call_insn 25 24 0 5 fact.c:11 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x41]  <function_decl 0xb7743f00 printf>) [0 S1 A8])
+            (const_int 12 [0xc]))) 697 {*call_value_0} (nil)
+    (nil))

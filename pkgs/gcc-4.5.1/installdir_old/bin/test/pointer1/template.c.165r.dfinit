@@ -1,0 +1,8 @@
+
+;; Function func (func)
+
+verify found no changes in insn with uid = 7.
+
+;; Function main (main)
+
+verify found no changes in insn with uid = 5.

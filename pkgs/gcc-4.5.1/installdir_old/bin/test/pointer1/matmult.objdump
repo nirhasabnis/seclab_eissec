@@ -1,0 +1,440 @@
+
+matmult:     file format elf32-i386
+
+
+Disassembly of section .init:
+0804830c <_init> pushl  %ebp
+0804830d <_init+0x1> movl   %esp,%ebp
+0804830f <_init+0x3> pushl  %ebx
+08048310 <_init+0x4> subl   $0x4,%esp
+08048313 <_init+0x7> calll  08048318 <_init+0xc>
+08048318 <_init+0xc> popl   %ebx
+08048319 <_init+0xd> addl   $0x18b8,%ebx
+0804831f <_init+0x13> movl   -0x4(%ebx),%edx
+08048325 <_init+0x19> testl  %edx,%edx
+08048327 <_init+0x1b> je     0804832e <_init+0x22>
+08048329 <_init+0x1d> calll  0804834c <__gmon_start__@plt>
+0804832e <_init+0x22> calll  08048450 <frame_dummy>
+08048333 <_init+0x27> calll  08048940 <__do_global_ctors_aux>
+08048338 <_init+0x2c> popl   %eax
+08048339 <_init+0x2d> popl   %ebx
+0804833a <_init+0x2e> leavel 
+0804833b <_init+0x2f> retl   
+
+Disassembly of section .plt:
+0804833c <__gmon_start__@plt-0x10> pushl  0x8049bd4
+08048342 <__gmon_start__@plt-0xa> jmpl   *0x8049bd8
+08048348 <__gmon_start__@plt-0x4> addb   %al,(%eax)
+	...
+0804834c <__gmon_start__@plt> jmpl   *0x8049bdc
+08048352 <__gmon_start__@plt+0x6> pushl  $0x0
+08048357 <__gmon_start__@plt+0xb> jmpl   0804833c <_init+0x30>
+0804835c <putchar@plt> jmpl   *0x8049be0
+08048362 <putchar@plt+0x6> pushl  $0x8
+08048367 <putchar@plt+0xb> jmpl   0804833c <_init+0x30>
+0804836c <__libc_start_main@plt> jmpl   *0x8049be4
+08048372 <__libc_start_main@plt+0x6> pushl  $0x10
+08048377 <__libc_start_main@plt+0xb> jmpl   0804833c <_init+0x30>
+0804837c <printf@plt> jmpl   *0x8049be8
+08048382 <printf@plt+0x6> pushl  $0x18
+08048387 <printf@plt+0xb> jmpl   0804833c <_init+0x30>
+0804838c <__isoc99_scanf@plt> jmpl   *0x8049bec
+08048392 <__isoc99_scanf@plt+0x6> pushl  $0x20
+08048397 <__isoc99_scanf@plt+0xb> jmpl   0804833c <_init+0x30>
+0804839c <puts@plt> jmpl   *0x8049bf0
+080483a2 <puts@plt+0x6> pushl  $0x28
+080483a7 <puts@plt+0xb> jmpl   0804833c <_init+0x30>
+080483ac <exit@plt> jmpl   *0x8049bf4
+080483b2 <exit@plt+0x6> pushl  $0x30
+080483b7 <exit@plt+0xb> jmpl   0804833c <_init+0x30>
+
+Disassembly of section .text:
+080483c0 <_start> xorl   %ebp,%ebp
+080483c2 <_start+0x2> popl   %esi
+080483c3 <_start+0x3> movl   %esp,%ecx
+080483c5 <_start+0x5> andl   $0xfffffff0,%esp
+080483c8 <_start+0x8> pushl  %eax
+080483c9 <_start+0x9> pushl  %esp
+080483ca <_start+0xa> pushl  %edx
+080483cb <_start+0xb> pushl  $0x80488d0
+080483d0 <_start+0x10> pushl  $0x80488e0
+080483d5 <_start+0x15> pushl  %ecx
+080483d6 <_start+0x16> pushl  %esi
+080483d7 <_start+0x17> pushl  $0x8048474
+080483dc <_start+0x1c> calll  0804836c <__libc_start_main@plt>
+080483e1 <_start+0x21> hlt    
+080483e2 <_start+0x22> nop
+080483e3 <_start+0x23> nop
+080483e4 <_start+0x24> nop
+080483e5 <_start+0x25> nop
+080483e6 <_start+0x26> nop
+080483e7 <_start+0x27> nop
+080483e8 <_start+0x28> nop
+080483e9 <_start+0x29> nop
+080483ea <_start+0x2a> nop
+080483eb <_start+0x2b> nop
+080483ec <_start+0x2c> nop
+080483ed <_start+0x2d> nop
+080483ee <_start+0x2e> nop
+080483ef <_start+0x2f> nop
+080483f0 <__do_global_dtors_aux> pushl  %ebp
+080483f1 <__do_global_dtors_aux+0x1> movl   %esp,%ebp
+080483f3 <__do_global_dtors_aux+0x3> pushl  %ebx
+080483f4 <__do_global_dtors_aux+0x4> subl   $0x4,%esp
+080483f7 <__do_global_dtors_aux+0x7> cmpb   $0x0,0x8049c00
+080483fe <__do_global_dtors_aux+0xe> jne    0804843f <__do_global_dtors_aux+0x4f>
+08048400 <__do_global_dtors_aux+0x10> movl   0x8049c04,%eax
+08048405 <__do_global_dtors_aux+0x15> movl   $0x8049afc,%ebx
+0804840a <__do_global_dtors_aux+0x1a> subl   $0x8049af8,%ebx
+08048410 <__do_global_dtors_aux+0x20> sarl   $0x2,%ebx
+08048413 <__do_global_dtors_aux+0x23> subl   $0x1,%ebx
+08048416 <__do_global_dtors_aux+0x26> cmpl   %ebx,%eax
+08048418 <__do_global_dtors_aux+0x28> jae    08048438 <__do_global_dtors_aux+0x48>
+0804841a <__do_global_dtors_aux+0x2a> leal   0x0(%esi),%esi
+08048420 <__do_global_dtors_aux+0x30> addl   $0x1,%eax
+08048423 <__do_global_dtors_aux+0x33> movl   %eax,0x8049c04
+08048428 <__do_global_dtors_aux+0x38> calll  *0x8049af8(,%eax,4)
+0804842f <__do_global_dtors_aux+0x3f> movl   0x8049c04,%eax
+08048434 <__do_global_dtors_aux+0x44> cmpl   %ebx,%eax
+08048436 <__do_global_dtors_aux+0x46> jb     08048420 <__do_global_dtors_aux+0x30>
+08048438 <__do_global_dtors_aux+0x48> movb   $0x1,0x8049c00
+0804843f <__do_global_dtors_aux+0x4f> addl   $0x4,%esp
+08048442 <__do_global_dtors_aux+0x52> popl   %ebx
+08048443 <__do_global_dtors_aux+0x53> popl   %ebp
+08048444 <__do_global_dtors_aux+0x54> retl   
+08048445 <__do_global_dtors_aux+0x55> leal   0x0(%esi,%eiz,1),%esi
+08048449 <__do_global_dtors_aux+0x59> leal   0x0(%edi,%eiz,1),%edi
+08048450 <frame_dummy> pushl  %ebp
+08048451 <frame_dummy+0x1> movl   %esp,%ebp
+08048453 <frame_dummy+0x3> subl   $0x18,%esp
+08048456 <frame_dummy+0x6> movl   0x8049b00,%eax
+0804845b <frame_dummy+0xb> testl  %eax,%eax
+0804845d <frame_dummy+0xd> je     08048471 <frame_dummy+0x21>
+0804845f <frame_dummy+0xf> movl   $0x0,%eax
+08048464 <frame_dummy+0x14> testl  %eax,%eax
+08048466 <frame_dummy+0x16> je     08048471 <frame_dummy+0x21>
+08048468 <frame_dummy+0x18> movl   $0x8049b00,(%esp)
+0804846f <frame_dummy+0x1f> calll  *%eax
+08048471 <frame_dummy+0x21> leavel 
+08048472 <frame_dummy+0x22> retl   
+08048473 <frame_dummy+0x23> nop
+08048474 <main> pushl  %ebp
+08048475 <main+0x1> movl   %esp,%ebp
+08048477 <main+0x3> andl   $0xfffffff0,%esp
+0804847a <main+0x6> pushl  %ebx
+0804847b <main+0x7> subl   $0x4ec,%esp
+08048481 <main+0xd> movl   $0x8048990,%eax
+08048486 <main+0x12> movl   %eax,(%esp)
+08048489 <main+0x15> calll  0804837c <printf@plt>
+0804848e <main+0x1a> movl   $0x80489c4,%eax
+08048493 <main+0x1f> leal   0x1c(%esp),%edx
+08048497 <main+0x23> movl   %edx,0x8(%esp)
+0804849b <main+0x27> leal   0x20(%esp),%edx
+0804849f <main+0x2b> movl   %edx,0x4(%esp)
+080484a3 <main+0x2f> movl   %eax,(%esp)
+080484a6 <main+0x32> calll  0804838c <__isoc99_scanf@plt>
+080484ab <main+0x37> movl   $0x80489cc,%eax
+080484b0 <main+0x3c> movl   %eax,(%esp)
+080484b3 <main+0x3f> calll  0804837c <printf@plt>
+080484b8 <main+0x44> movl   $0x80489c4,%eax
+080484bd <main+0x49> leal   0x14(%esp),%edx
+080484c1 <main+0x4d> movl   %edx,0x8(%esp)
+080484c5 <main+0x51> leal   0x18(%esp),%edx
+080484c9 <main+0x55> movl   %edx,0x4(%esp)
+080484cd <main+0x59> movl   %eax,(%esp)
+080484d0 <main+0x5c> calll  0804838c <__isoc99_scanf@plt>
+080484d5 <main+0x61> movl   $0x8048a04,(%esp)
+080484dc <main+0x68> calll  0804839c <puts@plt>
+080484e1 <main+0x6d> movl   $0x0,0x4dc(%esp)
+080484ec <main+0x78> jmp    08048552 <main+0xde>
+080484ee <main+0x7a> movl   $0x0,0x4d8(%esp)
+080484f9 <main+0x85> jmp    0804853d <main+0xc9>
+080484fb <main+0x87> leal   0x344(%esp),%ecx
+08048502 <main+0x8e> movl   0x4dc(%esp),%edx
+08048509 <main+0x95> movl   %edx,%eax
+0804850b <main+0x97> shll   $0x2,%eax
+0804850e <main+0x9a> addl   %edx,%eax
+08048510 <main+0x9c> addl   %eax,%eax
+08048512 <main+0x9e> movl   %eax,%edx
+08048514 <main+0xa0> movl   0x4d8(%esp),%eax
+0804851b <main+0xa7> leal   (%edx,%eax,1),%eax
+0804851e <main+0xaa> shll   $0x2,%eax
+08048521 <main+0xad> leal   (%ecx,%eax,1),%edx
+08048524 <main+0xb0> movl   $0x8048a29,%eax
+08048529 <main+0xb5> movl   %edx,0x4(%esp)
+0804852d <main+0xb9> movl   %eax,(%esp)
+08048530 <main+0xbc> calll  0804838c <__isoc99_scanf@plt>
+08048535 <main+0xc1> addl   $0x1,0x4d8(%esp)
+0804853d <main+0xc9> movl   0x1c(%esp),%eax
+08048541 <main+0xcd> cmpl   %eax,0x4d8(%esp)
+08048548 <main+0xd4> jl     080484fb <main+0x87>
+0804854a <main+0xd6> addl   $0x1,0x4dc(%esp)
+08048552 <main+0xde> movl   0x20(%esp),%eax
+08048556 <main+0xe2> cmpl   %eax,0x4dc(%esp)
+0804855d <main+0xe9> jl     080484ee <main+0x7a>
+0804855f <main+0xeb> movl   $0x8048a2c,(%esp)
+08048566 <main+0xf2> calll  0804839c <puts@plt>
+0804856b <main+0xf7> movl   $0x0,0x4dc(%esp)
+08048576 <main+0x102> jmp    080485dc <main+0x168>
+08048578 <main+0x104> movl   $0x0,0x4d8(%esp)
+08048583 <main+0x10f> jmp    080485c7 <main+0x153>
+08048585 <main+0x111> leal   0x1b4(%esp),%ecx
+0804858c <main+0x118> movl   0x4dc(%esp),%edx
+08048593 <main+0x11f> movl   %edx,%eax
+08048595 <main+0x121> shll   $0x2,%eax
+08048598 <main+0x124> addl   %edx,%eax
+0804859a <main+0x126> addl   %eax,%eax
+0804859c <main+0x128> movl   %eax,%edx
+0804859e <main+0x12a> movl   0x4d8(%esp),%eax
+080485a5 <main+0x131> leal   (%edx,%eax,1),%eax
+080485a8 <main+0x134> shll   $0x2,%eax
+080485ab <main+0x137> leal   (%ecx,%eax,1),%edx
+080485ae <main+0x13a> movl   $0x8048a29,%eax
+080485b3 <main+0x13f> movl   %edx,0x4(%esp)
+080485b7 <main+0x143> movl   %eax,(%esp)
+080485ba <main+0x146> calll  0804838c <__isoc99_scanf@plt>
+080485bf <main+0x14b> addl   $0x1,0x4d8(%esp)
+080485c7 <main+0x153> movl   0x14(%esp),%eax
+080485cb <main+0x157> cmpl   %eax,0x4d8(%esp)
+080485d2 <main+0x15e> jl     08048585 <main+0x111>
+080485d4 <main+0x160> addl   $0x1,0x4dc(%esp)
+080485dc <main+0x168> movl   0x18(%esp),%eax
+080485e0 <main+0x16c> cmpl   %eax,0x4dc(%esp)
+080485e7 <main+0x173> jl     08048578 <main+0x104>
+080485e9 <main+0x175> movl   $0x8048a52,(%esp)
+080485f0 <main+0x17c> calll  0804839c <puts@plt>
+080485f5 <main+0x181> movl   $0x0,0x4dc(%esp)
+08048600 <main+0x18c> jmp    08048667 <main+0x1f3>
+08048602 <main+0x18e> movl   $0x0,0x4d8(%esp)
+0804860d <main+0x199> jmp    08048646 <main+0x1d2>
+0804860f <main+0x19b> movl   0x4dc(%esp),%edx
+08048616 <main+0x1a2> movl   %edx,%eax
+08048618 <main+0x1a4> shll   $0x2,%eax
+0804861b <main+0x1a7> addl   %edx,%eax
+0804861d <main+0x1a9> addl   %eax,%eax
+0804861f <main+0x1ab> addl   0x4d8(%esp),%eax
+08048626 <main+0x1b2> movl   0x344(%esp,%eax,4),%edx
+0804862d <main+0x1b9> movl   $0x8048a67,%eax
+08048632 <main+0x1be> movl   %edx,0x4(%esp)
+08048636 <main+0x1c2> movl   %eax,(%esp)
+08048639 <main+0x1c5> calll  0804837c <printf@plt>
+0804863e <main+0x1ca> addl   $0x1,0x4d8(%esp)
+08048646 <main+0x1d2> movl   0x1c(%esp),%eax
+0804864a <main+0x1d6> cmpl   %eax,0x4d8(%esp)
+08048651 <main+0x1dd> jl     0804860f <main+0x19b>
+08048653 <main+0x1df> movl   $0xa,(%esp)
+0804865a <main+0x1e6> calll  0804835c <putchar@plt>
+0804865f <main+0x1eb> addl   $0x1,0x4dc(%esp)
+08048667 <main+0x1f3> movl   0x20(%esp),%eax
+0804866b <main+0x1f7> cmpl   %eax,0x4dc(%esp)
+08048672 <main+0x1fe> jl     08048602 <main+0x18e>
+08048674 <main+0x200> movl   $0x8048a6c,(%esp)
+0804867b <main+0x207> calll  0804839c <puts@plt>
+08048680 <main+0x20c> movl   $0x0,0x4dc(%esp)
+0804868b <main+0x217> jmp    080486f2 <main+0x27e>
+0804868d <main+0x219> movl   $0x0,0x4d8(%esp)
+08048698 <main+0x224> jmp    080486d1 <main+0x25d>
+0804869a <main+0x226> movl   0x4dc(%esp),%edx
+080486a1 <main+0x22d> movl   %edx,%eax
+080486a3 <main+0x22f> shll   $0x2,%eax
+080486a6 <main+0x232> addl   %edx,%eax
+080486a8 <main+0x234> addl   %eax,%eax
+080486aa <main+0x236> addl   0x4d8(%esp),%eax
+080486b1 <main+0x23d> movl   0x1b4(%esp,%eax,4),%edx
+080486b8 <main+0x244> movl   $0x8048a67,%eax
+080486bd <main+0x249> movl   %edx,0x4(%esp)
+080486c1 <main+0x24d> movl   %eax,(%esp)
+080486c4 <main+0x250> calll  0804837c <printf@plt>
+080486c9 <main+0x255> addl   $0x1,0x4d8(%esp)
+080486d1 <main+0x25d> movl   0x14(%esp),%eax
+080486d5 <main+0x261> cmpl   %eax,0x4d8(%esp)
+080486dc <main+0x268> jl     0804869a <main+0x226>
+080486de <main+0x26a> movl   $0xa,(%esp)
+080486e5 <main+0x271> calll  0804835c <putchar@plt>
+080486ea <main+0x276> addl   $0x1,0x4dc(%esp)
+080486f2 <main+0x27e> movl   0x18(%esp),%eax
+080486f6 <main+0x282> cmpl   %eax,0x4dc(%esp)
+080486fd <main+0x289> jl     0804868d <main+0x219>
+080486ff <main+0x28b> movl   0x1c(%esp),%edx
+08048703 <main+0x28f> movl   0x18(%esp),%eax
+08048707 <main+0x293> cmpl   %eax,%edx
+08048709 <main+0x295> je     08048724 <main+0x2b0>
+0804870b <main+0x297> movl   $0x8048a84,%eax
+08048710 <main+0x29c> movl   %eax,(%esp)
+08048713 <main+0x29f> calll  0804837c <printf@plt>
+08048718 <main+0x2a4> movl   $0x0,(%esp)
+0804871f <main+0x2ab> calll  080483ac <exit@plt>
+08048724 <main+0x2b0> movl   $0x0,0x4dc(%esp)
+0804872f <main+0x2bb> jmpl   08048821 <main+0x3ad>
+08048734 <main+0x2c0> movl   $0x0,0x4d8(%esp)
+0804873f <main+0x2cb> jmpl   08048808 <main+0x394>
+08048744 <main+0x2d0> movl   0x4dc(%esp),%edx
+0804874b <main+0x2d7> movl   %edx,%eax
+0804874d <main+0x2d9> shll   $0x2,%eax
+08048750 <main+0x2dc> addl   %edx,%eax
+08048752 <main+0x2de> addl   %eax,%eax
+08048754 <main+0x2e0> addl   0x4d8(%esp),%eax
+0804875b <main+0x2e7> movl   $0x0,0x24(%esp,%eax,4)
+08048763 <main+0x2ef> movl   $0x0,0x4d4(%esp)
+0804876e <main+0x2fa> jmp    080487ef <main+0x37b>
+08048770 <main+0x2fc> movl   0x4dc(%esp),%edx
+08048777 <main+0x303> movl   %edx,%eax
+08048779 <main+0x305> shll   $0x2,%eax
+0804877c <main+0x308> addl   %edx,%eax
+0804877e <main+0x30a> addl   %eax,%eax
+08048780 <main+0x30c> addl   0x4d8(%esp),%eax
+08048787 <main+0x313> movl   0x24(%esp,%eax,4),%ecx
+0804878b <main+0x317> movl   0x4dc(%esp),%edx
+08048792 <main+0x31e> movl   %edx,%eax
+08048794 <main+0x320> shll   $0x2,%eax
+08048797 <main+0x323> addl   %edx,%eax
+08048799 <main+0x325> addl   %eax,%eax
+0804879b <main+0x327> addl   0x4d4(%esp),%eax
+080487a2 <main+0x32e> movl   0x344(%esp,%eax,4),%ebx
+080487a9 <main+0x335> movl   0x4d4(%esp),%edx
+080487b0 <main+0x33c> movl   %edx,%eax
+080487b2 <main+0x33e> shll   $0x2,%eax
+080487b5 <main+0x341> addl   %edx,%eax
+080487b7 <main+0x343> addl   %eax,%eax
+080487b9 <main+0x345> addl   0x4d8(%esp),%eax
+080487c0 <main+0x34c> movl   0x1b4(%esp,%eax,4),%eax
+080487c7 <main+0x353> imull  %ebx,%eax
+080487ca <main+0x356> addl   %eax,%ecx
+080487cc <main+0x358> movl   0x4dc(%esp),%edx
+080487d3 <main+0x35f> movl   %edx,%eax
+080487d5 <main+0x361> shll   $0x2,%eax
+080487d8 <main+0x364> addl   %edx,%eax
+080487da <main+0x366> addl   %eax,%eax
+080487dc <main+0x368> addl   0x4d8(%esp),%eax
+080487e3 <main+0x36f> movl   %ecx,0x24(%esp,%eax,4)
+080487e7 <main+0x373> addl   $0x1,0x4d4(%esp)
+080487ef <main+0x37b> movl   0x1c(%esp),%eax
+080487f3 <main+0x37f> cmpl   %eax,0x4d4(%esp)
+080487fa <main+0x386> jl     08048770 <main+0x2fc>
+08048800 <main+0x38c> addl   $0x1,0x4d8(%esp)
+08048808 <main+0x394> movl   0x14(%esp),%eax
+0804880c <main+0x398> cmpl   %eax,0x4d8(%esp)
+08048813 <main+0x39f> jl     08048744 <main+0x2d0>
+08048819 <main+0x3a5> addl   $0x1,0x4dc(%esp)
+08048821 <main+0x3ad> movl   0x20(%esp),%eax
+08048825 <main+0x3b1> cmpl   %eax,0x4dc(%esp)
+0804882c <main+0x3b8> jl     08048734 <main+0x2c0>
+08048832 <main+0x3be> movl   $0x8048ac4,(%esp)
+08048839 <main+0x3c5> calll  0804839c <puts@plt>
+0804883e <main+0x3ca> movl   $0x0,0x4dc(%esp)
+08048849 <main+0x3d5> jmp    080488ad <main+0x439>
+0804884b <main+0x3d7> movl   $0x0,0x4d8(%esp)
+08048856 <main+0x3e2> jmp    0804888c <main+0x418>
+08048858 <main+0x3e4> movl   0x4dc(%esp),%edx
+0804885f <main+0x3eb> movl   %edx,%eax
+08048861 <main+0x3ed> shll   $0x2,%eax
+08048864 <main+0x3f0> addl   %edx,%eax
+08048866 <main+0x3f2> addl   %eax,%eax
+08048868 <main+0x3f4> addl   0x4d8(%esp),%eax
+0804886f <main+0x3fb> movl   0x24(%esp,%eax,4),%edx
+08048873 <main+0x3ff> movl   $0x8048a67,%eax
+08048878 <main+0x404> movl   %edx,0x4(%esp)
+0804887c <main+0x408> movl   %eax,(%esp)
+0804887f <main+0x40b> calll  0804837c <printf@plt>
+08048884 <main+0x410> addl   $0x1,0x4d8(%esp)
+0804888c <main+0x418> movl   0x14(%esp),%eax
+08048890 <main+0x41c> cmpl   %eax,0x4d8(%esp)
+08048897 <main+0x423> jl     08048858 <main+0x3e4>
+08048899 <main+0x425> movl   $0xa,(%esp)
+080488a0 <main+0x42c> calll  0804835c <putchar@plt>
+080488a5 <main+0x431> addl   $0x1,0x4dc(%esp)
+080488ad <main+0x439> movl   0x20(%esp),%eax
+080488b1 <main+0x43d> cmpl   %eax,0x4dc(%esp)
+080488b8 <main+0x444> jl     0804884b <main+0x3d7>
+080488ba <main+0x446> addl   $0x4ec,%esp
+080488c0 <main+0x44c> popl   %ebx
+080488c1 <main+0x44d> movl   %ebp,%esp
+080488c3 <main+0x44f> popl   %ebp
+080488c4 <main+0x450> retl   
+080488c5 <main+0x451> nop
+080488c6 <main+0x452> nop
+080488c7 <main+0x453> nop
+080488c8 <main+0x454> nop
+080488c9 <main+0x455> nop
+080488ca <main+0x456> nop
+080488cb <main+0x457> nop
+080488cc <main+0x458> nop
+080488cd <main+0x459> nop
+080488ce <main+0x45a> nop
+080488cf <main+0x45b> nop
+080488d0 <__libc_csu_fini> pushl  %ebp
+080488d1 <__libc_csu_fini+0x1> movl   %esp,%ebp
+080488d3 <__libc_csu_fini+0x3> popl   %ebp
+080488d4 <__libc_csu_fini+0x4> retl   
+080488d5 <__libc_csu_fini+0x5> leal   0x0(%esi,%eiz,1),%esi
+080488d9 <__libc_csu_fini+0x9> leal   0x0(%edi,%eiz,1),%edi
+080488e0 <__libc_csu_init> pushl  %ebp
+080488e1 <__libc_csu_init+0x1> movl   %esp,%ebp
+080488e3 <__libc_csu_init+0x3> pushl  %edi
+080488e4 <__libc_csu_init+0x4> pushl  %esi
+080488e5 <__libc_csu_init+0x5> pushl  %ebx
+080488e6 <__libc_csu_init+0x6> calll  0804893a <__i686.get_pc_thunk.bx>
+080488eb <__libc_csu_init+0xb> addl   $0x12e5,%ebx
+080488f1 <__libc_csu_init+0x11> subl   $0x1c,%esp
+080488f4 <__libc_csu_init+0x14> calll  0804830c <_init>
+080488f9 <__libc_csu_init+0x19> leal   -0xe0(%ebx),%edi
+080488ff <__libc_csu_init+0x1f> leal   -0xe0(%ebx),%eax
+08048905 <__libc_csu_init+0x25> subl   %eax,%edi
+08048907 <__libc_csu_init+0x27> sarl   $0x2,%edi
+0804890a <__libc_csu_init+0x2a> testl  %edi,%edi
+0804890c <__libc_csu_init+0x2c> je     08048932 <__libc_csu_init+0x52>
+0804890e <__libc_csu_init+0x2e> xorl   %esi,%esi
+08048910 <__libc_csu_init+0x30> movl   0x10(%ebp),%eax
+08048913 <__libc_csu_init+0x33> movl   %eax,0x8(%esp)
+08048917 <__libc_csu_init+0x37> movl   0xc(%ebp),%eax
+0804891a <__libc_csu_init+0x3a> movl   %eax,0x4(%esp)
+0804891e <__libc_csu_init+0x3e> movl   0x8(%ebp),%eax
+08048921 <__libc_csu_init+0x41> movl   %eax,(%esp)
+08048924 <__libc_csu_init+0x44> calll  *-0xe0(%ebx,%esi,4)
+0804892b <__libc_csu_init+0x4b> addl   $0x1,%esi
+0804892e <__libc_csu_init+0x4e> cmpl   %edi,%esi
+08048930 <__libc_csu_init+0x50> jb     08048910 <__libc_csu_init+0x30>
+08048932 <__libc_csu_init+0x52> addl   $0x1c,%esp
+08048935 <__libc_csu_init+0x55> popl   %ebx
+08048936 <__libc_csu_init+0x56> popl   %esi
+08048937 <__libc_csu_init+0x57> popl   %edi
+08048938 <__libc_csu_init+0x58> popl   %ebp
+08048939 <__libc_csu_init+0x59> retl   
+0804893a <__i686.get_pc_thunk.bx> movl   (%esp),%ebx
+0804893d <__i686.get_pc_thunk.bx+0x3> retl   
+0804893e <__i686.get_pc_thunk.bx+0x4> nop
+0804893f <__i686.get_pc_thunk.bx+0x5> nop
+08048940 <__do_global_ctors_aux> pushl  %ebp
+08048941 <__do_global_ctors_aux+0x1> movl   %esp,%ebp
+08048943 <__do_global_ctors_aux+0x3> pushl  %ebx
+08048944 <__do_global_ctors_aux+0x4> subl   $0x4,%esp
+08048947 <__do_global_ctors_aux+0x7> movl   0x8049af0,%eax
+0804894c <__do_global_ctors_aux+0xc> cmpl   $0xffffffff,%eax
+0804894f <__do_global_ctors_aux+0xf> je     08048964 <__do_global_ctors_aux+0x24>
+08048951 <__do_global_ctors_aux+0x11> movl   $0x8049af0,%ebx
+08048956 <__do_global_ctors_aux+0x16> xchgw  %ax,%ax
+08048958 <__do_global_ctors_aux+0x18> subl   $0x4,%ebx
+0804895b <__do_global_ctors_aux+0x1b> calll  *%eax
+0804895d <__do_global_ctors_aux+0x1d> movl   (%ebx),%eax
+0804895f <__do_global_ctors_aux+0x1f> cmpl   $0xffffffff,%eax
+08048962 <__do_global_ctors_aux+0x22> jne    08048958 <__do_global_ctors_aux+0x18>
+08048964 <__do_global_ctors_aux+0x24> addl   $0x4,%esp
+08048967 <__do_global_ctors_aux+0x27> popl   %ebx
+08048968 <__do_global_ctors_aux+0x28> popl   %ebp
+08048969 <__do_global_ctors_aux+0x29> retl   
+0804896a <__do_global_ctors_aux+0x2a> nop
+0804896b <__do_global_ctors_aux+0x2b> nop
+
+Disassembly of section .fini:
+0804896c <_fini> pushl  %ebp
+0804896d <_fini+0x1> movl   %esp,%ebp
+0804896f <_fini+0x3> pushl  %ebx
+08048970 <_fini+0x4> subl   $0x4,%esp
+08048973 <_fini+0x7> calll  08048978 <_fini+0xc>
+08048978 <_fini+0xc> popl   %ebx
+08048979 <_fini+0xd> addl   $0x1258,%ebx
+0804897f <_fini+0x13> calll  080483f0 <__do_global_dtors_aux>
+08048984 <_fini+0x18> popl   %ecx
+08048985 <_fini+0x19> popl   %ebx
+08048986 <_fini+0x1a> leavel 
+08048987 <_fini+0x1b> retl   

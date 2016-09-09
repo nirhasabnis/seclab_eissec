@@ -1,0 +1,9 @@
+addOutput
+st
+vt
+ct
+getGenCount
+symvar_to_string
+makeVarSymbolic
+deleteRecord
+deleteRecord1

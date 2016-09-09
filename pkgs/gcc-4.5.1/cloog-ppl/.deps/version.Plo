@@ -1,0 +1,3 @@
+version.lo: source/version.c source/../include/cloog/version.h
+
+source/../include/cloog/version.h:

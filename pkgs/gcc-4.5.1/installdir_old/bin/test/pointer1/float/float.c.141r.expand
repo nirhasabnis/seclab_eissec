@@ -1,0 +1,94 @@
+
+;; Function main (main)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 4 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 4 2 5 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 5 4 6 3 float.c:7 (set (mem/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 i+0 S4 A32])
+        (const_int 100 [0x64])) -1 (nil))
+
+(insn 6 5 7 3 float.c:8 (set (reg:SF 63)
+        (mem/u/c/i:SF (symbol_ref/u:SI ("*.LC0") [flags 0x2]) [0 S4 A32])) -1 (nil))
+
+(insn 7 6 8 3 float.c:8 (set (mem/c/i:SF (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -8 [0xfffffff8])) [0 j+0 S4 A32])
+        (reg:SF 63)) -1 (nil))
+
+(insn 8 7 9 3 float.c:9 (set (mem/c/i:QI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -9 [0xfffffff7])) [0 c+0 S1 A8])
+        (const_int 99 [0x63])) -1 (nil))
+
+(insn 9 8 10 3 float.c:11 (set (reg:SI 58 [ D.3783 ])
+        (sign_extend:SI (mem/c/i:QI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -9 [0xfffffff7])) [0 c+0 S1 A8]))) -1 (nil))
+
+(insn 10 9 11 3 float.c:11 (set (reg:DF 59 [ D.3784 ])
+        (float_extend:DF (mem/c/i:SF (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                    (const_int -8 [0xfffffff8])) [0 j+0 S4 A32]))) -1 (nil))
+
+(insn 11 10 12 3 float.c:11 (set (reg/f:SI 60 [ D.3785 ])
+        (symbol_ref/f:SI ("*.LC1") [flags 0x2]  <string_cst 0xb7663f60>)) -1 (nil))
+
+(insn 12 11 13 3 float.c:11 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 16 [0x10])) [0 S4 A32])
+        (reg:SI 58 [ D.3783 ])) -1 (nil))
+
+(insn 13 12 14 3 float.c:11 (set (mem:DF (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0 S8 A32])
+        (reg:DF 59 [ D.3784 ])) -1 (nil))
+
+(insn 14 13 15 3 float.c:11 (set (reg:SI 64)
+        (mem/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 i+0 S4 A32])) -1 (nil))
+
+(insn 15 14 16 3 float.c:11 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 64)) -1 (nil))
+
+(insn 16 15 17 3 float.c:11 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 60 [ D.3785 ])) -1 (nil))
+
+(call_insn 17 16 18 3 float.c:11 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x41]  <function_decl 0xb76a2f00 printf>) [0 S1 A8])
+            (const_int 20 [0x14]))) -1 (nil)
+    (nil))
+
+(insn 18 17 19 3 float.c:12 (set (reg:SI 61 [ D.3786 ])
+        (const_int 0 [0x0])) -1 (nil))
+
+(insn 19 18 20 3 float.c:12 (set (reg:SI 62 [ <retval> ])
+        (reg:SI 61 [ D.3786 ])) -1 (nil))
+
+(jump_insn 20 19 21 3 float.c:12 (set (pc)
+        (label_ref 22)) -1 (nil)
+ -> 22)
+
+(barrier 21 20 27)
+
+(note 27 21 24 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 24 27 25 4 float.c:13 (clobber (reg/i:SI 0 ax)) -1 (nil))
+
+(insn 25 24 22 4 float.c:13 (clobber (reg:SI 62 [ <retval> ])) -1 (nil))
+
+(code_label 22 25 28 5 1 "" [1 uses])
+
+(note 28 22 23 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 23 28 26 5 float.c:13 (set (reg/i:SI 0 ax)
+        (reg:SI 62 [ <retval> ])) -1 (nil))
+
+(insn 26 23 0 5 float.c:13 (use (reg/i:SI 0 ax)) -1 (nil))

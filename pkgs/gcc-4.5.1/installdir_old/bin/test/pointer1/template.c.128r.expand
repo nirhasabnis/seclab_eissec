@@ -1,0 +1,100 @@
+
+;; Function func (func)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 4 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 4 2 5 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 5 4 6 3 template.c:7 (set (reg/f:SI 58 [ D.2762 ])
+        (symbol_ref/f:SI ("*.LC0") [flags 0x2] <string_cst 0xb77b48dc>)) -1 (nil))
+
+(insn 6 5 7 3 template.c:7 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 58 [ D.2762 ])) -1 (nil))
+
+(call_insn 7 6 12 3 template.c:7 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0xb7716f00 printf>) [0 S1 A8])
+            (const_int 4 [0x4]))) -1 (nil)
+    (nil))
+
+(note 12 7 9 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(jump_insn 9 12 10 4 template.c:8 (set (pc)
+        (label_ref 11)) -1 (nil))
+
+(barrier 10 9 8)
+
+(code_label 8 10 13 5 1 "" [0 uses])
+
+(note 13 8 11 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(code_label 11 13 14 6 2 "" [1 uses])
+
+(note 14 11 0 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+;; Function main (main)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 4 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 4 2 5 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(call_insn 5 4 6 3 template.c:12 (call (mem:QI (symbol_ref:SI ("func") [flags 0x3] <function_decl 0xb75ec100 func>) [0 S1 A8])
+        (const_int 0 [0x0])) -1 (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(insn 6 5 7 3 template.c:13 (set (reg:SI 58 [ D.2767 ])
+        (const_int 0 [0x0])) -1 (nil))
+
+(insn 7 6 8 3 template.c:13 (set (reg:SI 59 [ <result> ])
+        (reg:SI 58 [ D.2767 ])) -1 (nil))
+
+(jump_insn 8 7 9 3 template.c:13 (set (pc)
+        (label_ref 10)) -1 (nil))
+
+(barrier 9 8 18)
+
+(note 18 9 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 12 18 13 4 template.c:14 (clobber (reg/i:SI 0 ax)) -1 (nil))
+
+(insn 13 12 14 4 template.c:14 (clobber (reg:SI 59 [ <result> ])) -1 (nil))
+
+(jump_insn 14 13 15 4 template.c:14 (set (pc)
+        (label_ref 16)) -1 (nil))
+
+(barrier 15 14 10)
+
+(code_label 10 15 19 5 3 "" [1 uses])
+
+(note 19 10 11 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 11 19 16 5 template.c:14 (set (reg/i:SI 0 ax)
+        (reg:SI 59 [ <result> ])) -1 (nil))
+
+(code_label 16 11 20 6 4 "" [1 uses])
+
+(note 20 16 17 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 17 20 0 6 template.c:14 (use (reg/i:SI 0 ax)) -1 (nil))

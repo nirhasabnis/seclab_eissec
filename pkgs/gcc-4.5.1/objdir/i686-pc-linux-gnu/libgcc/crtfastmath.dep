@@ -1,0 +1,4 @@
+crtfastmath.o: ../../../libgcc/../gcc/config/i386/crtfastmath.c \
+ ../../../libgcc/../gcc/config/i386/cpuid.h
+
+../../../libgcc/../gcc/config/i386/cpuid.h:

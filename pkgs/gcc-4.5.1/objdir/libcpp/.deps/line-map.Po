@@ -1,0 +1,18 @@
+line-map.o: ../../libcpp/line-map.c config.h ../../libcpp/system.h \
+ ../../libcpp/../include/filenames.h ../../libcpp/../include/libiberty.h \
+ ../../libcpp/../include/ansidecl.h ../../libcpp/../include/safe-ctype.h \
+ ../../libcpp/include/line-map.h
+
+config.h:
+
+../../libcpp/system.h:
+
+../../libcpp/../include/filenames.h:
+
+../../libcpp/../include/libiberty.h:
+
+../../libcpp/../include/ansidecl.h:
+
+../../libcpp/../include/safe-ctype.h:
+
+../../libcpp/include/line-map.h:

@@ -1,0 +1,41 @@
+
+;; Function func (func)
+
+(note 1 0 3 NOTE_INSN_DELETED)
+
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 5 2 6 2 template.c:7 (set (reg/f:SI 0 ax [orig:58 D.2762 ] [58])
+        (symbol_ref/f:SI ("*.LC0") [flags 0x2] <string_cst 0xb77b48dc>)) 47 {*movsi_1} (nil))
+
+(insn 6 5 7 2 template.c:7 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (reg/f:SI 0 ax [orig:58 D.2762 ] [58])) 47 {*movsi_1} (nil))
+
+(call_insn 7 6 15 2 template.c:7 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0xb7716f00 printf>) [0 S1 A8])
+            (const_int 4 [0x4]))) 907 {*call_value_0} (nil)
+    (nil))
+
+(note 15 7 0 NOTE_INSN_DELETED)
+
+;; Function main (main)
+
+(note 1 0 3 NOTE_INSN_DELETED)
+
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(call_insn 5 2 6 2 template.c:12 (call (mem:QI (symbol_ref:SI ("func") [flags 0x3] <function_decl 0xb75ec100 func>) [0 S1 A8])
+        (const_int 0 [0x0])) 647 {*call_0} (expr_list:REG_EH_REGION (const_int 0 [0x0])
+        (nil))
+    (nil))
+
+(insn 6 5 17 2 template.c:13 (set (reg:SI 0 ax [orig:58 D.2767 ] [58])
+        (const_int 0 [0x0])) 47 {*movsi_1} (nil))
+
+(insn 17 6 21 2 template.c:14 (use (reg/i:SI 0 ax)) -1 (nil))
+
+(note 21 17 0 NOTE_INSN_DELETED)

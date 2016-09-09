@@ -1,0 +1,18 @@
+mkdeps.o: ../../libcpp/mkdeps.c config.h ../../libcpp/system.h \
+ ../../libcpp/../include/filenames.h ../../libcpp/../include/libiberty.h \
+ ../../libcpp/../include/ansidecl.h ../../libcpp/../include/safe-ctype.h \
+ ../../libcpp/include/mkdeps.h
+
+config.h:
+
+../../libcpp/system.h:
+
+../../libcpp/../include/filenames.h:
+
+../../libcpp/../include/libiberty.h:
+
+../../libcpp/../include/ansidecl.h:
+
+../../libcpp/../include/safe-ctype.h:
+
+../../libcpp/include/mkdeps.h:

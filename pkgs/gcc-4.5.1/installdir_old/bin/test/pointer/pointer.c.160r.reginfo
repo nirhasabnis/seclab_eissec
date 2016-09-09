@@ -1,0 +1,56 @@
+
+;; Function main (main)
+
+(note 3 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 5 2 6 2 pointer.c:7 (set (mem/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                (const_int -8 [0xfffffff8])) [0 i+0 S4 A64])
+        (const_int 100 [0x64])) 44 {*movsi_1} (nil))
+
+(insn 6 5 7 2 pointer.c:8 (parallel [
+            (set (reg:SI 62)
+                (plus:SI (reg/f:SI 20 frame)
+                    (const_int -8 [0xfffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (nil))
+
+(insn 7 6 8 2 pointer.c:8 (set (mem/f/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                (const_int -4 [0xfffffffc])) [0 p+0 S4 A32])
+        (reg:SI 62)) 44 {*movsi_1} (expr_list:REG_EQUAL (plus:SI (reg/f:SI 20 frame)
+            (const_int -8 [0xfffffff8]))
+        (nil)))
+
+(insn 8 7 9 2 pointer.c:9 (set (reg/f:SI 63)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 20 frame)
+                (const_int -4 [0xfffffffc])) [0 p+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 9 8 10 2 pointer.c:9 (set (reg:SI 58 [ D.3782 ])
+        (mem:SI (reg/f:SI 63) [0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 10 9 11 2 pointer.c:9 (set (reg/f:SI 59 [ D.3783 ])
+        (symbol_ref/f:SI ("*.LC0") [flags 0x2]  <string_cst 0xb751df90>)) 44 {*movsi_1} (nil))
+
+(insn 11 10 12 2 pointer.c:9 (set (mem:SI (plus:SI (reg/f:SI 7 sp)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 58 [ D.3782 ])) 44 {*movsi_1} (nil))
+
+(insn 12 11 13 2 pointer.c:9 (set (mem:SI (reg/f:SI 7 sp) [0 S4 A32])
+        (reg/f:SI 59 [ D.3783 ])) 44 {*movsi_1} (nil))
+
+(call_insn 13 12 14 2 pointer.c:9 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x41]  <function_decl 0xb7669f00 printf>) [0 S1 A8])
+            (const_int 8 [0x8]))) 697 {*call_value_0} (nil)
+    (nil))
+
+(insn 14 13 15 2 pointer.c:10 (set (reg:SI 60 [ D.3784 ])
+        (const_int 0 [0x0])) 44 {*movsi_1} (nil))
+
+(insn 15 14 19 2 pointer.c:10 (set (reg:SI 61 [ <retval> ])
+        (reg:SI 60 [ D.3784 ])) 44 {*movsi_1} (nil))
+
+(insn 19 15 22 2 pointer.c:11 (set (reg/i:SI 0 ax)
+        (reg:SI 61 [ <retval> ])) 44 {*movsi_1} (nil))
+
+(insn 22 19 0 2 pointer.c:11 (use (reg/i:SI 0 ax)) -1 (nil))

@@ -1,0 +1,270 @@
+
+;; Function main (main)
+
+(note 1 0 3 NOTE_INSN_DELETED)
+
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 4 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 4 2 5 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 5 4 6 3 pointer1.c:13 (set (reg/f:SI 62)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 argv+0 S4 A32])) -1 (nil))
+
+(insn 6 5 7 3 pointer1.c:13 (set (reg/f:SI 58 [ D.3785 ])
+        (mem/f:SI (reg/f:SI 62) [0 S4 A32])) -1 (nil))
+
+(insn 7 6 8 3 pointer1.c:13 (set (reg/f:SI 59 [ D.3786 ])
+        (symbol_ref/f:SI ("*.LC0") [flags 0x2]  <string_cst 0xb74e70fc>)) -1 (nil))
+
+(insn 8 7 9 3 pointer1.c:13 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0 S4 A32])
+        (reg/f:SI 58 [ D.3785 ])) -1 (nil))
+
+(insn 9 8 10 3 pointer1.c:13 (set (reg:SI 63)
+        (mem/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 argc+0 S4 A32])) -1 (nil))
+
+(insn 10 9 11 3 pointer1.c:13 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 63)) -1 (nil))
+
+(insn 11 10 12 3 pointer1.c:13 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 59 [ D.3786 ])) -1 (nil))
+
+(call_insn 12 11 13 3 pointer1.c:13 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x41]  <function_decl 0xb760ff00 printf>) [0 S1 A8])
+            (const_int 12 [0xc]))) -1 (nil)
+    (nil))
+
+(insn 13 12 14 3 pointer1.c:15 (set (reg:SI 64)
+        (mem/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 argc+0 S4 A32])) -1 (nil))
+
+(insn 14 13 15 3 pointer1.c:15 (set (mem/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 i+0 S4 A32])
+        (reg:SI 64)) -1 (nil))
+
+(insn 15 14 16 3 pointer1.c:17 (set (reg:SI 66)
+        (mem/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 argc+0 S4 A32])) -1 (nil))
+
+(insn 16 15 17 3 pointer1.c:17 (parallel [
+            (set (reg:SI 65)
+                (plus:SI (reg:SI 66)
+                    (const_int -1 [0xffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 17 16 18 3 pointer1.c:17 (set (mem/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -8 [0xfffffff8])) [0 l+0 S4 A32])
+        (reg:SI 65)) -1 (expr_list:REG_EQUAL (plus:SI (mem/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 argc+0 S4 A32])
+            (const_int -1 [0xffffffff]))
+        (nil)))
+
+(insn 18 17 19 3 pointer1.c:18 (set (reg:SI 68)
+        (mem/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 argc+0 S4 A32])) -1 (nil))
+
+(insn 19 18 20 3 pointer1.c:18 (parallel [
+            (set (reg:SI 67)
+                (plus:SI (reg:SI 68)
+                    (const_int 23 [0x17])))
+            (clobber (reg:CC 17 flags))
+        ]) -1 (nil))
+
+(insn 20 19 21 3 pointer1.c:18 (set (mem/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -12 [0xfffffff4])) [0 k+0 S4 A32])
+        (reg:SI 67)) -1 (expr_list:REG_EQUAL (plus:SI (mem/c/i:SI (reg/f:SI 53 virtual-incoming-args) [0 argc+0 S4 A32])
+            (const_int 23 [0x17]))
+        (nil)))
+
+(insn 21 20 22 3 pointer1.c:22 (set (reg/f:SI 60 [ D.3787 ])
+        (symbol_ref/f:SI ("*.LC1") [flags 0x2]  <string_cst 0xb74e7118>)) -1 (nil))
+
+(insn 22 21 23 3 pointer1.c:22 (set (reg:SI 69)
+        (mem/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -12 [0xfffffff4])) [0 k+0 S4 A32])) -1 (nil))
+
+(insn 23 22 24 3 pointer1.c:22 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 12 [0xc])) [0 S4 A32])
+        (reg:SI 69)) -1 (nil))
+
+(insn 24 23 25 3 pointer1.c:22 (set (reg:SI 70)
+        (mem/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -8 [0xfffffff8])) [0 l+0 S4 A32])) -1 (nil))
+
+(insn 25 24 26 3 pointer1.c:22 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0 S4 A32])
+        (reg:SI 70)) -1 (nil))
+
+(insn 26 25 27 3 pointer1.c:22 (set (reg:SI 71)
+        (mem/c/i:SI (plus:SI (reg/f:SI 54 virtual-stack-vars)
+                (const_int -4 [0xfffffffc])) [0 i+0 S4 A32])) -1 (nil))
+
+(insn 27 26 28 3 pointer1.c:22 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 71)) -1 (nil))
+
+(insn 28 27 29 3 pointer1.c:22 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 60 [ D.3787 ])) -1 (nil))
+
+(call_insn 29 28 35 3 pointer1.c:22 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x41]  <function_decl 0xb760ff00 printf>) [0 S1 A8])
+            (const_int 16 [0x10]))) -1 (nil)
+    (nil))
+
+(note 35 29 32 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 32 35 33 4 pointer1.c:23 (clobber (reg/i:SI 0 ax)) -1 (nil))
+
+(insn 33 32 30 4 pointer1.c:23 (clobber (reg:SI 61 [ <retval> ])) -1 (nil))
+
+(code_label 30 33 36 5 1 "" [0 uses])
+
+(note 36 30 31 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 31 36 34 5 pointer1.c:23 (set (reg/i:SI 0 ax)
+        (reg:SI 61 [ <retval> ])) -1 (nil))
+
+(insn 34 31 0 5 pointer1.c:23 (use (reg/i:SI 0 ax)) -1 (nil))
+
+;; Function main (main)
+
+(note 1 0 3 NOTE_INSN_DELETED)
+
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 5 2 6 2 pointer1.c:13 (set (reg/f:SI 62)
+        (mem/f/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 4 [0x4])) [0 argv+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 6 5 7 2 pointer1.c:13 (set (reg/f:SI 58 [ D.3785 ])
+        (mem/f:SI (reg/f:SI 62) [0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 7 6 8 2 pointer1.c:13 (set (reg/f:SI 59 [ D.3786 ])
+        (symbol_ref/f:SI ("*.LC0") [flags 0x2]  <string_cst 0xb74e70fc>)) 44 {*movsi_1} (nil))
+
+(insn 8 7 9 2 pointer1.c:13 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0 S4 A32])
+        (reg/f:SI 58 [ D.3785 ])) 44 {*movsi_1} (nil))
+
+(insn 9 8 10 2 pointer1.c:13 (set (reg:SI 63)
+        (mem/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 0 [0x0])) [0 argc+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 10 9 11 2 pointer1.c:13 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 63)) 44 {*movsi_1} (nil))
+
+(insn 11 10 12 2 pointer1.c:13 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 59 [ D.3786 ])) 44 {*movsi_1} (nil))
+
+(call_insn 12 11 13 2 pointer1.c:13 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x41]  <function_decl 0xb760ff00 printf>) [0 S1 A8])
+            (const_int 12 [0xc]))) 697 {*call_value_0} (nil)
+    (nil))
+
+(insn 13 12 14 2 pointer1.c:15 (set (reg:SI 64)
+        (mem/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 0 [0x0])) [0 argc+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 14 13 15 2 pointer1.c:15 (set (mem/c/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 28 [0x1c])) [0 i+0 S4 A32])
+        (reg:SI 64)) 44 {*movsi_1} (nil))
+
+(insn 15 14 16 2 pointer1.c:17 (set (reg:SI 66)
+        (mem/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 0 [0x0])) [0 argc+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 16 15 17 2 pointer1.c:17 (parallel [
+            (set (reg:SI 65)
+                (plus:SI (reg:SI 66)
+                    (const_int -1 [0xffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (nil))
+
+(insn 17 16 18 2 pointer1.c:17 (set (mem/c/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 24 [0x18])) [0 l+0 S4 A32])
+        (reg:SI 65)) 44 {*movsi_1} (expr_list:REG_EQUAL (plus:SI (mem/c/i:SI (plus:SI (reg/f:SI 6 bp)
+                    (const_int 8 [0x8])) [0 argc+0 S4 A32])
+            (const_int -1 [0xffffffff]))
+        (nil)))
+
+(insn 18 17 19 2 pointer1.c:18 (set (reg:SI 68)
+        (mem/c/i:SI (plus:SI (reg/f:SI 53 virtual-incoming-args)
+                (const_int 0 [0x0])) [0 argc+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 19 18 20 2 pointer1.c:18 (parallel [
+            (set (reg:SI 67)
+                (plus:SI (reg:SI 68)
+                    (const_int 23 [0x17])))
+            (clobber (reg:CC 17 flags))
+        ]) 197 {*addsi_1} (nil))
+
+(insn 20 19 21 2 pointer1.c:18 (set (mem/c/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 20 [0x14])) [0 k+0 S4 A32])
+        (reg:SI 67)) 44 {*movsi_1} (expr_list:REG_EQUAL (plus:SI (mem/c/i:SI (plus:SI (reg/f:SI 6 bp)
+                    (const_int 8 [0x8])) [0 argc+0 S4 A32])
+            (const_int 23 [0x17]))
+        (nil)))
+
+(insn 21 20 22 2 pointer1.c:22 (set (reg/f:SI 60 [ D.3787 ])
+        (symbol_ref/f:SI ("*.LC1") [flags 0x2]  <string_cst 0xb74e7118>)) 44 {*movsi_1} (nil))
+
+(insn 22 21 23 2 pointer1.c:22 (set (reg:SI 69)
+        (mem/c/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 20 [0x14])) [0 k+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 23 22 24 2 pointer1.c:22 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 12 [0xc])) [0 S4 A32])
+        (reg:SI 69)) 44 {*movsi_1} (nil))
+
+(insn 24 23 25 2 pointer1.c:22 (set (reg:SI 70)
+        (mem/c/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 24 [0x18])) [0 l+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 25 24 26 2 pointer1.c:22 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0 S4 A32])
+        (reg:SI 70)) 44 {*movsi_1} (nil))
+
+(insn 26 25 27 2 pointer1.c:22 (set (reg:SI 71)
+        (mem/c/i:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 28 [0x1c])) [0 i+0 S4 A32])) 44 {*movsi_1} (nil))
+
+(insn 27 26 28 2 pointer1.c:22 (set (mem:SI (plus:SI (reg/f:SI 56 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0 S4 A32])
+        (reg:SI 71)) 44 {*movsi_1} (nil))
+
+(insn 28 27 29 2 pointer1.c:22 (set (mem:SI (reg/f:SI 56 virtual-outgoing-args) [0 S4 A32])
+        (reg/f:SI 60 [ D.3787 ])) 44 {*movsi_1} (nil))
+
+(call_insn 29 28 32 2 pointer1.c:22 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x41]  <function_decl 0xb760ff00 printf>) [0 S1 A8])
+            (const_int 16 [0x10]))) 697 {*call_value_0} (nil)
+    (nil))
+
+(insn 32 29 34 2 pointer1.c:23 (clobber (reg/i:SI 0 ax)) -1 (nil))
+
+(insn 34 32 43 2 pointer1.c:23 (use (reg/i:SI 0 ax)) -1 (nil))
+
+(note 43 34 44 2 NOTE_INSN_EPILOGUE_BEG)
+
+(insn/f 44 43 45 2 pointer1.c:23 (parallel [
+            (set (reg/f:SI 7 sp)
+                (plus:SI (reg/f:SI 6 bp)
+                    (const_int 4 [0x4])))
+            (set (reg/f:SI 6 bp)
+                (mem:SI (reg/f:SI 6 bp) [0 S4 A8]))
+            (clobber (mem:BLK (scratch) [0 A8]))
+        ]) 500 {leave} (expr_list:REG_CFA_RESTORE (reg/f:SI 6 bp)
+        (expr_list:REG_CFA_ADJUST_CFA (set (reg/f:SI 7 sp)
+                (plus:SI (reg/f:SI 6 bp)
+                    (const_int 4 [0x4])))
+            (nil))))
+
+(jump_insn 45 44 46 2 pointer1.c:23 (return) 490 {return_internal} (nil))
+
+(barrier 46 45 37)
+
+(note 37 46 0 NOTE_INSN_DELETED)
