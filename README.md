@@ -24,18 +24,14 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
 ## Directory structure
 
 eissec - 
-  |-- src - 
-      | - csolve - Interface code to connect to constraint solver for EISSEC
-      | - symhelper - Support code used by EISSEC while executing transformed
-                        code generator
-      | - transformer - OCaml code to transform code generator source code
-                        for symbolic execution
-  |-- pkgs -
-      | - cil-1.4.0 - CIL source package for source-to-source transformation
-      | - gcc-4.5.1 - GCC's source code (code generator) used for symbolic 
-                      execution
-  |-- test/x86 - code for GCC's x86 code generator and a driver to extract x86 
-                 model
+. src - 
+.. csolve - Interface code to connect to constraint solver for EISSEC
+.. symhelper - Support code used by EISSEC while executing transformed code generator
+.. transformer - OCaml code to transform code generator source code for symbolic execution
+. pkgs -
+.. cil-1.4.0 - CIL source package for source-to-source transformation
+.. gcc-4.5.1 - GCC's source code (code generator) used for symbolic execution
+. test/x86 - code for GCC's x86 code generator and a driver to extract x86 model
 
 ## Required packages
 
@@ -93,7 +89,6 @@ README file is. $ is a command prompt.
     insn(_G9,rtl(15,_G27,union_u([rtl(_G184,_G191,_G198,_G205),rtl(_G462,_G469,_G470,_G471),rtl(_G653,_G660,_G667,_G668)|_G393],_G39,_G46,_G53,_G54),_G73))
 
     Q_425 	_G2101 in 21..28,
-
    ```
 
     Here `_G` are Prolog variables. As can be seen, above rule is for `cmpb x86`
